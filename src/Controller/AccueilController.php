@@ -47,6 +47,24 @@ class AccueilController extends AbstractController
             'controller_name' => 'AccueilController',
         ]);
     }
+    /**
+     * @Route("/restaurant", name="restaurant")
+     */
+    public function restaurant(): Response
+    {
+        return $this->render('restaurant/restaurant.html.twig', [
+            'controller_name' => 'AccueilController',
+        ]);
+    }
+    /**
+     * @Route("/admin", name="admin")
+     */
+    public function admin(): Response
+    {
+        return $this->render('admin/admin.html.twig', [
+            'controller_name' => 'AccueilController',
+        ]);
+    }
 
 
 
@@ -56,6 +74,16 @@ class AccueilController extends AbstractController
     public function listingdetails(): Response
     {
         return $this->render('listing/listing-details/listing-details.html.twig', [
+            'controller_name' => 'AccueilController',
+        ]);
+    }
+
+    /**
+     * @Route("/add", name="addrestaurant")
+     */
+    public function addrestaurant(): Response
+    {
+        return $this->render('restaurant/add.restaurant.html.twig', [
             'controller_name' => 'AccueilController',
         ]);
     }
