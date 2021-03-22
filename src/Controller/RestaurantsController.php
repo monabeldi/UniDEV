@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\File\File;
 
+
 /**
  * @Route("/restaurants")
  */
@@ -60,7 +61,11 @@ class RestaurantsController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="restaurants_show", methods={"GET"})
+     * @Route("/{id}",
+     *     name="restaurants_show",
+     *     methods={"GET"},
+     *     requirements={"id"="\d+"}
+     *  )
      */
     public function show(Restaurants $restaurant): Response
     {
@@ -103,7 +108,7 @@ class RestaurantsController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="restaurants_delete", methods={"DELETE"})
+     * @Route("/{id}/delete", name="restaurants_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Restaurants $restaurant): Response
     {
@@ -116,17 +121,16 @@ class RestaurantsController extends AbstractController
         return $this->redirectToRoute('restaurants_index');
     }
     /**
-     * @Route("/searchRestaurantx ", name="searchRestaurantx")
+     * @Route("/search", name="search_restaurant")
      */
-    public function searchRestaurantx(Request $request,NormalizerInterface $Normalizer)
+    public function searchRestaurantx(Request $request, NormalizerInterface $Normalizer)
     {
-        $repository = $this->getDoctrine()->getRepository(restaurant::class);
-        $requestString=$request->get('searchValue');
+        $repository = $this->getDoctrine()->getRepository(Restaurants::class);
+        $requestString = $request->get('searchValue');
         $restaurants = $repository->findRestaurantByNom($requestString);
-        $jsonContent = $Normalizer->normalize($restaurants, 'json',['groups'=>'restaurants']);
-        $retour=json_encode($jsonContent);
-        return new Response($retour);
+        $jsonContent = $Normalizer->normalize($restaurants, 'json',[]);
 
+        return new Response(json_encode($jsonContent));
     }
 
 }

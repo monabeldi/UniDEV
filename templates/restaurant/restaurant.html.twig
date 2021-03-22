@@ -170,8 +170,9 @@
 
     </div>
     <div class="listing__list">
+        {% for restaurant in restaurants %}
         <div class="listing__item">
-            <div class="listing__item__pic set-bg" data-setbg="img/restaurants/el-ali.jpg">
+            <div class="listing__item__pic set-bg" data-setbg="{{ asset('uploads/images/' ~ restaurant.photoRest) }}">
                 <img src="img/listing/list_icon-1.png" alt="">
                 <div class="listing__item__pic__tag">Popular</div>
                 <div class="listing__item__pic__btns">
@@ -181,7 +182,8 @@
             </div>
             <div class="listing__item__text">
                 <div class="listing__item__text__inside">
-                    <h5>El Ali</h5>
+
+                    <h5>{{ restaurant.nomRest }}</h5>
                     <div class="listing__item__text__rating">
                         <div class="listing__item__rating__star">
                             <span class="icon_star"></span>
@@ -193,8 +195,8 @@
                         <h6>$40 - $70</h6>
                     </div>
                     <ul>
-                        <li><span class="icon_pin_alt"></span> 45 bis rue Jemaâ Zitouna la Médina, Tunis 1006 Tunisie</li>
-                        <li><span class="icon_phone"></span> +216 71 321 927</li>
+                        <li><span class="icon_pin_alt"></span> {{ restaurant.addRest }}</li>
+                        <li><span class="icon_phone"></span> +216 {{ restaurant.numTelRest }}</li>
                     </ul>
                 </div>
                 <div class="listing__item__text__info">
@@ -206,115 +208,8 @@
                 </div>
             </div>
         </div>
-        <div class="listing__item">
-            <div class="listing__item__pic set-bg" data-setbg="img/restaurants/steak.jpg">
-                <img src="img/listing/list_icon-1.png" alt="">
-                <div class="listing__item__pic__tag">Popular</div>
-                <div class="listing__item__pic__btns">
-                    <a href="#"><span class="icon_zoom-in_alt"></span></a>
-                    <a href="#"><span class="icon_heart_alt"></span></a>
-                </div>
-            </div>
-            <div class="listing__item__text">
-                <div class="listing__item__text__inside">
-                    <h5>Club Grill Citroen
-                    </h5>
-                    <div class="listing__item__text__rating">
-                        <div class="listing__item__rating__star">
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star-half_alt"></span>
-                        </div>
-                        <h6>$60 - $90</h6>
-                    </div>
-                    <ul>
-                        <li><span class="icon_pin_alt"></span> Avenue principale Les berges du lac. Show Room maison Citroen, Tunis Tunisie</li>
-                        <li><span class="icon_phone"></span> +216 71 960 193</li>
-                    </ul>
-                </div>
-                <div class="listing__item__text__info">
-                    <div class="listing__item__text__info__left">
-                        <img src="img/listing/list_small_icon-1.png" alt="">
-                        <span>Restaurant</span>
-                    </div>
-                    <div class="listing__item__text__info__right">Open Now</div>
-                </div>
-            </div>
-        </div>
-        <div class="listing__item">
-            <div class="listing__item__pic set-bg" data-setbg="img/restaurants/la-closerie.jpg">
-                <img src="img/listing/list_icon-1.png" alt="">
-                <div class="listing__item__pic__tag">Popular</div>
-                <div class="listing__item__pic__btns">
-                    <a href="#"><span class="icon_zoom-in_alt"></span></a>
-                    <a href="#"><span class="icon_heart_alt"></span></a>
-                </div>
-            </div>
-            <div class="listing__item__text">
-                <div class="listing__item__text__inside">
-                    <h5>La Closerie</h5>
-                    <div class="listing__item__text__rating">
-                        <div class="listing__item__rating__star">
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star-half_alt"></span>
-                        </div>
-                        <h6>$80 - $120</h6>
-                    </div>
-                    <ul>
-                        <li><span class="icon_pin_alt"></span> Km.16,Sidi Fredj, la Soukra, Tunis Tunisie</li>
-                        <li><span class="icon_phone"></span> +216 70 938 537</li>
-                    </ul>
-                </div>
-                <div class="listing__item__text__info">
-                    <div class="listing__item__text__info__left">
-                        <img src="img/listing/list_small_icon-1.png" alt="">
-                        <span>Restaurant</span>
-                    </div>
-                    <div class="listing__item__text__info__right">Open Now</div>
-                </div>
-            </div>
-        </div>
-        <div class="listing__item">
-            <div class="listing__item__pic set-bg" data-setbg="img/restaurants/origami-sushi-bar.jpg">
-                <img src="img/listing/list_icon-1.png" alt="">
-                <div class="listing__item__pic__tag">Popular</div>
-                <div class="listing__item__pic__btns">
-                    <a href="#"><span class="icon_zoom-in_alt"></span></a>
-                    <a href="#"><span class="icon_heart_alt"></span></a>
-                </div>
-            </div>
-            <div class="listing__item__text">
-                <div class="listing__item__text__inside">
-                    <h5>Origami Sushi Bar Ennasr</h5>
-                    <div class="listing__item__text__rating">
-                        <div class="listing__item__rating__star">
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star-half_alt"></span>
-                        </div>
-                        <h6>$50 - $80</h6>
-                    </div>
-                    <ul>
-                        <li><span class="icon_pin_alt"></span> Avenue Hedi Nouira, ennasr, Tunis 2035 Tunisie</li>
-                        <li><span class="icon_phone"></span> +216 71 818 315</li>
-                    </ul>
-                </div>
-                <div class="listing__item__text__info">
-                    <div class="listing__item__text__info__left">
-                        <img src="img/listing/list_small_icon-1.png" alt="">
-                        <span>Restaurant</span>
-                    </div>
-                    <div class="listing__item__text__info__right">Open Now</div>
-                </div>
-            </div>
-        </div>
+
+        {% endfor %}
 
     </div>
 </section>
@@ -322,8 +217,7 @@
 
 <!-- Map Begin -->
 <div class="listing__map">
-    <iframe
-            src="https://maps.google.com/maps?q=tunis&t=&z=9&ie=UTF8&iwloc=&output=embed" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    {{ include('restaurant/map.html.twig') }}
 
 </div>
 <!-- Map End -->

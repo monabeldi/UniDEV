@@ -18,12 +18,13 @@ class RestaurantsRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Restaurants::class);
     }
+
     public function findRestaurantByNom($nom_rest){
         return $this->createQueryBuilder('restaurant')
             ->where('restaurant.nom_rest LIKE :nom_rest')
-            ->setParameter('nsc', '%'.$nom_rest.'%')
+            ->setParameter('nom_rest', '%'.$nom_rest.'%')
             ->getQuery()
-            ->getResult();
+            ->getArrayResult();
     }
 
     // /**
