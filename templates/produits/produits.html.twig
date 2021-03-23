@@ -66,97 +66,7 @@
 </header>
 <!-- Header Section End -->
 
-<!-- Filter Begin -->
-<div class="filter nice-scroll">
-    <div class="filter__title">
-        <h5><i class="fa fa-filter"></i> Filter</h5>
-    </div>
-    <div class="filter__search">
-        <input type="text">
-    </div>
-    <div class="filter__select">
-        <select>
-            <option value="">All Categories</option>
-        </select>
-    </div>
-    <div class="filter__location">
-        <input type="text" placeholder="Location">
-        <i class="fa fa-map-marker"></i>
-    </div>
-    <div class="filter__radius">
-        <p>Radius:</p>
-        <div class="price-range-wrap">
-            <div
-                    class="price-range-radius ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
-                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-            </div>
-            <div class="range-slider">
-                <div class="price-input">
-                    <input type="text" id="radius">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="filter__price">
-        <p>Price:</p>
-        <div class="price-range-wrap">
-            <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
-                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-            </div>
-            <div class="range-slider">
-                <div class="price-input">
-                    <input type="text" id="minamount">
-                    <input type="text" id="maxamount" value="$80">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="filter__tags">
-        <h6>Tag</h6>
-        <label for="coupon">
-            Coupons
-            <input type="checkbox" id="coupon">
-            <span class="checkmark"></span>
-        </label>
-        <label for="sa">
-            Smoking Allowed
-            <input type="checkbox" id="sa">
-            <span class="checkmark"></span>
-        </label>
-        <label for="camping">
-            Camping
-            <input type="checkbox" id="camping">
-            <span class="checkmark"></span>
-        </label>
-        <label for="hot-spots">
-            Hot Spots
-            <input type="checkbox" id="hot-spots">
-            <span class="checkmark"></span>
-        </label>
-        <label for="internet">
-            Internet
-            <input type="checkbox" id="internet">
-            <span class="checkmark"></span>
-        </label>
-        <label for="tr">
-            Top Rated
-            <input type="checkbox" id="tr">
-            <span class="checkmark"></span>
-        </label>
-        <label for="hd">
-            Hot Deal
-            <input type="checkbox" id="hd">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="filter__btns">
-        <button type="submit">Filter Results</button>
-        <button type="submit" class="filter__reset">Reset All</button>
-    </div>
-</div>
-<!-- Filter End -->
+
 
 <!-- Listing Section Begin -->
 <section class="listing nice-scroll">
@@ -167,8 +77,8 @@
         </div>
         <div class="listing__text__top__right">Nearby <i class="fa fa-sort-amount-asc"></i></div>
     </div>
-    <div class="listing__list">
-        <div class="listing__item">
+    <div class="listing__list ">
+        <div class="listing__item col-lg-12">
             <div class="listing__item__pic set-bg" data-setbg="img/listing/list-1.jpg">
                 <img src="img/listing/list_icon-1.png" alt="">
                 <div class="listing__item__pic__tag">Popular</div>
@@ -391,15 +301,87 @@
             </div>
         </div>
     </div>
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <a href="./index.html"><img src="{{ asset('img/footer-logo.png') }}" alt=""></a>
+                        </div>
+                        <p>Challenging the way things have always been done can lead to creative new options that reward
+                            you.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 offset-lg-1 col-md-6">
+                    <div class="footer__address">
+                        <ul>
+                            <li>
+                                <span>Call Us:</span>
+                                <p>(+12) 345-678-910</p>
+                            </li>
+                            <li>
+                                <span>Email:</span>
+                                <p>info.colorlib@gmail .com</p>
+                            </li>
+                            <li>
+                                <span>Fax:</span>
+                                <p>(+12) 345-678-910</p>
+                            </li>
+                            <li>
+                                <span>Connect Us:</span>
+                                <div class="footer__social">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-skype"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1 col-md-6">
+                    <div class="footer__widget">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">How it work</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Sign In</a></li>
+                            <li><a href="#">How it Work</a></li>
+                            <li><a href="#">Advantages</a></li>
+                            <li><a href="#">Direo App</a></li>
+                            <li><a href="#">Packages</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright">
+                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </div>
+                        <div class="footer__copyright__links">
+                            <a href="#">Terms</a>
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Cookie Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- Footer Section End -->
 </section>
 <!-- Listing Section End -->
 
-<!-- Map Begin -->
-<div class="listing__map">
-    <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423283.43556031643!2d-118.69192431097179!3d34.020730495817475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1586670019340!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-</div>
-<!-- Map End -->
 
 
 <!-- Js Plugins -->
@@ -413,6 +395,8 @@
 <script src="js/jquery.slicknav.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/main.js"></script>
+
+
 </body>
 
 </html>

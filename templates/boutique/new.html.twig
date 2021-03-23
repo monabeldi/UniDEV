@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Boutique{% endblock %}
+
+{% block body %}
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-area set-bg" data-setbg="{{ asset('img/breadcrumb/breadcrumb-normal.jpg') }}"
+         >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>About Us</h2>
+                        <div class="breadcrumb__option">
+                            <a href="#"><i class="fa fa-home"></i> Home</a>
+                            <span>Aboutus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1>Create new Boutique</h1>
+
+    {{ include('boutique/_form.html.twig') }}
+
+    <a href="{{ path('boutique_index') }}">back to list</a>
+{% endblock %}

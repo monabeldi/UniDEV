@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Boutique{% endblock %}
+
+{% block body %}
+    <div class="breadcrumb-area set-bg" data-setbg="{{ asset('img/breadcrumb/breadcrumb-normal.jpg') }}"
+    >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>About Us</h2>
+                        <div class="breadcrumb__option">
+                            <a href="#"><i class="fa fa-home"></i> Home</a>
+                            <span>Aboutus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>Boutique</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ boutique.id }}</td>
+            </tr>
+            <tr>
+                <th>NomBoutique</th>
+                <td>{{ boutique.nomBoutique }}</td>
+            </tr>
+            <tr>
+                <th>AddressBoutiques</th>
+                <td>{{ boutique.addressBoutiques }}</td>
+            </tr>
+            <tr>
+                <th>NumTelBoutique</th>
+                <td>{{ boutique.numTelBoutique }}</td>
+            </tr>
+            <tr>
+                <th>EmailBoutique</th>
+                <td>{{ boutique.emailBoutique }}</td>
+            </tr>
+            <tr>
+                <th>PhotoBoutique</th>
+                <td><img src="{{ asset('uploads/images/' ~ boutique.photoBoutique) }}" width="40%" ></img></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-success" href="{{ path('boutique_index') }}">back to list</a>
+
+    <a class="btn btn-primary" href="{{ path('boutique_edit', {'id': boutique.id}) }}">edit</a>
+    <br><br>
+
+    {{ include('boutique/_delete_form.html.twig') }}
+{% endblock %}
