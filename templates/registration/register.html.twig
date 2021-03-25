@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <div class="breadcrumb-area set-bg" data-setbg={{ asset('img/breadcrumb/breadcrumb-normal.jpg') }}>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Register</h2>
+                        <div class="breadcrumb__option">
+                            <a href="/accueil"><i class="fa fa-home"></i> Home</a>
+                            <span>Register</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+    {{ form_start(registrationForm,{'attr':{'novalidate': 'novalidate'}}) }}
+
+<section class="contact spad">
+    <div class="container centered">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <form action="#" class="contact__form">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(registrationForm.nom, 'Nom'|trans, {'label_attr' : {'class': '' }}) }}
+                            {{ form_widget(registrationForm.nom) }}
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(registrationForm.email, 'Email'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                            {{ form_widget(registrationForm.email) }}
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(registrationForm.plainPassword, 'Password'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                            {{ form_widget(registrationForm.plainPassword) }}
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(registrationForm.nationality) }}
+                            {{ form_widget(registrationForm.nationality) }}
+                        </div>
+                    </div>
+
+        <button type="submit" class="btn btn-success pull-right">Register</button>
+
+                </form>
+
+        </div>
+    </div>
+    </div>
+
+
+</section>
+    {{ form_end(registrationForm) }}
+{% endblock %}

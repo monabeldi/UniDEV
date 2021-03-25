@@ -1,0 +1,94 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Guides index{% endblock %}
+
+{% block body %}
+<div class="breadcrumb-area set-bg" data-setbg={{ asset('img/breadcrumb/breadcrumb-normal.jpg') }}>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                    <h2>Guides Guide</h2>
+                    <div class="breadcrumb__option">
+                        <a href="/accueil"><i class="fa fa-home"></i> Home</a>
+                        <span>Contacts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+<div class="container">
+    <h1>Guides index</h1>
+</div>>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prenom</th>
+                <th scope="col">Etat Guide</th>
+                <th scope="col">Description</th>
+                <th scope="col">Num Tel°</th>
+                <th scope="col">Photo</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for guide in guides %}
+
+            <tr>
+                <td>{{ guide.id }}</td>
+                <td>{{ guide.nomGui }}</td>
+                <td>{{ guide.prenomGui }}</td>
+                <td>{{ guide.etatGui }}</td>
+                <td>{{ guide.descGui }}</td>
+                <td>{{ guide.numTelGui }}</td>
+                <td>{{ guide.photoGui }}</td>
+                <td>
+                    <a  href="{{ path('guides_show', {'id': guide.id}) }}">Consulter</a>
+                    <a  href="{{ path('guides_edit', {'id': guide.id}) }}"><i class="material-icons blue-text">Modifier</i></a>
+                     <a href="{{ path('guides_delete', {'id': guide.id}) }}"><i class="material-icons red-text">Supprimer</i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {{ form_start(form,{'attr':{'novalidate': 'novalidate'}}) }}
+
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <form action="#" class="contact__form">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                {{ form_label(form.nom_gui, 'Nom Guide'|trans, {'label_attr' : {'class': '' }}) }}
+                                {{ form_widget(form.nom_gui) }}
+                            </div>
+
+
+                                <div class="col-lg-6 col-md-6">
+                                    {{ form_label(form.etat_gui, 'Etat Guide'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                                    {{ form_widget(form.etat_gui) }}
+                                </div>
+
+                        </div>
+                        <button type="submit" class="site-btn">{{ button_label|default('Save') }}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+    {{ form_end(form) }}
+
+<a href="{{ path('guides_new') }}">Create new</a>
+{% endblock %}
