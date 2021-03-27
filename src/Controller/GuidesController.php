@@ -6,13 +6,14 @@ use App\Entity\Guides;
 use App\Form\GuidesType;
 use App\Form\SearchType;
 use App\Repository\GuidesRepository;
+use Symfony\Component\Serializer\Exception\ExceptionInterface;
+use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-
 
 /**
  * @Route("/guides")
@@ -21,31 +22,12 @@ class GuidesController extends AbstractController
 {
     /**
      * @Route("/", name="guides_index")
-     * @param Request $request
      * @return Response
      */
-    public function index(Request $request): Response
+    public function index(GuidesRepository $guidesRepository): Response
     {
-        $guide = new Guides();
-        $form = $this->createForm(SearchType::class, $guide);
-        $form->handleRequest($request);
-        $guides= [];
-        $guides= $this->getDoctrine()->getRepository(Guides::class)->findAll();
 
-
-        if($form->isSubmitted() && $form->isValid()) {
-            $nom = $guide->getNomGui();
-            $etat = $guide->getEtatGui();
-            if ($nom!="")
-                $guides= $this->getDoctrine()->getRepository(Guides::class)->findBy(['nom_gui' => $nom] );
-            else
-                if($etat!=""){
-                    $guides= $this->getDoctrine()->getRepository(Guides::class)->findBy(['etat_gui' => $etat] );
-
-                }else
-                    $guides= $this->getDoctrine()->getRepository(Guides::class)->findAll();
-        }
-        return  $this->render('guides/index.html.twig',[ 'form' =>$form->createView(), 'guides' => $guides]);
+        return  $this->render('guides/index.html.twig',['guides' => $guidesRepository->findAll()]);
 
     }
 
@@ -85,7 +67,7 @@ class GuidesController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="guides_show", methods={"GET"})
+     * @Route("/{id}", name="guides_show", methods={"GET"}, requirements={"id"="\d+"})
      */
     public function show(Guides $guide): Response
     {
@@ -135,30 +117,17 @@ class GuidesController extends AbstractController
     }
 
     /**
-     * @Route("/supprime/image/{id}", name="annonces_delete_image", methods={"DELETE"})
-     * @param Images $image
-     * @param Request $request
-     * @return JsonResponse
+     * @Route("/search", name="search_guides", requirements={"id":"\d+"})
      */
-    public function deleteImage(Images $image, Request $request){
-        $data = json_decode($request->getContent(), true);
+    public function searchGuides(Request $request, NormalizerInterface $Normalizer)
+    {
+        $repository = $this->getDoctrine()->getRepository(Guides::class);
+        $requestString = $request->get('searchValue');
+        $guides = $repository->findGuidesByNom($requestString);
+        $jsonContent = $Normalizer->normalize($guides, 'json',[]);
 
-        // On vérifie si le token est valide
-        if($this->isCsrfTokenValid('delete'.$image->getId(), $data['_token'])){
-            // On récupère le nom de l'image
-            $nom = $image->getName();
-            // On supprime le fichier
-            unlink($this->getParameter('images_directory').'/'.$nom);
-
-            // On supprime l'entrée de la base
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($image);
-            $em->flush();
-
-            // On répond en json
-            return new JsonResponse(['success' => 1]);
-        }else{
-            return new JsonResponse(['error' => 'Token Invalide'], 400);
-        }
+        return new Response(json_encode($jsonContent));
     }
+
+
 }

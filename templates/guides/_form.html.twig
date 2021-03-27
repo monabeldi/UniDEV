@@ -2,43 +2,42 @@
 {{ form_start(form,{'attr':{'novalidate': 'novalidate'}}) }}
 
 <!-- Contact Section Begin -->
-<section class="contact spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12">
-                <form action="#" class="contact__form">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6">
+<div class="card card-primary">
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+                <div class="form-group">
                             {{ form_label(form.nom_gui, 'Nom Guide'|trans, {'label_attr' : {'class': '' }}) }}
                             {{ form_widget(form.nom_gui) }}
                         </div>
-                        <div class="col-lg-6 col-md-6">
+                <div class="form-group">
                             {{ form_label(form.prenom_gui, 'Prenom Guide'|trans, {'label_attr' : {'class': 'control-label' }}) }}
                             {{ form_widget(form.prenom_gui) }}
                         </div>
 
-                        <div class="col-lg-6 col-md-6">
+                <div class="form-group">
                             {{ form_label(form.desc_gui, 'Description'|trans, {'label_attr' : {'class': 'control-label' }}) }}
                             {{ form_widget(form.desc_gui) }}
                         </div>
-                        <div class="col-lg-6 col-md-6">
+                <div class="form-group">
                             {{ form_label(form.num_tel_gui, 'Num Tel°'|trans, {'label_attr' : {'class': 'control-label' }}) }}
                             {{ form_widget(form.num_tel_gui) }}
-                            <div class="col-lg-6 col-md-6">
+                </div>
+                <div class="form-group">
                                 {{ form_label(form.etat_gui, 'Etat Guide'|trans, {'label_attr' : {'class': 'control-label' }}) }}
                                 {{ form_widget(form.etat_gui) }}
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
+                </div>
+
+                <div class="form-group">
                             {{ form_label(form.photo_gui, 'Photo Guide'|trans, {'label_attr' : {'class': 'control-label' }}) }}
                             {{ form_widget(form.photo_gui) }}
                         </div>
                     </div>
-                    <button type="submit" class="site-btn">{{ button_label|default('Save') }}</button>
+            <button type="submit" class="btn btn-primary">{{ button_label|default('Save') }}</button>
+
+            <a class="btn btn-success" href="{{ path('guides_index') }}">back to list</a>
                 </form>
             </div>
         </div>
-    </div>
-</section>
 <!-- Contact Section End -->
 {{ form_end(form) }}

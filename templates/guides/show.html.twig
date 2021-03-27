@@ -1,27 +1,28 @@
-{% extends 'layout.html.twig' %}
-
-{% block title %}Guides{% endblock %}
-
+{% extends 'back.html.twig' %}
 {% block body %}
-    <div class="breadcrumb-area set-bg" data-setbg={{ asset('img/breadcrumb/breadcrumb-normal.jpg') }}>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2>Show</h2>
-                        <div class="breadcrumb__option">
-                            <a href="/accueil"><i class="fa fa-home"></i> Home</a>
-                            <span>Register</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-dark">Dashboard</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard </li>
+                            {{ include('guides/_delete_form.html.twig', {'button_label': 'Delete'}) }}
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
         </div>
-    </div>
-    <div class="container">
-    <h1>Guides</h1>
+        <!-- /.content-header -->
+        <div>
 
-    <table class="table centered">
+            <table class="table contact__form">
         <tbody>
             <tr>
                 <th>Nom : </th>
@@ -45,20 +46,13 @@
             </tr>
             <tr>
                 <th>Image  : </th>
-
-                <td>
-                    <img src= " {{ asset('public/uploads' ~ guide.photoGui) }}"
-                alt ="" style = "width: 50px;
-                  height: 50px"></td>
-
+                    <td><img src="/uploads/images/{{ guide.photoGui }}" alt="" width="140" height="200"></td>
             </tr>
+
         </tbody>
-    </table>
-
-        <a  class="btn btn-dark centered" href="{{ path('guides_index') }}">Liste Guides</a>>
-        <a  class="btn btn-success centered" href="{{ path('guides_edit', {'id': guide.id}) }}">Modifier</a>
-
-
-{{ include('guides/_delete_form.html.twig') }}
-</div>>
+            </table>
+            <a class="btn btn-success" href="{{ path('guides_index') }}">Back to list</a>
+            <a class="btn btn-primary" href="{{ path('guides_edit', {'id': guide.id}) }}">edit</a>
+</div>
+</div>
 {% endblock %}

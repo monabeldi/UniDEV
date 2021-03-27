@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Log in!{% endblock %}
+  {% block stylesheets %}
+      {{ parent() }}
+{% endblock %}
 
 {% block body %}
     <div class="breadcrumb-area set-bg" data-setbg={{ asset('img/breadcrumb/breadcrumb-normal.jpg') }}>
@@ -18,73 +21,74 @@
             </div>
         </div>
     </div>
-<div class="container centered">
-    {% for message in app.flashes('message') %}
-    <div class="alert alert-success" role="alert">
-        {{ message }}
-    </div>
-    {% endfor %}
-    {% for message in app.flashes('warning') %}
-        <div class="alert alert-warning" role="alert">
-            {{ message }}
-        </div>
-    {% endfor %}
-    {% for message in app.flashes('danger') %}
-        <div class="alert alert-danger" role="alert">
-            {{ message }}
-        </div>
-    {% endfor %}
-    <form method="post" class="contact__form centered">
+    <section class="pt-4">
+            <div class="row">
 
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+                <div class="col-md-12 d-flex justify-content-center">
+                    {% for message in app.flashes('message') %}
+                        <div class="alert alert-success" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                    {% for message in app.flashes('warning') %}
+                        <div class="alert alert-warning" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                    {% for message in app.flashes('danger') %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
-    <div class="col-lg-6 col-md-6">
-        <label for="inputEmail">Email</label>
-        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control centered" required autofocus>
-    </div>
-    <div class="col-lg-6 col-md-6">
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control centered" required>
-    </div>
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
 
+                    {% if app.user %}
+                        <div class="mb-3">
+                            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                        </div>
+                    {% endif %}
+                    <form action="{{ path('app_login') }}" method="post"  class="contact__form">
+                        <div class="row d-flex justify-content-center">
+                            <p>You already have an account? Great! Login here.</p>
 
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
+                            <div class="col-lg-8 col-md-8">
+                                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                            </div>
 
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
-        </div>
-    #}
+                            <div class="col-lg-8 col-md-8">
+                                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                            </div>
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-    <div class="bottom-container">
-        <div class="row">
-            <div class="col">
-                <a href="/register  " style="color:blue" class="btn">Sign up</a>
+                        </div>
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" >
+
+                        <div class="d-flex justify-content-center">
+
+                            <div>
+                                <button type="submit" class="site-btn">Sign IN</button>
+
+                            </div>
+
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="p-3 m-3">
+                                <p>Don't have an account? <b><a href="{{ path('app_register') }}" >Register Now</a></b></p>
+
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <a href="/oubli-pass  " style="color:blue" class="btn">Forget Password?</a>
-            </div>
-        </div>
-    </div>
-</form>
-</div>
+    </section>
+
 
 {% endblock %}
+        {% block javascripts %}
+            {{ parent() }}
+            <script src="{{ asset('js/login.js') }}"></script>
+        {% endblock %}
+

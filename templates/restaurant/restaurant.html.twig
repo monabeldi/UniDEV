@@ -70,6 +70,7 @@
 <!-- Filter Begin -->
 <div class="filter nice-scroll">
     <div class="filter__title">
+<<<<<<< HEAD
         <h5><i class="fa fa-filter" ></i> Filter</h5>
     </div>
     <div class="filter__search">
@@ -84,6 +85,52 @@
         <i class="fa fa-map-marker"></i>
     </div>
 
+=======
+        <h5><i class="fa fa-filter"></i> Filter</h5>
+    </div>
+    <div class="filter__search">
+        <input type="text">
+    </div>
+    <div class="filter__select">
+        <select>
+            <option value="">All Categories</option>
+        </select>
+    </div>
+    <div class="filter__location">
+        <input type="text" placeholder="Location">
+        <i class="fa fa-map-marker"></i>
+    </div>
+    <div class="filter__radius">
+        <p>Radius:</p>
+        <div class="price-range-wrap">
+            <div
+                    class="price-range-radius ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+            </div>
+            <div class="range-slider">
+                <div class="price-input">
+                    <input type="text" id="radius">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="filter__price">
+        <p>Price:</p>
+        <div class="price-range-wrap">
+            <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+            </div>
+            <div class="range-slider">
+                <div class="price-input">
+                    <input type="text" id="minamount">
+                    <input type="text" id="maxamount" value="$80">
+                </div>
+            </div>
+        </div>
+    </div>
+>>>>>>> 6fd7449 (first commit)
     <div class="filter__tags">
         <h6>Tag</h6>
         <label for="coupon">
@@ -134,13 +181,21 @@
     <div class="listing__text__top">
         <div class="listing__text__top__left">
             <h5>Restaurants</h5>
+<<<<<<< HEAD
             <span>{{ restaurants|length }} Results Found</span>
+=======
+            <span>4 Results Found</span>
+>>>>>>> 6fd7449 (first commit)
         </div>
 
         <div class="listing__text__top__right">Nearby <i class="fa fa-sort-amount-asc"></i></div>
 
     </div>
+<<<<<<< HEAD
     <div id="list" class="listing__list">
+=======
+    <div class="listing__list">
+>>>>>>> 6fd7449 (first commit)
         {% for restaurant in restaurants %}
         <div class="listing__item">
             <div class="listing__item__pic set-bg" data-setbg="{{ asset('uploads/images/' ~ restaurant.photoRest) }}">
@@ -192,9 +247,13 @@
 
 </div>
 <!-- Map End -->
+<<<<<<< HEAD
 <!-- make sure that jquery is included --!>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
+=======
+
+>>>>>>> 6fd7449 (first commit)
 <!-- Js Plugins -->
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -206,6 +265,7 @@
 <script src="js/jquery.slicknav.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/main.js"></script>
+<<<<<<< HEAD
 <!-- /.content-wrapper -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
 </script>
@@ -301,6 +361,8 @@
     </div>
 </template>
 
+=======
+>>>>>>> 6fd7449 (first commit)
 </body>
 
 </html>

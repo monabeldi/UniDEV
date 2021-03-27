@@ -1,6 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Register{% endblock %}
+ {% block stylesheets %}
+     {{ parent() }}
+     <link rel="stylesheet" href="{{ asset('css/login.css') }}" >
+ {% endblock %}
 
 {% block body %}
     <div class="breadcrumb-area set-bg" data-setbg={{ asset('img/breadcrumb/breadcrumb-normal.jpg') }}>
@@ -23,7 +27,7 @@
     {% endfor %}
     {{ form_start(registrationForm,{'attr':{'novalidate': 'novalidate'}}) }}
 
-<section class="contact spad">
+ <section class="contact spad">
     <div class="container centered">
         <div class="row">
             <div class="col-lg-12 col-md-12">
@@ -41,10 +45,7 @@
                             {{ form_label(registrationForm.plainPassword, 'Password'|trans, {'label_attr' : {'class': 'control-label' }}) }}
                             {{ form_widget(registrationForm.plainPassword) }}
                         </div>
-                        <div class="col-lg-6 col-md-6">
-                            {{ form_label(registrationForm.nationality) }}
-                            {{ form_widget(registrationForm.nationality) }}
-                        </div>
+
                     </div>
 
         <button type="submit" class="btn btn-success pull-right">Register</button>
@@ -59,3 +60,42 @@
 </section>
     {{ form_end(registrationForm) }}
 {% endblock %}
+
+{#
+<!--Signup Section-->
+    {{ form_start(registrationForm,{'attr':{'novalidate': 'novalidate'}}) }}
+        <div id="wrap" class="wrap">
+            <div class="wrap-inner">
+<div  class="section" id="section2">
+    <div class="form form--signup">
+        <h1 class="alpha">Sign Up in Seconds!</h1>
+        <p>Signup using your Email address</p>
+        <div>
+            <form action="{{ path('app_register') }}" class="form-wrap">
+                <input id="" class="inputbox name" type="text" placeholder="Your Name" />
+                <input id="" class="inputbox email" type="text" placeholder="Email id" />
+                <input id="" class="inputbox password" type="password" placeholder="Password" />
+                <input id="" class="inputbox password" type="password" placeholder="Confirm Password" />
+                <p><a type="submit" class="button">Create my Account <i class="icon-rocket"></i></a></p>
+                <!--<input id="" type="button" class="button" value="Sign up" />-->
+            </form>
+        </div>
+        <hr />
+        <p>Or you can Signup with one of the following</p>
+        <div class="social">
+            <a href="#" class="facebook"><i class="icon-facebook"></i><span>Facebook</span></a>
+            <a href="#" class="twitter"><i class="icon-twitter"></i><span>Twitter</span></a>
+            <a href="#" class="google"><i class="icon-google-plus"></i><span>Google</span></a>
+        </div>
+        <p><a class="scroll" href="{{ path('app_login') }}" data-section="1">&laquo; Login here</a></p>
+    </div>
+</div>
+</div>
+    </div>
+    {% block javascripts %}
+        {{ parent() }}
+        <script src="{{ asset('js/login.js') }}"></script>
+    {% endblock %}
+<!--END: Signup Section-->
+{% endblock %}
+ #}

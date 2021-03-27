@@ -26,8 +26,8 @@ class GuidesType extends AbstractType
             ->add('prenom_gui',TextType::class)
             ->add('etat_gui',ChoiceType::class, [
                 'choices' => array(
-                    'Disponible' => 'oui',
-                    'Non Disponible' => 'non',
+                    'Disponible' => 'Disponible',
+                    'Non Disponible' => 'Non Disponible',
                 )
             ])
             ->add('desc_gui',TextareaType::class)
