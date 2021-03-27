@@ -19,6 +19,14 @@ class GuidesRepository extends ServiceEntityRepository
         parent::__construct($registry, Guides::class);
     }
 
+    public function findGuidesByNom($nom_gui){
+        return $this->createQueryBuilder('guides')
+            ->where('guides.nom_gui LIKE :nom_gui')
+            ->setParameter('nom_gui', '%'.$nom_gui.'%')
+            ->getQuery()
+            ->getArrayResult();
+    }
+
     // /**
     //  * @return Guides[] Returns an array of Guides objects
     //  */

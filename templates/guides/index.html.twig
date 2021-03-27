@@ -1,29 +1,48 @@
-{% extends 'layout.html.twig' %}
+{% extends 'back.html.twig' %}
 
 {% block title %}Guides index{% endblock %}
 
 {% block body %}
-<div class="breadcrumb-area set-bg" data-setbg={{ asset('img/breadcrumb/breadcrumb-normal.jpg') }}>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <div class="breadcrumb__text">
-                    <h2>Guides Guide</h2>
-                    <div class="breadcrumb__option">
-                        <a href="/accueil"><i class="fa fa-home"></i> Home</a>
-                        <span>Contacts</span>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">Liste Guides</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Liste Guides </li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <div class="card">
+        <div class="card-header">
+            <a  href="{{ path('guides_new') }}">Create new</a>
+
+            <form class="form-inline ml-3">
+                <div class="input-group input-group-sm">
+                    <input class="form-control form-control-navbar" type="text" id="search" placeholder="Search" aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-navbar" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Breadcrumb End -->
-<div class="container">
-    <h1>Guides index</h1>
-</div>>
+            </form>
 
-    <table class="table">
+
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+
+            <table id="t" class="table table-bordered">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">Id</th>
@@ -36,7 +55,7 @@
                 <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="all">
         {% for guide in guides %}
 
             <tr>
@@ -46,11 +65,10 @@
                 <td>{{ guide.etatGui }}</td>
                 <td>{{ guide.descGui }}</td>
                 <td>{{ guide.numTelGui }}</td>
-                <td>{{ guide.photoGui }}</td>
+                <td><img src="{{ asset('uploads/images/' ~ guide.photoGui) }}" width="70" height="70"></td>
                 <td>
-                    <a  href="{{ path('guides_show', {'id': guide.id}) }}">Consulter</a>
-                    <a  href="{{ path('guides_edit', {'id': guide.id}) }}"><i class="material-icons blue-text">Modifier</i></a>
-                     <a href="{{ path('guides_delete', {'id': guide.id}) }}"><i class="material-icons red-text">Supprimer</i></a>
+                    <a class="btn btn-success btn-sm rounded-0" href="{{ path('guides_show', {'id': guide.id}) }}"><i class="fa fa-eye"></i></a>
+                    <a class="btn btn-primary btn-sm rounded-0" href="{{ path('guides_edit', {'id': guide.id}) }}"><i class="fa fa-edit"></i></a>
                 </td>
             </tr>
         {% else %}
@@ -59,36 +77,56 @@
             </tr>
         {% endfor %}
         </tbody>
+                <tbody id="search">
+                </tbody>
     </table>
-    {{ form_start(form,{'attr':{'novalidate': 'novalidate'}}) }}
-
-    <!-- Contact Section Begin -->
-    <section class="contact spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <form action="#" class="contact__form">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6">
-                                {{ form_label(form.nom_gui, 'Nom Guide'|trans, {'label_attr' : {'class': '' }}) }}
-                                {{ form_widget(form.nom_gui) }}
-                            </div>
-
-
-                                <div class="col-lg-6 col-md-6">
-                                    {{ form_label(form.etat_gui, 'Etat Guide'|trans, {'label_attr' : {'class': 'control-label' }}) }}
-                                    {{ form_widget(form.etat_gui) }}
-                                </div>
-
-                        </div>
-                        <button type="submit" class="site-btn">{{ button_label|default('Save') }}</button>
-                    </form>
-                </div>
-            </div>
         </div>
-    </section>
-    <!-- Contact Section End -->
-    {{ form_end(form) }}
-
-<a href="{{ path('guides_new') }}">Create new</a>
+    </div></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script>
+        $( document ).ready(function() {
+            $("#search").keyup(function(e){
+                /* La variable value va prendre la valeur insérer dans le champ de texte afin d’effectuer la recherche */
+                var value = $(this).val();
+                /* Ajax est lancé lors du remplissage du champ texte dont l’id est « search » pour faire la recherche */
+                $.ajax({
+                    /* l’url est une chaine de caractères contenant l’adresse où la requête est envoyée */
+                    url : "{{ path('search_guides') }}",
+                    /* La méthode utilisée pour transférer les données est GET */
+                    type : 'GET',
+                    /*Ici search value va prendre la chaine entrée par un utilisateur dans la zone de recherche et sera placée après l’url */
+                    data: {
+                        'searchValue' : value
+                    },
+                    /*Cette fonction permet de vider le contenu du tableau pour recevoir le nouveau contenu*/
+                    success : function(retour){
+                        //console.log(retour);
+                        if(retour){
+                            $('#t tbody#search').empty();
+                            $.each(JSON.parse(retour), function(i, obj) {
+                                $('#t tbody#all').hide();
+                                $('#t tbody#search').append(
+                                    '<tr><td> '+obj.id+' ' +
+                                    ' </td><td>    '+obj.nom_gui+'' +
+                                    '  </td><td>'+obj.prenom_gui+'' +
+                                    '  </td><td>'+obj.num_tel_gui+'' +
+                                    '  </td><td>'+obj.etat_gui+'' +
+                                    '  </td><td>'+obj.desc_gui+'' +
+                                    '  </td><td><img src="/uploads/images/'+obj.photo_gui+'" width="70" height="70">' +
+                                    '</td><td><a class="btn btn-success btn-sm rounded-0" href="/guides/'+obj.id+'"><i class="fa fa-eye"></i></a> <a class="btn btn-primary btn-sm rounded-0" href="/guides/'+obj.id+'/edit"><i class="fa fa-edit"></a></td></tr>');
+                            });
+                        }
+                        else
+                        {
+                            $('#t tbody#all').show();
+                            $('#t tbody#search').empty();
+                            $('#t tbody#search').fadeIn('fast');
+                        }
+                    },
+                });
+                return false;
+            });
+        });
+    </script>
 {% endblock %}

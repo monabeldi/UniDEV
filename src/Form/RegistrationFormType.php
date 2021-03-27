@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\User;
+use App\Controller\SecurityController;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\IsTrue;
@@ -20,7 +21,6 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('email',EmailType::class)
             ->add('nom',TextType::class)
-            ->add('nationality',TextType::class)
             ->add('plainPassword', PasswordType::class, [
                 'mapped' => false,
                 'constraints' => [

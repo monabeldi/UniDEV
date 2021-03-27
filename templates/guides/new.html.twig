@@ -1,34 +1,30 @@
-{% extends 'layout.html.twig' %}
+{% extends 'back.html.twig' %}
 
 {% block title %}New Guides{% endblock %}
 
 {% block body %}
     {{parent()}}
     <!-- Breadcrumb Begin -->
-    <div class="breadcrumb-area set-bg" data-setbg={{ asset('img/breadcrumb/breadcrumb-normal.jpg') }}>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2>Ajouter Guide</h2>
-                        <div class="breadcrumb__option">
-                            <a href="/accueil"><i class="fa fa-home"></i> Home</a>
-                            <span>Contacts</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb End -->
-<div class="container">
-    <h2>Create new Guides</h2>
-</div>
 
+<!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-dark">Add</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Add </li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- Breadcrumb End -->
     {{ include('guides/_form.html.twig') }}
-<div class="container">
-<div class="btn pull-right">
-    <a href="{{ path('guides_index') }}">Liste Guide</a>
-</div>
 </div>
 {% endblock %}
