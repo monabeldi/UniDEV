@@ -1,0 +1,71 @@
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Directing Template">
+    <meta name="keywords" content="Directing, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Css Styles -->
+
+
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('css/elegant-icons.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('css/nice-select.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('css/barfiller.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('css/jquery-ui.min.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
+    {% endblock %}
+</head>
+
+<body>
+{% block header %}
+    {{ include('partials/header.section.html.twig') }}
+{% endblock %}
+
+{% block body %}
+{% endblock %}
+{% block newslatter %}
+{% endblock %}
+{{ include('partials/newslatter.html.twig') }}
+
+{% block footer %}
+    {{ include('partials/footer.html.twig') }}
+{% endblock %}
+
+
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+
+
+
+
+{% block javascripts %}
+    <!-- Js Plugins -->
+    <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.nicescroll.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.barfiller.js') }}"></script>
+    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.slicknav.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+{% endblock %}
+</body>
+
+
+</html>

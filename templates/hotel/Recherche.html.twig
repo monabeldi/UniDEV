@@ -1,0 +1,133 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div >
+
+        <div class="form-group"  >
+            <input type="text"  name="search" class=" js-user-search " placeholder="Rechercher">
+        </div>
+        <button><a  href="{{ path('app_register') }}"> ADD <i class="fa fa-align-justify"></i></a></button>
+
+        <table border="1" id="entitiesNavv" >
+            <tr>
+                <th>adresse</th>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>nom</th>
+                <th>prenom</th>
+                <th>image</th>
+
+                {#            <th>role</th>#}
+
+
+            </tr>
+            <tr {% for c in user  %}>
+                <th>{{ c.adresse }}</th>
+                <th>{{ c.id }}</th>
+                <th>{{ c.email }}</th>
+                <th>{{ c.password }}</th>
+                <th>{{ c.nom }}</th>
+                <th>{{ c.prenom }}</th>
+                <td><img src="{{ asset('images/products/'~c.image) }} " style="width: 50px;"></td>
+
+                {#            <th>{{ c.role }}</th>#}
+                {#            <td><img src="{{ asset('images/products/'~c.image) }} " style="width: 50px;"></td>#}
+                {#            <th>{{ c.role }}</th>#}
+                <th><a href="{{ path('updateU',{'id':c.id }) }}">Update</a> </th>
+                <th><a href="{{ path('dU',{'id':c.id }) }}"> Delete</a> </th>
+
+
+            </tr {% endfor %}>
+        </table>
+    </div>
+
+    <script src="{{ asset('assets/js/jquery.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            var searchRequest = null;
+            $(".js-user-search").keyup(function () {
+                var minlength = 1;
+                var that = this;
+                var value = $(this).val();
+                var entitySelector = $("#entitiesNavv").html('');
+                console.log(value.length)
+
+                if (searchRequest != null)
+                    searchRequest.abort();
+                searchRequest = $.ajax({
+                    type: "GET",
+                    url: "{{ path('search_ajax') }}",
+                    data: {
+                        'q': value
+                    },
+                    dataType: "text",
+                    success: function (msg) {
+                        //we need to check if the value is the same
+                        if (value == $(that).val()) {
+                            var result = JSON.parse(msg);
+                            $.each(result, function (key, arr) {
+                                $.each(arr, function (id, value) {
+                                    if (key == 'entities') {
+                                        if (id != 'error') {
+                                            var assetsDir = "{{ asset('images/products') }}";
+                                            var mail=value[0];
+                                            var imgName=value[1];
+                                            var iduser=value[2];
+                                            var motdepasse=value[3]
+                                            var nom=value[4];
+                                            var prenom=value[5];
+                                            var adress=value[6];
+                                            entitySelector.append(
+                                                '<div>'
+                                                +'<table border="0">'
+                                                +'<tr>'
+                                                + '<th>adresse</th>'+
+                                                + '<th>Id</th>'
+                                                +'<th>Email</th>'
+                                                + '<th>Password</th>'
+                                                +' <th>nom</th>'
+                                                +'<th>prenom</th>'
+
+                                                +  '</tr>'
+                                                + '<tr >'
+                                                + '<div >'
+                                                + '<img id="myImgTag'+iduser+'" src="" style="width:300px">'
+                                                +'</div>'
+
+                                                +  '<th>'+adress+'</th>'
+
+                                                +     '<th>'+mail+'</th>'
+                                                +  '<th>'+motdepasse+'</th>'
+                                                +   '<th>'+nom+'</th>'
+                                                +     '<th>'+prenom+'</th>'
+
+                                                +   '</tr >'
+                                                +   ' </table>'
+
+                                                +   '</div>'
+                                                +'</div>'
+
+                                            );
+                                            document.getElementById("myImgTag"+iduser).src= assetsDir + '/' + imgName;
+
+
+
+
+
+                                        } else {
+                                            entitySelector.append('<li class="errorLi">' + value + '</li>');
+                                        }
+                                    }
+                                });
+                            });
+
+
+                        }
+                    }
+                });
+
+            });
+        });
+    </script>
+
+{% endblock %}

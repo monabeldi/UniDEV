@@ -1,0 +1,46 @@
+{% extends 'back.html.twig' %}
+{% block body %}
+
+    <div class="content-wrapper">
+
+
+    {{parent()}}
+    <form METHOD="post">
+        <input type="text" name="idchambre" >
+        <input type="submit" value="recherche" class="btn btn-outline-warning">
+    </form>
+
+    <table class="table" border="1">
+        <thead>
+        <tr>
+
+            <th>ID</th>
+            <th>Numero chambre</th>
+            <th>Type chambre</th>
+            <th>Etat chambre</th>
+            <th>prix chambre</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr {% for c in Chambre %}>
+            <td>{{ c.idchambre }}</td>
+            <td> №={{ c.numchambre }}</td>
+            <td>{{ c.typchambre }}</td>
+
+
+            <td>{{ c.etatchambre }}</td>
+            <td>{{ c.prixchambre }} DT</td>
+
+            <td><a class="btn btn-outline-danger" href="{{ path('b',{'idchambre':c.idchambre}) }}">Delete</a> </td>
+            <td><a class="btn btn-outline-primary" href="{{ path('updat',{'idchambre':c.idchambre}) }}">Update</a> </td>
+
+        </tr{% endfor %}>
+
+        </tbody>
+    </table>
+    <a class="btn btn-outline-success" href="{{ path('neww') }}">Create new</a>
+    </div>
+{% endblock %}

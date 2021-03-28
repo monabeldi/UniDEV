@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{parent()}}
+{% endblock %}
+{% block javascripts %}
+    {{parent()}}
+{% endblock %}
+{% block body %}
+    {{parent()}}
+    {{ include('accueil/hero.section.html.twig') }}
+    {{ include('accueil/categories.section.html.twig') }}
+    {{ include('accueil/search.section.html.twig') }}
+    {{ include('accueil/work.section.html.twig') }}
+    {{ include('accueil/feature.section.html.twig') }}
+    {{ include('accueil/testimonial.section.html.twig') }}
+    {{ include('accueil/Hotel.section.html.twig') }}
+{% endblock %}

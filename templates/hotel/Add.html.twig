@@ -1,0 +1,66 @@
+{% extends 'back.html.twig' %}
+{% block body %}
+    <div class="content-wrapper">
+    {{parent()}}
+
+{{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+    {{ form_errors(form) }}
+<!-- Contact Section Begin -->
+    <script src="https://kit.fontawesome.com/9ee46c96e2.js" crossorigin="anonymous"></script>
+<section class="contact spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <form action="#" class="contact__form">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(form.idhotel, 'Id Hotel'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                            {{ form_widget(form.idhotel) }}
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(form.nomhotel, 'Nom Hotel'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                            {{ form_widget(form.nomhotel) }}
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(form.adrrhotel, 'Adresse hotel'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                            {{ form_widget(form.adrrhotel) }}
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(form.photohotel, 'Photo hotel') }}
+                            {{ form_widget(form.photohotel) }}
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+
+                            {{ form_label(form.ratehotel, 'rate hotel'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                            {{ form_widget(form.ratehotel) }}
+
+
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(form.deschotel, 'description hotel'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                            {{ form_widget(form.deschotel) }}
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(form.prixnuit, 'Prix nuité'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                            {{ form_widget(form.prixnuit) }}
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(form.numtelhotel, 'Phone Hotel'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                            {{ form_widget(form.numtelhotel) }}
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(form.idchambre, 'id chambre'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                            {{ form_widget(form.idchambre) }}
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-outline-info">{{ button_label|default('Save') }}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+    </div>
+<!-- Contact Section End -->
+{{ form_end(form) }}
+{% endblock %}

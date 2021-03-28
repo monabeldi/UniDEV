@@ -1,0 +1,48 @@
+{% extends 'back.html.twig' %}
+{% block body %}
+    <div class="content-wrapper">
+    {{parent()}}
+
+    {{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+    {{ form_errors(form) }}
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+
+                    <form action="#" class="contact__form">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                {{ form_label(form.idchambre, 'Id Chambre'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                                {{ form_widget(form.idchambre) }}
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                {{ form_label(form.numchambre, 'Numero chambre'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                                {{ form_widget(form.numchambre) }}
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                {{ form_label(form.typchambre, 'Type Chambre'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                                {{ form_widget(form.typchambre) }}
+                            </div>
+
+                            <div class="col-lg-6 col-md-6">
+                                {{ form_label(form.etatchambre, 'Etat chambre'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                                {{ form_widget(form.etatchambre) }}
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                {{ form_label(form.prixchambre, 'prix Chambre'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                                {{ form_widget(form.prixchambre) }}
+                            </div>
+
+                        </div>
+                        <button type="submit" class="btn btn-outline-info">{{ button_label|default('Save') }}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+    {{ form_end(form) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,162 @@
+{% extends 'back.html.twig' %}
+{% block body %}
+
+<div class="content-wrapper">
+    {{parent()}}
+    <form METHOD="get">
+        <input type="text" name="search" class=" js-user-search ">
+        <input type="submit" value="Search" name="search" >
+    </form>
+
+<table class="table" border="1"  >
+    <thead>
+    <tr>
+
+        <th>ID</th>
+        <th>NOM</th>
+        <th>ADRESSE</th>
+        <th>PHOTO</th>
+        <th>RATE</th>
+        <th>DESCRIPTION</th>
+        <th>PRIX</th>
+        <th>NUMTEL</th>
+        <th>Delete</th>
+        <th>Update</th>
+        <th> choix</th>
+    </tr>
+    </thead>
+    <tbody id="entitiesNavv">
+    <div  >
+    <tr {% for h in Hotel %}  >
+         <td>{{ h.idhotel }}</td>
+         <td>{{ h.nomhotel }}</td>
+        <td>{{ h.adrrhotel }}</td>
+
+        <td><img src="{{ asset('uploads/images/' ~ h.photohotel) }}" width="160" height="160"></img></td>
+        <td>{{ h.ratehotel }}</td>
+
+        <td>{{ h.deschotel }}</td>
+        <td>{{ h.prixnuit }}DT/Nuit</td>
+        <td>№: +216 {{ h.numtelhotel }}</td>
+        <td><a class="btn btn-outline-danger" href="{{ path('d',{'idhotel':h.idhotel}) }}">Delete</a> </td>
+        <td><a class="btn btn-outline-primary" href="{{ path('update',{'idhotel':h.idhotel}) }}">Update</a> </td>
+        <td ><input type="radio" name="drone"></td>
+    </tr{% endfor %}>
+    </div>
+
+    </tbody>
+</table>
+    <a class="btn btn-outline-success" href="{{ path('new') }}">Create new</a>
+</div>
+
+
+
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            var searchRequest = null;
+            $(".js-user-search").keyup(function () {
+                var minlength = 1;
+                var that = this;
+                var value = $(this).val();
+                var entitySelector = $("#entitiesNavv").html('');
+                console.log(value.length)
+
+                if (searchRequest != null)
+                    searchRequest.abort();
+                searchRequest = $.ajax({
+                    type: "GET",
+                    url: "{{ path('search_ajax') }}",
+                    data: {
+                        'q': value
+                    },
+                    dataType: "text",
+                    success: function (msg) {
+                        //we need to check if the value is the same
+                        if (value == $(that).val()) {
+                            var result = JSON.parse(msg);
+                            $.each(result, function (key, arr) {
+                                $.each(arr, function (id, value) {
+                                    if (key == 'entities') {
+                                        if (id != 'error') {
+                                            var assetsDir = "{{ asset('uploads/images') }}";
+                                            var hotelnom=value[0];
+                                            var hoteladdresss=value[1];
+                                            var imgName=value[2];
+                                            var hotelid=value[3];
+                                            var rate=value[4]
+                                            var desc=value[5];
+                                            var prix=value[6];
+                                            var numtel=value[7];
+                                            entitySelector.append(
+
+                                                +'<table class="table" border="1">'
+                                                +'<tr>'
+                                                // + ' <th>ID</th>'
+                                                // +  '<th>nom</th>'
+                                                // +   '<th>ADRESSE</th>'
+                                                // + ' <th>photo</th>'
+                                                // +  '<th>rate</th>'
+                                                // +   '<th>description</th>'
+                                                // + ' <th>prix</th>'
+                                                // +  '<th>numtel</th>'
+                                                // +  '</tr>'
+                                                + '<tr >'
+                                                // + '<div class="listing_img" >'
+                                                // + '<img id="myImgTag'+hotelid+'" src="" style="width:300px">'
+                                                // +'</div>'
+
+                                                +  '<th>'+hotelid+'</th>'
+                                                +   '<th>'+hotelnom+'</th>'
+                                                +     '<th>'+hoteladdresss+'</th>'
+                                                +   '<th>'
+                                                + '<img id="myImgTag'+hotelid+'" src="" style="width:300px">'
+                                                +   '</th>'
+
+                                                +  '<th>'+rate+'</th>'
+                                                +   '<th>'+desc+'</th>'
+                                                +     '<th>'+prix+'</th>'
+                                                +  '<th>'+numtel+'</th>'
+                                                + '<th>'
+                                                + '<a class="btn btn-outline-danger" href="" id="hrd'+hotelid+'">'
+                                                +'Delete'
+                                                +'</a>'
+                                                + '</th>'
+                                                + '<th>'
+                                                + '<a class="btn btn-outline-danger" href="" id="update'+hotelid+'">'
+                                                +'Update'
+                                                +'</a>'
+                                                + '</th>'
+
+                                            {#<td><a class="btn btn-outline-primary" href="{{ path('update',{'idhotel':h.idhotel}) }}">Update</a> </td>#}
+                                                +   '</tr >'
+                                                +   ' </table>'
+
+
+
+                                            );
+                                            document.getElementById("myImgTag"+hotelid).src= assetsDir + '/' + imgName;
+                                            document.getElementById("hrd"+hotelid).href="http://127.0.0.1:8000/Suppp/"+hotelid;
+                                            document.getElementById("update"+hotelid).href="http://127.0.0.1:8000/hotel/Update/"+hotelid
+
+
+
+
+
+
+                                        } else {
+                                            entitySelector.append('<li class="errorLi">' + value + '</li>');
+                                        }
+                                    }
+                                });
+                            });
+
+
+                        }
+                    }
+                });
+
+            });
+        });
+    </script>
+{% endblock %}
