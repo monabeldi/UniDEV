@@ -34,6 +34,19 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+            ->add('confirm_password', PasswordType::class, [
+                'mapped' => false,
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Please enter a confirm password',
+                    ]),
+                    new Length([
+                        'min' => 6,
+                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'max' => 4096,
+                    ]),
+                ],
+            ])
         ;
     }
 

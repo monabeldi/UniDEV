@@ -39,19 +39,35 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", nullable=true)
      */
-    private $nationality;
+    private $sexe;
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $address;
 
     /**
      * @ORM\Column(type="json")
      */
     private $roles = [];
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $picture;
 
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Assert\Length(min="8", minMessage="Password must be more then 8 caracteres")
+     * @Assert\EqualTo(propertyPath="confirm_password", message="Please type the same password" )
      */
     private $password;
-
+    /**
+     * @var string The hashed password
+     * @ORM\Column(type="string")
+     * @Assert\Length(min="8", minMessage="Password must be more then 8 caracteres")
+     * @Assert\EqualTo(propertyPath="confirm_password", message="Please type the same password" )
+     */
+    public $confirm_password;
     /**
      * @ORM\Column(type="boolean")
      */
@@ -94,15 +110,37 @@ class User implements UserInterface
 
         return $this;
     }
-
-    public function getNationality(): ?string
+    public function getPicture(): ?string
     {
-        return $this->nationality;
+        return $this->picture;
     }
 
-    public function setNationality(string $nationality): self
+    public function setPicture(?string $picture): self
     {
-        $this->nationality = $nationality;
+        $this->picture = $picture;
+
+        return $this;
+    }
+
+    public function getSexe(): ?string
+    {
+        return $this->sexe;
+    }
+
+    public function setSexe(string $sexe): self
+    {
+        $this->sexe = $sexe;
+
+        return $this;
+    }
+    public function getAddress(): ?string
+    {
+        return $this->address;
+    }
+
+    public function setAddress(string $address): self
+    {
+        $this->address = $address;
 
         return $this;
     }
@@ -162,6 +200,7 @@ class User implements UserInterface
 
         return array_unique($roles);
     }
+
 
     function setRole($role)
     {

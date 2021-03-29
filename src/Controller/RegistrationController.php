@@ -62,7 +62,7 @@ class RegistrationController extends AbstractController
                 )
             ;
             $mailer->send($message);
-
+            $this->addFlash('message    ', 'Un lien d\'activation a été envoyer a votre email !');
         }
 
         return $this->render('registration/register.html.twig', [
