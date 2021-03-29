@@ -32,6 +32,13 @@ class Catalogues
      */
     private $desc_plat;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Restaurants::class, mappedBy="catalogue", cascade={"persist", "remove"})
+     */
+    private $restaurants;
+
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -72,4 +79,35 @@ class Catalogues
 
         return $this;
     }
+
+    public function getRestaurants(): ?Restaurants
+    {
+        return $this->restaurants;
+    }
+
+    public function setRestaurants(?Restaurants $restaurants): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($restaurants === null && $this->restaurants !== null) {
+            $this->restaurants->setCatalogue(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($restaurants !== null && $restaurants->getCatalogue() !== $this) {
+            $restaurants->setCatalogue($this);
+        }
+
+        $this->restaurants = $restaurants;
+
+        return $this;
+    }
+
+
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return (string)$this->getId();
+    }
+
+
 }

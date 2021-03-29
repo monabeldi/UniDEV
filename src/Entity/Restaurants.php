@@ -44,9 +44,12 @@ class Restaurants
     private $photo_rest;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\OneToOne(targetEntity=Catalogues::class, inversedBy="restaurants", cascade={"persist", "remove"})
      */
-    private $id_cata;
+    private $catalogue;
+
+
+
 
     public function getId(): ?int
     {
@@ -101,14 +104,14 @@ class Restaurants
         return $this;
     }
 
-    public function getIdCata(): ?int
+    public function getCatalogue(): ?Catalogues
     {
-        return $this->id_cata;
+        return $this->catalogue;
     }
 
-    public function setIdCata(int $id_cata): self
+    public function setCatalogue(?Catalogues $catalogue): self
     {
-        $this->id_cata = $id_cata;
+        $this->catalogue = $catalogue;
 
         return $this;
     }

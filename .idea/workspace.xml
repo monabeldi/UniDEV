@@ -2,12 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ba8dd79-7a28-41cf-9eba-8777c65d8b53" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/PiDev.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PiDev.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RestaurantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RestaurantController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/js/pages/dashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/js/pages/dashboard2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/js/pages/dashboard3.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/RestaurantsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RestaurantsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/RestaurantsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RestaurantsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Catalogues.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Catalogues.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Restaurants.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Restaurants.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RestaurantsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RestaurantsType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/CataloguesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CataloguesRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accueil/hero.section.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil/hero.section.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/navbar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/sidebar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/back.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/back.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/restaurant/map.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/restaurant/map.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/restaurant/restaurant.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/restaurant/restaurant.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/restaurants/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/restaurants/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/restaurants/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/restaurants/edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/restaurants/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/restaurants/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/restaurants/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/restaurants/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/restaurants/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/restaurants/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +147,8 @@
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1pDpdO5NvEpxJ8kFDO8QMm7VWkv" />
@@ -134,8 +159,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/restaurant" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Compressed/notaresto-master" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -165,7 +191,13 @@
       <workItem from="1615930921867" duration="13472000" />
       <workItem from="1616025221602" duration="10675000" />
       <workItem from="1616070572549" duration="1250000" />
-      <workItem from="1616448676148" duration="1647000" />
+      <workItem from="1616448676148" duration="16983000" />
+      <workItem from="1616511956755" duration="18901000" />
+      <workItem from="1616697696238" duration="16575000" />
+      <workItem from="1616779616633" duration="2102000" />
+      <workItem from="1616888156650" duration="6024000" />
+      <workItem from="1616945059969" duration="347000" />
+      <workItem from="1616955671465" duration="14567000" />
     </task>
     <servers />
   </component>
@@ -177,10 +209,19 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="544" y="231" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.860/1600.3.1600.860@0.0.1600.860" timestamp="1614806946010" />
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615937021718">
+    <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser" timestamp="1616538251626">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1616538251626" />
+    <state x="2440" y="174" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616963206980">
+      <screen x="1920" y="0" width="1600" height="860" />
+    </state>
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1615937021718" />
+    <state x="2440" y="174" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.0.1600.860@1920.0.1600.860" timestamp="1616963206980" />
+    <state x="2500" y="185" key="FileChooserDialogImpl" timestamp="1616467369122">
+      <screen x="1920" y="0" width="1600" height="860" />
+    </state>
+    <state x="2500" y="185" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1600.860@1920.0.1600.860" timestamp="1616467369122" />
     <state x="634" y="353" key="NewPhpFileDialog" timestamp="1614806955760">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -189,9 +230,19 @@
       <screen x="1920" y="0" width="1600" height="860" />
     </state>
     <state x="2259" y="77" key="SettingsEditor/0.0.1536.824/1920.0.1600.860@1920.0.1600.860" timestamp="1615846103818" />
-    <state x="506" y="29" width="587" height="801" key="find.popup" timestamp="1614818319227">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="1691" y="-30" width="1282" height="629" maximized="true" key="dock-window-1" timestamp="1616965109307">
+      <screen x="1920" y="0" width="1600" height="860" />
     </state>
+    <state x="1691" y="-30" width="1282" height="629" maximized="true" key="dock-window-1/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1616965109307" />
+    <state x="105" y="0" width="1282" height="629" key="dock-window-1/0.0.1536.824/1920.0.1600.860@1920.0.1600.860" timestamp="1616963960387" />
+    <state x="216" y="9" width="1310" height="650" key="dock-window-2" timestamp="1616779918942">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="216" y="9" width="1310" height="650" key="dock-window-2/0.0.1536.824/1920.0.1600.860@1920.0.1600.860" timestamp="1616779918942" />
+    <state x="486" y="28" width="591" height="768" key="find.popup" timestamp="1616959518212">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="486" y="28" width="591" height="768" key="find.popup/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1616959518212" />
     <state x="506" y="29" width="587" height="801" key="find.popup/0.0.1600.860/1600.3.1600.860@0.0.1600.860" timestamp="1614818319227" />
     <state x="2493" y="303" width="611" height="282" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1615846059002">
       <screen x="1920" y="0" width="1600" height="860" />
@@ -206,5 +257,26 @@
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1615935796219" />
     <state x="2369" y="151" width="700" height="708" key="search.everywhere.popup/0.0.1536.824/1920.0.1600.860@1920.0.1600.860" timestamp="1616026707249" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/templates/catalogues/index.html.twig</url>
+          <line>50</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/templates/catalogues/index.html.twig</url>
+          <line>5</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/templates/catalogues/index.html.twig</url>
+          <line>27</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

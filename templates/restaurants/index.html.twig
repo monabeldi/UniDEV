@@ -21,14 +21,19 @@
         <!-- /.content-header -->
         <div class="card">
             <div class="card-header">
-                <a  href="{{ path('restaurants_new') }}">Create new</a>
-                <input type="text" id="search" class="form-control" placeholder="Search">
-
-
+                <a class="btn btn-primary" href="{{ path('restaurants_new') }}">Add Restaurant</a>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-
+                <div class="input-group input-group-sm">
+                    <input type="text" id="search" class="form-control fas fa-search" placeholder="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-navbar" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <br>
                 <table id="t" class="table table-bordered">
 
                     <thead>
@@ -50,11 +55,15 @@
                             <td>{{ restaurant.addRest }}</td>
                             <td>{{ restaurant.numTelRest }}</td>
                             <td><img src="{{ asset('uploads/images/' ~ restaurant.photoRest) }}" width="70" height="70"></img></td>
-                            <td>{{ restaurant.idCata }}</td>
+                            <td>{{ restaurant.catalogue }}</td>
                             <td>
-                                <a class="btn btn-success btn-sm rounded-0" href="{{ path('restaurants_show', {'id': restaurant.id}) }}"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-primary btn-sm rounded-0" href="{{ path('restaurants_edit', {'id': restaurant.id}) }}"><i class="fa fa-edit"></i></a>
-                                <a class="btn btn-danger btn-sm rounded-0" href="{{ path('restaurants_edit', {'id': restaurant.id}) }}"><i class="fa fa-trash"></i></a>
+                                <a class="btn btn-success btn-sm rounded-0" href="{{ path('restaurants_edit', {'id': restaurant.id}) }}"><i class="fa fa-edit"></i></a>
+
+                                <form method="post" action="{{ path('restaurants_delete', {'id': restaurant.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer le restaurant ?');">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ restaurant.id) }}">
+                                    <button class="btn btn-danger btn-sm rounded-0"><i class="fa fa-trash"></i></button>
+                                </form>
                             </td>
                         </tr>
                     {% else %}
@@ -112,7 +121,7 @@
                                     ' </td><td>    '+obj.nom_rest+'' +
                                     '  </td><td>'+obj.add_rest+'' +
                                     '  </td><td>'+obj.num_tel_rest+'' +
-                                    '  </td><td><img src="uploads/images/'+obj.photo_rest+'" width="70" height="70"></img></td><td>'+obj.id_cata+'' +
+                                    '  </td><td><img src="/uploads/images/'+obj.photo_rest+'" width="70" height="70"></img></td><td>'+obj.catalogue+'' +
                                     ' </td><td><a href="/restaurants/'+obj.id+'">show</a> </br><a href="/restaurants/'+obj.id+'/edit">edit</a></td></tr>');
                             });
                         }

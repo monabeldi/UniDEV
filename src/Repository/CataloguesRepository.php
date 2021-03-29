@@ -18,6 +18,13 @@ class CataloguesRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Catalogues::class);
     }
+    public function findCatalogueByNom($nom_plat){
+        return $this->createQueryBuilder('catalogue')
+            ->where('catalogue.nom_plat LIKE :nom_plat')
+            ->setParameter('nom_plat', '%'.$nom_plat.'%')
+            ->getQuery()
+            ->getArrayResult();
+    }
 
     // /**
     //  * @return Catalogues[] Returns an array of Catalogues objects

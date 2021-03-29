@@ -133,4 +133,5 @@ class RestaurantsController extends AbstractController
         return new Response(json_encode($jsonContent));
     }
 
+
 }

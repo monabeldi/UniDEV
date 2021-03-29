@@ -1,0 +1,36 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Catalogues{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+    <h1>Catalogues</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ catalogue.id }}</td>
+            </tr>
+            <tr>
+                <th>Photo_cata</th>
+                <td>{{ catalogue.photoCata }}</td>
+            </tr>
+            <tr>
+                <th>Nom_plat</th>
+                <td>{{ catalogue.nomPlat }}</td>
+            </tr>
+            <tr>
+                <th>Desc_plat</th>
+                <td>{{ catalogue.descPlat }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('catalogues_index') }}">back to list</a>
+
+    <a href="{{ path('catalogues_edit', {'id': catalogue.id}) }}">edit</a>
+
+    {{ include('catalogues/_delete_form.html.twig') }}
+</div>
+{% endblock %}

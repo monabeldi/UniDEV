@@ -1,0 +1,30 @@
+{{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+<!-- Contact Section Begin -->
+<div class="card card-primary">
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+
+                <div class="form-group">
+                    {{ form_label(form.nom_plat, 'Nom plat'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                    {{ form_widget(form.nom_plat) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.desc_plat, 'Descrption plat'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                    {{ form_widget(form.desc_plat) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.photo_cata, 'Photo cataloque'|trans, {'label_attr' : {'class': '' }}) }}
+                    {{ form_widget(form.photo_cata) }}
+                </div>
+
+
+                <a class="btn btn-success" href="{{ path('catalogues_index') }}">back to list</a>
+                <button type="submit" class="btn btn-primary">{{ button_label|default('Save') }}</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+<!-- Contact Section End -->
+{{ form_end(form) }}

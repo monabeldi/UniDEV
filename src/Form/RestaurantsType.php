@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Restaurants;
+use App\Entity\Catalogues;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -31,6 +33,10 @@ class RestaurantsType extends AbstractType
                 'data_class' => null,
                 'required' => false
             ))
+            ->add('catalogue', EntityType::class , [
+                'choice_label' => 'id',
+                'class' => Catalogues::class,
+            ])
         ;
     }
 

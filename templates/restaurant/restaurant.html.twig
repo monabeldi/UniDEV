@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
@@ -69,50 +70,20 @@
 <!-- Filter Begin -->
 <div class="filter nice-scroll">
     <div class="filter__title">
-        <h5><i class="fa fa-filter"></i> Filter</h5>
+        <h5><i class="fa fa-filter" ></i> Filter</h5>
     </div>
     <div class="filter__search">
-        <input type="text">
+        <input type="text" id="search" placeholder="search" >
     </div>
     <div class="filter__select">
         <select>
-            <option value="">All Categories</option>
+            <option value="">All Locations</option>
         </select>
     </div>
     <div class="filter__location">
-        <input type="text" placeholder="Location">
         <i class="fa fa-map-marker"></i>
     </div>
-    <div class="filter__radius">
-        <p>Radius:</p>
-        <div class="price-range-wrap">
-            <div
-                    class="price-range-radius ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
-                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-            </div>
-            <div class="range-slider">
-                <div class="price-input">
-                    <input type="text" id="radius">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="filter__price">
-        <p>Price:</p>
-        <div class="price-range-wrap">
-            <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
-                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-            </div>
-            <div class="range-slider">
-                <div class="price-input">
-                    <input type="text" id="minamount">
-                    <input type="text" id="maxamount" value="$80">
-                </div>
-            </div>
-        </div>
-    </div>
+
     <div class="filter__tags">
         <h6>Tag</h6>
         <label for="coupon">
@@ -163,13 +134,13 @@
     <div class="listing__text__top">
         <div class="listing__text__top__left">
             <h5>Restaurants</h5>
-            <span>4 Results Found</span>
+            <span>{{ restaurants|length }} Results Found</span>
         </div>
 
         <div class="listing__text__top__right">Nearby <i class="fa fa-sort-amount-asc"></i></div>
 
     </div>
-    <div class="listing__list">
+    <div id="list" class="listing__list">
         {% for restaurant in restaurants %}
         <div class="listing__item">
             <div class="listing__item__pic set-bg" data-setbg="{{ asset('uploads/images/' ~ restaurant.photoRest) }}">
@@ -221,7 +192,9 @@
 
 </div>
 <!-- Map End -->
-
+<!-- make sure that jquery is included --!>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
 <!-- Js Plugins -->
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -233,6 +206,101 @@
 <script src="js/jquery.slicknav.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/main.js"></script>
+<!-- /.content-wrapper -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+<script>
+    $( document ).ready(function() {
+        $("#search").keyup(function(e){
+            /* La variable value va prendre la valeur insérer dans le champ de texte afin d’effectuer la recherche */
+            var value = $(this).val();
+            /* Ajax est lancé lors du remplissage du champ texte dont l’id est « search » pour faire la recherche */
+            $.ajax({
+                /* l’url est une chaine de caractères contenant l’adresse où la requête est envoyée */
+                url : "{{ path('search_restaurant') }}",
+                /* La méthode utilisée pour transférer les données est GET */
+                type : 'GET',
+                /*Ici search value va prendre la chaine entrée par un utilisateur dans la zone de recherche et sera placée après l’url */
+                data: {
+                    'searchValue' : value
+                },
+                /*Cette fonction permet de vider le contenu du tableau pour recevoir le nouveau contenu*/
+                success : function(retour){
+                    //console.log(retour);
+                    if(retour){
+                        $('#list').empty();
+                        $.each(JSON.parse(retour), function(i, obj) {
+                            // Get template
+                            var template = $("#template-restaurant-item").html();
+
+                            // Create a new row from the template
+                            var $item = $(template);
+
+                            // Add data to the row
+                            //$('.listing__item__pic').
+                            $item.find("div[data-template='image_rest']").css('background-image', 'url(/uploads/images/'+ obj.photo_rest + ')')
+                            //data('setbg', "/uploads/images/"+obj.photo_rest);
+                            $item.find("h5[data-template='nom_rest']").text(obj.nom_rest);
+                            $item.find("li[data-template='add_rest']").text(obj.add_rest);
+                            $item.find("li[data-template='num_tel_rest']").text(obj.num_tel_rest);
+
+                            // Add the row to the table
+                            $("#list").append($item);
+                        });
+                    }
+                    else
+                    {
+                        $('#list tbody#all').show();
+                        $('#list tbody#search').empty();
+                        $('#list tbody#search').fadeIn('fast');
+                    }
+                },
+            });
+            return false;
+        });
+    });
+
+</script>
+<template id="template-restaurant-item">
+    <div class="listing__item">
+        <div class="listing__item__pic set-bg" data-template="image_rest" data-setbg="" >
+            <img src="img/listing/list_icon-1.png" alt="">
+            <div class="listing__item__pic__tag">Popular</div>
+            <div class="listing__item__pic__btns">
+                <a href="#"><span class="icon_zoom-in_alt"></span></a>
+                <a href="#"><span class="icon_heart_alt"></span></a>
+            </div>
+        </div>
+        <div class="listing__item__text">
+            <div class="listing__item__text__inside">
+
+                <h5 data-template="nom_rest"></h5>
+                <div class="listing__item__text__rating">
+                    <div class="listing__item__rating__star">
+                        <span class="icon_star"></span>
+                        <span class="icon_star"></span>
+                        <span class="icon_star"></span>
+                        <span class="icon_star"></span>
+                        <span class="icon_star-half_alt"></span>
+                    </div>
+                    <h6>$40 - $70</h6>
+                </div>
+                <ul>
+                    <li data-template="add_rest"><span class="icon_pin_alt"></span> </li>
+                    <li data-template="num_tel_rest"><span class="icon_phone"></span> +216 </li>
+                </ul>
+            </div>
+            <div class="listing__item__text__info">
+                <div class="listing__item__text__info__left">
+                    <img src="img/listing/list_small_icon-1.png" alt="">
+                    <span>Restaurant</span>
+                </div>
+                <div class="listing__item__text__info__right">Open Now</div>
+            </div>
+        </div>
+    </div>
+</template>
+
 </body>
 
 </html>
