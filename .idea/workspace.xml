@@ -146,7 +146,11 @@
       <change afterPath="$PROJECT_DIR$/templates/produits/listeProduits.html.twig" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/templates/produits/produits.html.twig" afterDir="false" />
     <list default="true" id="c3d8b1a2-9db6-42ec-91db-8910361843ba" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210329021915.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/GuideController.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/templates/admin/profile.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/guide/guide.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/guide/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
@@ -307,7 +311,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/unidev" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/admin" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -321,6 +325,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\21628\Documents\GitHub\UniDEV\templates\admin" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\21628\Documents\GitHub\UniDEV\templates\user" />
     </key>
@@ -361,7 +368,7 @@
       <workItem from="1616503368716" duration="23215000" />
       <workItem from="1616683726259" duration="1044000" />
       <workItem from="1616684790835" duration="454000" />
-      <workItem from="1616688310118" duration="114738000" />
+      <workItem from="1616688310118" duration="117405000" />
     </task>
     <servers />
   </component>

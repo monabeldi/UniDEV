@@ -96,8 +96,10 @@ class AppAuthenticator extends AbstractFormLoginAuthenticator
             }, $roles);
             if (in_array('ROLE_ADMIN', $rolesTab, true))
                 $redirection = new RedirectResponse($this->router->generate('guides_index'));
-            else
+            elseif (in_array('ROLE_USER', $rolesTab, true)){
                 $redirection = new RedirectResponse($this->router->generate('accueil'));
+            }
+               else{$redirection = new RedirectResponse($this->router->generate('accueil'));}
             return $redirection;
         }
     }

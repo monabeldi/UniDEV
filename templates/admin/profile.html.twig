@@ -1,0 +1,142 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profile {{ app.user.nom }}{% endblock %}
+ {% block stylesheets %}
+     {{ parent() }}
+ {% endblock %}
+
+{% block body %}
+    <div class="breadcrumb-area set-bg" data-setbg={{ asset('img/breadcrumb/breadcrumb-normal.jpg') }}>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Register</h2>
+                        <div class="breadcrumb__option">
+                            <a href="/accueil"><i class="fa fa-home"></i> Home</a>
+                            <span>Register</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="container">
+    <div class="col-lg-8 col-md-8">
+    <b><p style="color:#000b16">Profile</p></b>
+</div>
+    <hr>
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-3">
+            <div class="text-center">
+                <img {{ app.user.picture }} class="img z-depth-1 rounded-circle" alt="avatar" width="70" height="70">
+                <h6>Upload a different photo...</h6>
+
+                <input type="file"  name="picture" class="form-control">
+            </div>
+        </div>
+
+        <!-- edit form column -->
+        <div class="col-md-9 personal-info">
+            <div class="alert alert-info alert-dismissable">
+                <a class="panel-close close" data-dismiss="alert">×</a>
+                <i class="fa fa-coffee"></i>
+                This is an <strong>.alert</strong>. Use this to show important messages to the user.
+            </div>
+            <h3>Personal info</h3>
+            <form action="{{ path('profile') }}" class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Full Name:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" name="nom" value="{{ app.user.nom }}">
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label class="col-lg-3 control-label p-3 ">Adress:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" name="address" id="user_input_autocomplete_address" value="{{ app.user.address }}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Email:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" name="email" value="{{ app.user.email }}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Password:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="password" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Confirm password:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="password" name="confirm_password" value="">
+                    </div>
+                </div>
+                <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}"
+                >
+                <div class="form-group">
+                    <div>
+                        <label class="col-lg-3 control-label">Sexe:</label>
+                    </div>
+                    <SELECT class="col-lg-3" name="sexe" value="{{ app.user.sexe }}">
+                        <OPTION value="1">Not defined
+                        <OPTION value="2">Female
+                        <OPTION value="3">Man
+                    </SELECT>
+                </div>
+                <p></p>
+                <div class="form-group">
+                    <label class="col-md-3 control-label p-3 "></label>
+                    <div class="col-md-12">
+
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+
+                            <button type="reset" class="btn btn-default">Cancel</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<hr>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyCuP0QbhWgKwx5mwDm1jV2pZXYU4FtGhQ4"></script>
+    <script>
+        function initializeAutocomplete(id) {
+            var element = document.getElementById(id);
+            if (element) {
+                var autocomplete = new google.maps.places.Autocomplete(element, { types: ['geocode'] });
+                google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+            }
+        }
+
+        function onPlaceChanged() {
+            var place = this;
+
+            // console.log(place);  // Uncomment this line to view the full object returned by Google API.
+
+            for (var i in place.address_components) {
+                var component = place.address_components[i];
+                for (var j in component.types) {  // Some types are ["country", "political"]
+                    var type_element = document.getElementById(component.types[j]);
+                    if (type_element) {
+                        type_element.value = component.long_name;
+                    }
+                }
+            }
+        }
+
+        google.maps.event.addDomListener(window, 'load', function() {
+            initializeAutocomplete('user_input_autocomplete_address');
+        });</script>
+{% endblock %}
+
