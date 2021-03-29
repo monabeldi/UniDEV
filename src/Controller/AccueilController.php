@@ -27,6 +27,7 @@ class AccueilController extends AbstractController
             'controller_name' => 'AccueilController',
         ]);
     }
+
     /**
      * @Route("/contact", name="contact")
      */

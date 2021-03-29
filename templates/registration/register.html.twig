@@ -37,22 +37,22 @@
                         <p>Signup using your Email address</p>
                             </div>
                         <div class="col-lg-6 col-md-8 p-1 m-1">
-                            {{ form_label(registrationForm.nom, 'Full Name'|trans, {'label_attr' : {'class': 'control-label' }}) }}
-                            {{ form_widget(registrationForm.nom) }}
+
+                            {{ form_widget(registrationForm.nom,{ 'attr': {'class': 'form-control', 'placeholder' : 'Full Name'}}) }}
                         </div>
 
                         <div class="col-lg-6 col-md-8 p-1 m-1" >
-                            {{ form_label(registrationForm.email, 'Email Adress'|trans, {'label_attr' : {'class': 'control-label' }}) }}
-                            {{ form_widget(registrationForm.email) }}
+
+                            {{ form_widget(registrationForm.email,{ 'attr': {'class': 'form-control', 'placeholder' : 'Email Adress'}}) }}
                         </div>
 
                         <div class="col-lg-6 col-md-8 p-1 m-1">
-                            {{ form_label(registrationForm.plainPassword, 'Password'|trans, {'label_attr' : {'class': 'control-label' }}) }}
-                            {{ form_widget(registrationForm.plainPassword) }}
+
+                            {{ form_widget(registrationForm.plainPassword, { 'attr': {'class': 'form-control', 'placeholder' : 'Password'}}) }}
                         </div>
                         <div class="col-lg-6 col-md-8 p-1 m-1">
-                            {{ form_label(registrationForm.confirm_password, 'Confirm Password'|trans, {'label_attr' : {'class': 'control-label' }}) }}
-                            {{ form_widget(registrationForm.confirm_password) }}
+
+                            {{ form_widget(registrationForm.confirm_password,{ 'attr': {'class': 'form-control', 'placeholder' : 'Retype password'}}) }}
                         </div>
 
                     </div>

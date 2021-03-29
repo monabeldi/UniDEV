@@ -25,13 +25,11 @@ class SecurityController extends AbstractController
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        // if ($this->getUser()) {
-        //     return $this->redirectToRoute('target_path');
-        // }
+        if ($this->getUser()) {
+            return $this->redirectToRoute('accueil');
 
-        // get the login error if there is one
-        $error = $authenticationUtils->getLastAuthenticationError();
-        // last username entered by the user
+        }
+         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
@@ -42,6 +40,7 @@ class SecurityController extends AbstractController
      */
     public function logout()
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
 
@@ -56,33 +55,17 @@ class SecurityController extends AbstractController
     public function oubliPass(Request $request, UserRepository $users, Swift_Mailer $mailer, TokenGeneratorInterface $tokenGenerator
     ): Response
     {
-        // On initialise le formulaire
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_ANONYMOUSLY');
         $form = $this->createForm(ResetPassType::class);
-
-        // On traite le formulaire
         $form->handleRequest($request);
-
-        // Si le formulaire est valide
         if ($form->isSubmitted() && $form->isValid()) {
-            // On récupère les données
             $donnees = $form->getData();
-
-            // On cherche un utilisateur ayant cet e-mail
             $user = $users->findOneByEmail($donnees['email']);
-
-            // Si l'utilisateur n'existe pas
             if ($user === null) {
-                // On envoie une alerte disant que l'adresse e-mail est inconnue
                 $this->addFlash('danger', 'Cette adresse e-mail est inconnue');
-
-                // On retourne sur la page de connexion
                 return $this->redirectToRoute('app_login');
             }
-
-            // On génère un token
             $token = $tokenGenerator->generateToken();
-
-            // On essaie d'écrire le token en base de données
             try{
                 $user->setResetToken($token);
                 $entityManager = $this->getDoctrine()->getManager();
@@ -93,10 +76,8 @@ class SecurityController extends AbstractController
                 return $this->redirectToRoute('app_login');
             }
 
-            // On génère l'URL de réinitialisation de mot de passe
             $url = $this->generateUrl('app_reset_password', array('token' => $token), UrlGeneratorInterface::ABSOLUTE_URL);
 
-            // On génère l'e-mail
             $message = (new \Swift_Message('Mot de passe oublié'))
                 ->setFrom('votre@adresse.fr')
                 ->setTo($user->getEmail())
@@ -129,7 +110,10 @@ class SecurityController extends AbstractController
      */
     public function resetPassword(Request $request, string $token, UserPasswordEncoderInterface $passwordEncoder)
     {
-        // On cherche un utilisateur avec le token donné
+        if ($this->getUser()) {
+            return $this->redirectToRoute('accueil');
+
+        }
         $user = $this->getDoctrine()->getRepository(User::class)->findOneBy(['reset_token' => $token]);
 
         // Si l'utilisateur n'existe pas

@@ -25,6 +25,7 @@ class ProfileController extends AbstractController
      */
     public function profileEdit(Request $request): Response
     {
+        $this->denyAccessUnlessGranted(['ROLE_ADMIN']);
         $user = $this->getUser();
 
         $form = $this->createForm(ProfileType::class, $user);
@@ -38,9 +39,9 @@ class ProfileController extends AbstractController
                 $user->getDoctrine()->setPicture($image);
             }
 
-            $this->getDoctrine()->getManager()->flush();
+            $this->getDoctrine()->getManager()->persist();
 
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('profile');
         }
 
         return $this->render('profile/profile.html.twig', [
