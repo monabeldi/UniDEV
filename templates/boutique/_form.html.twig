@@ -1,0 +1,39 @@
+{{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+{{ form_errors (form) }}
+
+<!-- Contact Section Begin -->
+<section class="contact spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <form action="#" class="contact__form">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(form.nomBoutique, 'Nom Boutique'|trans, {'label_attr' : {'class': '' }}) }}
+                            {{ form_widget(form.nomBoutique) }}
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(form.addressBoutiques, 'Adresse Boutique'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                            {{ form_widget(form.addressBoutiques) }}
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(form.numTelBoutique, 'Phone Boutique'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                            {{ form_widget(form.numTelBoutique) }}
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(form.emailBoutique, 'email Boutique'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                            {{ form_widget(form.emailBoutique) }}
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            {{ form_label(form.photoBoutique, 'Photo Boutique'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                            {{ form_widget(form.photoBoutique) }}
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-outline-primary">{{ button_label|default('Save') }}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section End -->
+{{ form_end(form) }}

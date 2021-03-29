@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{parent()}}
+    <!-- Listing Section Begin -->
+    <section class="listing-hero set-bg" data-setbg="img/listing/details/listing-hero.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="listing__hero__option">
+                        <div class="listing__hero__icon">
+                            <img src="img/listing/details/ld-icon.png" alt="">
+                        </div>
+                        <div class="listing__hero__text">
+                            <h2>List Products</h2>
+                            <div class="listing__hero__widget">
+                                <div class="listing__hero__widget__rating">
+                                    <span class="icon_star"></span>
+                                    <span class="icon_star"></span>
+                                    <span class="icon_star"></span>
+                                    <span class="icon_star"></span>
+                                    <span class="icon_star-half_alt"></span>
+                                </div>
+                                <div>120 Review</div>
+                            </div>
+                            <p><span class="icon_pin_alt"></span> 1012 Vesper Dr. Columbus, Georgia, United States</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="listing__hero__btns">
+                        <a href="/addProduit" class="primary-btn"><i class="fa fa-bookmark"></i> Add Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Listing Section End -->
+
+    <!-- Listing Details Section Begin -->
+
+        <div class="container">
+            <div class="row">
+                <section class="listing nice-scroll ">
+                    <div class="listing__text__top">
+                        <div class="listing__text__top__left">
+                            <h5>Produits</h5>
+                            <span>{{ produits | length  }} Results Found</span>
+                        </div>
+                    </div>
+                    <div class="listing__list">
+                        {% for produit in produits %}
+                            <div class="listing__item">
+                                <div class="listing__item__pic set-bg" data-setbg="{{ asset('uploads/images/' ~ produit.PhotoProduit) }}">
+                                    <img src="img/listing/list_icon-1.png" alt="">
+                                    <div class="listing__item__pic__tag">Popular</div>
+                                    <div class="listing__item__pic__btns">
+                                        <a href="#"><span class="icon_zoom-in_alt"></span></a>
+                                        <a href="#"><span class="icon_heart_alt"></span></a>
+                                    </div>
+                                </div>
+                                <div class="listing__item__text">
+                                    <div class="listing__item__text__inside">
+
+                                        <h5>{{ produit.nomProduit }}</h5>
+                                        <div class="listing__item__text__rating">
+                                            <div class="listing__item__rating__star">
+                                                <span class="icon_star"></span>
+                                                <span class="icon_star"></span>
+                                                <span class="icon_star"></span>
+                                                <span class="icon_star"></span>
+                                                <span class="icon_star-half_alt"></span>
+                                            </div>
+                                            <h6>$40 - $70</h6>
+                                        </div>
+                                        <ul>
+                                            <li><span class="icon_pin_alt"></span> {{ produit.marqueProduit }}</li>
+                                            <li><span class="icon_phone"></span> +216 {{ produit.prixProduit }}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="listing__item__text__info">
+                                        <div class="listing__item__text__info__left">
+                                            <img src="img/listing/list_small_icon-1.png" alt="">
+                                            <span>Restaurant</span>
+                                        </div>
+                                        <div class="listing__item__text__info__right">Open Now</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+
+
+    <!-- Listing Details Section End -->
+
+{% endblock %}

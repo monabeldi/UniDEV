@@ -1,0 +1,47 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Boutique{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+    <h1>Boutique : {{ boutique.nomBoutique }}</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ boutique.id }}</td>
+            </tr>
+            <tr>
+                <th>NomBoutique</th>
+                <td>{{ boutique.nomBoutique }}</td>
+            </tr>
+            <tr>
+                <th>AddressBoutiques</th>
+                <td>{{ boutique.addressBoutiques }}</td>
+            </tr>
+            <tr>
+                <th>NumTelBoutique</th>
+                <td>{{ boutique.numTelBoutique }}</td>
+            </tr>
+            <tr>
+                <th>EmailBoutique</th>
+                <td>{{ boutique.emailBoutique }}</td>
+            </tr>
+            <tr>
+                <th>PhotoBoutique</th>
+                <td><img src="{{ asset('uploads/images/' ~ boutique.photoBoutique) }}" width="40%" ></img></td>
+            </tr>
+        </tbody>
+    </table>
+    <a class="btn btn-outline-primary" href="{{ path('boutique_index') }}">back to list</a>
+
+    <a class="btn btn-outline-success" href="{{ path('boutique_edit', {'id': boutique.id}) }}">edit</a>
+    <br><br>
+    {{ include('boutique/_delete_form.html.twig') }}
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{parent()}}
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-area set-bg" data-setbg="img/breadcrumb/breadcrumb-normal.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>add Produits</h2>
+                        <div class="breadcrumb__option">
+                            <a href="/accueil"><i class="fa fa-home"></i> Home</a>
+                            <span>Contacts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-lg-12 col-md-12">
+                    <form action="#" class="contact__form">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <input type="text" placeholder="id-Produits">
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <input type="text" placeholder="nom-Produits">
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <input type="text" placeholder="marque">
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <input type="text" placeholder="Prix-produit">
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <input type="text" placeholder="poids_produit">
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <input type="text" placeholder="id-boutique">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="site-btn">SAVE</button>
+                    </form>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+{% endblock %}

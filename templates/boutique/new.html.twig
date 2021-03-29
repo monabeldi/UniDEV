@@ -1,0 +1,15 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}New Boutique{% endblock %}
+
+{% block body %}
+    <!-- Breadcrumb Begin -->
+<div class="content-wrapper">
+
+    <h1>Create new Boutique</h1>
+
+    {{ include('boutique/_form.html.twig') }} <br>
+
+    <a class="btn btn-outline-primary" href="{{ path('boutique_index') }}">back to list</a><br><br>
+</div>
+{% endblock %}

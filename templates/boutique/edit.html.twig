@@ -1,0 +1,15 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Edit Boutique{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+    <h1>Edit Boutique</h1>
+
+    {{ include('boutique/_form.html.twig', {'button_label': 'Update'}) }} <br><br>
+
+    <a class="btn btn-outline-primary" href="{{ path('boutique_index') }}">back to list</a><br><br>
+
+    {{ include('boutique/_delete_form.html.twig') }}
+</div>
+{% endblock %}
