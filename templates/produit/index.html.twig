@@ -1,12 +1,20 @@
-{% extends 'base.html.twig' %}
+{% extends 'back.html.twig' %}
 
 {% block title %}Produit index{% endblock %}
 
 {% block body %}
-    <h1>Produit index</h1>
+<div class="content-wrapper">
 
-    <table class="table">
-        <thead>
+
+    ---------------------------------------------------
+    <h1 id="dd1"> Liste des Produits</h1>
+    </br>
+    <a class="btn btn-outline-success" href="{{ path('produit_new', ) }}">Create new</a>
+    </br>
+    <input type="text" id="search" class="form-control" placeholder="Search">
+    <div>
+        <table border ="1" id="t" class="table table-hover table-dark">
+            <thead class="thead-dark">
             <tr>
                 <th>Id</th>
                 <th>NomProduit</th>
@@ -15,27 +23,79 @@
                 <th>PhotoProduit</th>
                 <th>actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for produit in produits %}
-            <tr>
-                <td>{{ produit.id }}</td>
-                <td>{{ produit.nomProduit }}</td>
-                <td>{{ produit.marqueProduit }}</td>
-                <td>{{ produit.prixProduit }}</td>
-                <td>{{ produit.photoProduit }}</td>
-                <td>
-                    <a href="{{ path('produit_show', {'id': produit.id}) }}">show</a>
-                    <a href="{{ path('produit_edit', {'id': produit.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody id="all">
+            {% for produit in produits %}
+                <tr>
+                    <td>{{ produit.id }}</td>
+                    <td>{{ produit.nomProduit }}</td>
+                    <td>{{ produit.marqueProduit }}</td>
+                    <td>{{ produit.prixProduit }}</td>
+                    <td><img src="{{ asset('uploads/images/' ~ produit.PhotoProduit) }}" width="70" height="70"></img></td>
+                    <td>
+                        <a class="btn btn-outline-primary" href="{{ path('produit_show', {'id': produit.id}) }}">show</a>
+                        <a class="btn btn-outline-success" href="{{ path('produit_edit', {'id': produit.id}) }}">edit</a>
+                    </td>
 
-    <a href="{{ path('produit_new') }}">Create new</a>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tbody id="search">
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script>
+        $( document ).ready(function() {
+            $("#search").keyup(function(e){
+                /* La variable value va prendre la valeur insérer dans le champ de texte afin d’effectuer la recherche */
+                var value = $(this).val();
+                /* Ajax est lancé lors du remplissage du champ texte dont l’id est « search » pour faire la recherche */
+                $.ajax({
+                    /* l’url est une chaine de caractères contenant l’adresse où la requête est envoyée */
+                    url : "{{ path('searchProduit') }}",
+                    /* La méthode utilisée pour transférer les données est GET */
+                    type : 'GET',
+                    /*Ici search value va prendre la chaine entrée par un utilisateur dans la zone de recherche et sera placée après l’url */
+                    data: {
+                        'searchValue' : value
+                    },
+                    /*Cette fonction permet de vider le contenu du tableau pour recevoir le nouveau contenu*/
+                    success : function(retour){
+                        console.log(retour);
+                        if(retour){
+                            $('#t tbody#search').empty();
+                            $.each(JSON.parse(retour), function(i, obj) {
+                                $('#t tbody#all').hide();
+                                $('#t tbody#search').append('<tr><td> '+obj.id+' ' +
+                                    ' </td><td>    '+obj.nomProduit+'' +
+                                    '  </td><td>'+obj.marqueProduit+'' +
+                                    '  </td><td>'+obj.prixProduit+'' +
+                                    '  </td><td><img src="/uploads/images/'+obj.photoProduit+'" width="70" height="70"></img>' +
+                                    ' </td><td><a class="btn btn-outline-primary" href="/produit/'+obj.id+'">show</a> </br><a class="btn btn-outline-success" href="/boutique/'+obj.id+'/edit">edit</a></td></tr>');
+                            });
+                        }
+                        else
+                        {
+                            $('#t tbody#all').show();
+                            $('#t tbody#search').empty();
+                            $('#t tbody#search').fadeIn('fast');
+                        }
+                    },
+                });
+                return false;
+            });
+        });
+    </script>
+
+
+
 {% endblock %}

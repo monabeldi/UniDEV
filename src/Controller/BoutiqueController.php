@@ -86,7 +86,7 @@ class BoutiqueController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             /** @var UploadedFile $imageFile */
-            $brochureFile = $form->get('photo_rest')->getData();
+            $brochureFile = $form->get('PhotoBoutique')->getData();
             if ($brochureFile) {
                 $brochureFileName = $imageUploader->upload($brochureFile);
                 $boutique->setPhotoBoutique($brochureFileName);
@@ -128,7 +128,7 @@ class BoutiqueController extends AbstractController
         $repository = $this->getDoctrine()->getRepository(Boutique::class);
         $requestString=$request->get('searchValue');
         $boutique = $repository->findBoutiqueBynomBoutique($requestString);
-        $jsonContent = $Normalizer->normalize($boutique, 'json',[]);
+        $jsonContent = $Normalizer->normalize($boutique, 'json',['groups'=>'boutique:read']);
         $retour=json_encode($jsonContent);
         return new Response($retour);
 

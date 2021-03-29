@@ -1,10 +1,7 @@
-<div class="row">
-    <div class="container">
-        <div class="col-lg-8">
+{{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+{{ form_errors (form) }}
+
 {{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+    <button class="btn-outline-primary">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
-        </div>
-    </div>
-</div>

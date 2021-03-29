@@ -1,29 +1,15 @@
-{% extends 'base.html.twig' %}
+{% extends 'back.html.twig' %}
 
 {% block title %}Edit Boutique{% endblock %}
 
 {% block body %}
-    <div class="breadcrumb-area set-bg" data-setbg="{{ asset('img/breadcrumb/breadcrumb-normal.jpg') }}"
-    >
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2>About Us</h2>
-                        <div class="breadcrumb__option">
-                            <a href="#"><i class="fa fa-home"></i> Home</a>
-                            <span>Aboutus</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="content-wrapper">
     <h1>Edit Boutique</h1>
 
-    {{ include('boutique/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('boutique/_form.html.twig', {'button_label': 'Update'}) }} <br><br>
 
-    <a href="{{ path('boutique_index') }}">back to list</a>
+    <a class="btn btn-outline-primary" href="{{ path('boutique_index') }}">back to list</a><br><br>
 
     {{ include('boutique/_delete_form.html.twig') }}
+</div>
 {% endblock %}

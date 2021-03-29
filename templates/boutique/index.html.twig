@@ -1,66 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'back.html.twig' %}
 
 {% block title %}Boutique index{% endblock %}
 
 {% block body %}
-    <div class="breadcrumb-area set-bg" data-setbg="{{ asset('img/breadcrumb/breadcrumb-normal.jpg') }}"
-    >
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2>About Us</h2>
-                        <div class="breadcrumb__option">
-                            <a href="#"><i class="fa fa-home"></i> Home</a>
-                            <span>Aboutus</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <h1>Liste des Boutiques </h1>
-
-
-    <table class="table" >
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>NomBoutique</th>
-                <th>AddressBoutiques</th>
-                <th>NumTelBoutique</th>
-                <th>EmailBoutique</th>
-                <th>PhotoBoutique</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody id="all">
-        {% for boutique in boutiques %}
-            <tr>
-                <td>{{ boutique.id }}</td>
-                <td>{{ boutique.nomBoutique }}</td>
-                <td>{{ boutique.addressBoutiques }}</td>
-                <td>{{ boutique.numTelBoutique }}</td>
-                <td>{{ boutique.emailBoutique }}</td>
-                <td><img src="{{ asset('uploads/images/' ~ boutique.photoBoutique) }}" width="70" height="70"></img></td>
-                <td>
-                    <a class="btn btn-outline-primary" href="{{ path('boutique_show', {'id': boutique.id}) }}">show</a>
-                    <a class="btn btn-outline-success" href="{{ path('boutique_edit', {'id': boutique.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-
+    <div class="content-wrapper">
     <h1 id="dd1"> Liste des Boutiques</h1>
     </br>
-
-    </div>
+        <a class="btn btn-outline-success" href="{{ path('boutique_new', ) }}">Create new</a>
+        </br>
     <input type="text" id="search" class="form-control" placeholder="Search">
     <div>
         <table border ="1" id="t" class="table table-hover table-dark">
@@ -96,7 +43,7 @@
             </tbody>
         </table>
     </div>
-
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
     </script>
@@ -127,7 +74,7 @@
                                     '  </td><td>'+obj.addressBoutiques+'' +
                                     '  </td><td>'+obj.numTelBoutique+'' +
                                     '  </td><td>'+obj.emailBoutique+'' +
-                                    '</td><td>'+obj.photoBoutique+'' +
+                                    '  </td><td><img src="/uploads/images/'+obj.photoBoutique+'" width="70" height="70"></img>' +
                                     ' </td><td><a class="btn btn-outline-primary" href="/boutique/'+obj.id+'">show</a> </br><a class="btn btn-outline-success" href="/boutique/'+obj.id+'/edit">edit</a></td></tr>');
                             });
                         }

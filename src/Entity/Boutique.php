@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ORM\Entity(repositoryClass=BoutiqueRepository::class)
  */
@@ -14,24 +15,28 @@ class Boutique
 {
     /**
      * @ORM\Id
+     * @Groups("boutique:read")
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
+     * @Groups("boutique:read")
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
      */
     private $nomBoutique;
 
     /**
+     * @Groups("boutique:read")
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
      */
     private $addressBoutiques;
 
     /**
+     * @Groups("boutique:read")
      * @ORM\Column(type="integer", length=8 )
      * @Assert\NotBlank
      * @Assert\Length(min="8",
@@ -42,6 +47,7 @@ class Boutique
     private $numTelBoutique;
 
     /**
+     * @Groups("boutique:read")
      * @ORM\Column(type="string", length=255)
      * @Assert\Email(message = "The email '{{ value }}' is not a valid email.")
      * @Assert\NotBlank
@@ -49,11 +55,13 @@ class Boutique
     private $emailBoutique;
 
     /**
+     * @Groups("boutique:read")
      * @ORM\Column(type="string", length=255)
      */
     private $photoBoutique;
 
     /**
+     * @Groups("boutique:read")
      * @ORM\OneToMany(targetEntity=Produit::class, mappedBy="boutique")
      */
     private $idBoutique;
@@ -156,5 +164,9 @@ class Boutique
         }
 
         return $this;
+    }
+    public function __toString()
+    {
+        return (string)$this->getId();
     }
 }

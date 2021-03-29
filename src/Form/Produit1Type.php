@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Boutique;
 use App\Entity\Produit;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -17,8 +19,12 @@ class Produit1Type extends AbstractType
             ->add('nomProduit',TextType::class)
             ->add('marqueProduit',TextType::class)
             ->add('prixProduit',TextType::class)
-            ->add('photoProduit',FileType::class)
-            ->add('idBoutique',TextType::class)
+            ->add('photoProduit',FileType::class,array('label' => 'Image',
+                'data_class' => null,
+                'required' => false))
+
+            ->add('boutique',EntityType::class,array(
+                'class'=> Boutique::class ,'label' => 'Boutique', 'choice_label' => 'nomBoutique' ))
         ;
     }
 

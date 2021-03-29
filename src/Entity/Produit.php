@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\ProduitRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 
 /**
  * @ORM\Entity(repositoryClass=ProduitRepository::class)
@@ -12,37 +14,44 @@ class Produit
 {
     /**
      * @ORM\Id
+     * @Groups("Produit:read")
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
+     * @Groups("Produit:read")
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $nomProduit;
 
     /**
+     * @Groups("Produit:read")
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $marqueProduit;
 
     /**
+     * @Groups("Produit:read")
      * @ORM\Column(type="float", nullable=true)
      */
     private $prixProduit;
 
     /**
+     * @Groups("Produit:read")
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $photoProduit;
 
     /**
+     * @Groups("Produit:read")
      * @ORM\OneToOne(targetEntity=Boutique::class, cascade={"persist", "remove"})
      */
     private $idBoutique;
 
     /**
+     * @Groups("Produit:read")
      * @ORM\ManyToOne(targetEntity=Boutique::class, inversedBy="idBoutique")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -127,6 +136,7 @@ class Produit
 
         return $this;
     }
+
 
 
 }

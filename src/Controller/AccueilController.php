@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\BoutiqueRepository;
+use App\Repository\ProduitRepository;
 
 class AccueilController extends AbstractController
 {
@@ -75,11 +76,13 @@ class AccueilController extends AbstractController
 
     /**
      * @Route("/listeProduits", name="listeProduits")
+     * @param $produitRepository
+     * @return Response
      */
-    public function listeproduits(): Response
+    public function listeproduits(ProduitRepository $produitRepository): Response
     {
         return $this->render('produits/listeproduits.html.twig', [
-            'controller_name' => 'AccueilController',
+            'produits' => $produitRepository->findAll(),
         ]);
     }
 
