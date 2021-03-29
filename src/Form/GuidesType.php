@@ -43,12 +43,4 @@ class GuidesType extends AbstractType
             'csrf_protection' => false
         ]);
     }
-    public  static function processImage(UploadedFile $uploaded_file)
-    {
-        $path='../web/images/upload/images/guides/';
-        // $uploadg_file_info = pathinfo($uploaded_file->getClientOriginalName());
-        $file_name=$uploaded_file->getClientOriginalName();
-        $uploaded_file->move($path ,$file_name);
-        return $file_name ;
-    }
 }

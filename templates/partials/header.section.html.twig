@@ -40,7 +40,12 @@
                     </nav>
                     <div class="header__menu__right">
                         <a href="#" class="primary-btn"><i class="fa fa-plus"></i>Add Listing</a>
-                        <a href="/login" class="login-btn"><i class="fa fa-user"></i></a>
+                        {% if app.user %}
+                        <a href="/profile" class="login-btn"><i class="fa fa-user"></i></a>
+                            <a href="{{ path('app_logout') }}" class="login-btn"><i class="fa-sign-out"></i></a>
+                            {% else %}
+                                <a href="/login" class="login-btn"><i class="fa fa-user"></i></a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

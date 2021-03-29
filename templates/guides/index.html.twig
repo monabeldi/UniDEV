@@ -24,13 +24,12 @@
     <!-- /.content-header -->
     <div class="card">
         <div class="card-header">
-            <a  href="{{ path('guides_new') }}">Create new</a>
-
+            <a class="col-lg-3 col-md-12 p-1 m-2 d-flex justify-content-center btn btn-primary pull-right" href="{{ path('guides_new') }}">Create new</a>
             <form class="form-inline ml-3">
                 <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" type="text" id="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control" type="text" id="search" placeholder="Search" aria-label="Search">
                     <div class="input-group-append">
-                        <button class="btn btn-navbar" type="submit">
+                        <button class=" btn btn-navbar" type="submit">
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
@@ -76,6 +75,7 @@
                 <td colspan="11">no records found</td>
             </tr>
         {% endfor %}
+            {{ knp_pagination_render(guides) }}
         </tbody>
                 <tbody id="search">
                 </tbody>

@@ -2355,18 +2355,724 @@
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210327234940.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210328201253.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/41613e829005bb727ce0f777d9d75ae9.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/8de3c06d0e2201a1803f4b9ea224e115.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/eff15d48db5cf3c4b6123dfa5981fa49.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ProfileController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ChangePasswordType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ProfileType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/profile/profile.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/_delete_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/UniDEV.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/UniDEV.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/ajax_fullcalendar.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/filetree/jqueryFileTree.asp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/filetree/jqueryFileTree.aspx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/filetree/jqueryFileTree.cf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/filetree/jqueryFileTree.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/filetree/jqueryFileTree.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/filetree/jqueryFileTree.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/filetree/jqueryFileTree.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/filetree/jqueryFileTree.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/filetree/jqueryFileTree_huck.lasso" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/filetree/jqueryFileTree_sabourdin.lasso" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/fileupload/UploadHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/fileupload/cors/postmessage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/fileupload/cors/result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/fileupload/files/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/fileupload/files/2V_vkjfD5Gg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/fileupload/files/thumbnail/2V_vkjfD5Gg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/fileupload/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/blog/post_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/blog/post_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/gallery/girls-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/gallery/girls-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/gallery/girls-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/gallery/music-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/gallery/music-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/gallery/music-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/gallery/music-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/gallery/music-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/gallery/nature-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/gallery/nature-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/gallery/nature-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/gallery/nature-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/gallery/nature-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/gallery/nature-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/gallery/nature-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/gallery/space-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/gallery/space-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/nature.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/ocean.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/users/avatar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/users/no-image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/users/user.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/users/user2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/users/user3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/users/user4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/users/user5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/users/user6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/images/users/user7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/plugins/nvd3/cumulativeLineData.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/plugins/nvd3/linePlusBarData.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/plugins/nvd3/multiBarHorizontalData.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/plugins/nvd3/stackedAreaData.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/upload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/Images/Animal 48.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/Images/Lotus Sport Exige Gt3 01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/Images/Photoshop_Multi-coloured_butterflies_023732_.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/Images/Quiet Getaway, Lake Tahoe, Nevada-565362.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/Images/Space_Launching_pad_023724_.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/Images/Sport_Extreme__Waves__Ocean__Risk__Surfing_023731_.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/Images/Sritney_Spears2_1920x1200.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/Images/World_other_world_Costa_Rica__Puntarenas_023746_.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/Images/peugeot_908rc-1600x1200.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/Images/u3013_1278_53405-1600x1200.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/Images/u9644_3151_love_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/Images/white-aston-martin-wallpaper-1920x1080-1008078.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/Images/white_curved_building-1920x1200.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/Images/wide-wallpaper-1920x1080-001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/Images/wide-wallpaper-1920x1080-001234.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/Images/windows_7___dragon-2560x1600.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/Payment Icons.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/Supervisor.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/YUICompressor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/archive.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/archive.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/archive.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/books.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/elFinder.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/elFinder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/elfinder.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/elfinder.full.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/fireworks.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/fishes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/google.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/milter-greylist.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/munin_httptime.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/phuket.tiff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/rm.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/test-pivot.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/virus.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/assets/uploads/MIME-Types/vmware-win-ie8-elfinder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/audio/alert.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/audio/fail.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/animate/animate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/animate/animate.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/blueimp/blueimp-gallery.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/bootstrap/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/bootstrap/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/codemirror.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/3024-day.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/3024-night.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/ambiance-mobile.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/ambiance.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/base16-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/base16-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/blackboard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/cobalt.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/eclipse.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/elegant.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/erlang-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/lesser-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/mbo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/mdn-like.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/midnight.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/monokai.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/neat.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/neo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/night.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/paraiso-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/paraiso-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/pastel-on-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/rubyblue.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/solarized.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/the-matrix.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/tomorrow-night-eighties.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/twilight.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/vibrant-ink.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/xq-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/codemirror/theme/xq-light.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/dropzone/dropzone.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/fontawesome/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/fullcalendar/fullcalendar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/jquery/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/mcustomscrollbar/jquery.mCustomScrollbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/nvd3/nv.d3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/rickshaw/rickshaw.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/summernote/summernote.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/theme-black.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/theme-blue.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/theme-brown.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/theme-default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/theme-white.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/backgrounds/wall_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/bg-dot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/blueimp/error.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/blueimp/error.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/blueimp/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/blueimp/play-pause.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/blueimp/play-pause.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/blueimp/video-play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/blueimp/video-play.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/colorpicker/alpha.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/colorpicker/hue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/colorpicker/saturation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/dropzone/spritemap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/dropzone/spritemap@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/fileinput/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/application.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/code.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/css.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/db.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/directory.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/doc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/file.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/film.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/flash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/folder_open.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/html.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/java.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/linux.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/music.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/pdf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/php.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/picture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/ppt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/psd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/ruby.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/script.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/spinner.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/txt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/xls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/filetree/zip.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/icheck/grey.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/icheck/grey@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/icons/csv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/icons/json.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/icons/pdf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/icons/png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/icons/ppt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/icons/sql.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/icons/txt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/icons/word.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/icons/xls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/icons/xml.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/jquery/animated-overlay.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/jquery/resize-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/jquery/resize-icon@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/jquery/ui-bg_diagonals-thick_18_b81900_40x40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/jquery/ui-bg_diagonals-thick_20_666666_40x40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/jquery/ui-bg_flat_10_000000_40x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/jquery/ui-bg_glass_100_f6f6f6_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/jquery/ui-bg_glass_100_fdf5ce_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/jquery/ui-bg_glass_65_ffffff_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/jquery/ui-bg_gloss-wave_35_f6a828_500x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/jquery/ui-bg_highlight-soft_100_eeeeee_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/jquery/ui-bg_highlight-soft_75_ffe45c_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/jquery/ui-icons_222222_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/jquery/ui-icons_228ef1_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/jquery/ui-icons_ef8c08_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/jquery/ui-icons_ffd27a_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/jquery/ui-icons_ffffff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/loaders/default.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/logo-grey.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/logo-grey@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/logo-small-grey.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/logo-small-grey@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/logo-small.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/logo-small@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/logo@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/owl/AjaxLoader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/owl/grabbing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/themes/black.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/themes/blue.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/themes/brown.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/themes/default.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/img/themes/light.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/demo_charts_morris.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/demo_charts_nvd3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/demo_charts_rickshaw.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/demo_dashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/demo_icons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/demo_maps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/demo_tables.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/demo_tasks.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/faq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/blueimp/jquery.blueimp-gallery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/bootstrap/bootstrap-colorpicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/bootstrap/bootstrap-datepicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/bootstrap/bootstrap-file-input.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/bootstrap/bootstrap-select.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/bootstrap/bootstrap-timepicker.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/bootstrap/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/bootstrap/npm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/codemirror.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/apl/apl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/asterisk/asterisk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/clike/clike.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/clojure/clojure.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/cobol/cobol.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/coffeescript/coffeescript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/commonlisp/commonlisp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/css/css.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/css/less_test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/css/scss_test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/css/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/cypher/cypher.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/d/d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/diff/diff.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/django/django.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/dtd/dtd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/dylan/dylan.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/ecl/ecl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/eiffel/eiffel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/erlang/erlang.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/fortran/fortran.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/gas/gas.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/gfm/gfm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/gfm/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/gherkin/gherkin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/go/go.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/groovy/groovy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/haml/haml.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/haml/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/haskell/haskell.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/haxe/haxe.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/htmlembedded/htmlembedded.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/htmlmixed/htmlmixed.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/http/http.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/jade/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/javascript/javascript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/javascript/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/jinja2/jinja2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/julia/julia.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/kotlin/kotlin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/livescript/livescript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/lua/lua.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/markdown/markdown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/markdown/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/meta.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/mirc/mirc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/mllike/mllike.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/nginx/nginx.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/ntriples/ntriples.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/octave/octave.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/pascal/pascal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/pegjs/pegjs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/perl/perl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/php/php.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/php/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/pig/pig.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/properties/properties.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/puppet/puppet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/python/python.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/q/q.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/r/r.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/rpm/changes/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/rpm/rpm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/rst/rst.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/ruby/ruby.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/ruby/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/rust/rust.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/sass/sass.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/scheme/scheme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/shell/shell.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/shell/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/sieve/sieve.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/slim/slim.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/slim/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/smalltalk/smalltalk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/smarty/smarty.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/smartymixed/smartymixed.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/solr/solr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/sparql/sparql.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/sql/sql.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/stex/stex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/stex/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/tcl/tcl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/tiddlywiki/tiddlywiki.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/tiddlywiki/tiddlywiki.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/tiki/tiki.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/tiki/tiki.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/toml/toml.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/turtle/turtle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/vb/vb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/vbscript/vbscript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/velocity/velocity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/verilog/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/verilog/verilog.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/xml/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/xml/xml.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/xquery/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/xquery/xquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/yaml/yaml.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/codemirror/mode/z80/z80.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/datatables/jquery.dataTables.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/daterangepicker/daterangepicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/dropzone/dropzone.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fileinput/fileinput.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/filetree/jqueryFileTree.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/fullcalendar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/ar-ma.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/ar-sa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/ar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/bg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/cs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/da.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/de-at.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/el.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/en-au.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/en-ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/en-gb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/fa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/fi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/fr-ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/fr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/hi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/hr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/hu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/id.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/is.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/it.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/ja.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/ko.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/lt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/lv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/nl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/pl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/pt-br.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/pt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/ro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/sk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/sl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/sr-cyrl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/sr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/sv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/th.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/tr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/uk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/vi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/zh-cn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/fullcalendar/lang/zh-tw.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/highlight/jquery.highlight-4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/icheck/icheck.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/accept.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/additional.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/alphanumeric.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/bankaccountNL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/bankorgiroaccountNL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/bic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/cifES.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/creditcardtypes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/currency.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/dateFA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/dateITA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/dateNL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/extension.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/giroaccountNL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/iban.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/integer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/ipv4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/ipv6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/lettersonly.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/letterswithbasicpunc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/mobileNL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/mobileUK.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/nieES.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/nifES.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/nowhitespace.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/pattern.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/phoneNL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/phoneUK.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/phoneUS.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/phonesUK.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/postalCodeCA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/postalcodeIT.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/postalcodeNL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/postcodeUK.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/require_from_group.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/skip_or_fill_minimum.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/statesUS.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/strippedminlength.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/time.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/time12h.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/url2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/vinUS.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/zipcodeUS.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/additional/ziprange.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/jquery.validate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_ar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_bg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_cs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_da.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_el.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_es_AR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_et.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_eu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_fa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_fi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_fr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_gl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_he.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_hr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_hu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_id.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_is.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_it.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_ja.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_ka.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_kk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_ko.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_lt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_lv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_my.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_nl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_no.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_pl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_pt_BR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_pt_PT.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_ro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_si.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_sk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_sl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_sr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_sr_lat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_sv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_th.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_tj.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_tr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_uk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_vi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_zh.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/messages_zh_TW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/methods_de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/methods_es_CL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/methods_fi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/methods_nl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery-validation/localization/methods_pt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery/jquery-2.1.1.min.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery/jquery-migrate.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jquery/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jvectormap/jquery-jvectormap-europe-mill-en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jvectormap/jquery-jvectormap-uakraine-merc-en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jvectormap/jquery-jvectormap-us-aea-en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/knob/jquery.knob.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/lesscss/less.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/maskedinput/jquery.maskedinput.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/moment.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/morris/morris.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/morris/raphael-min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/noty/jquery.noty.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/noty/layouts/bottom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/noty/layouts/bottomCenter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/noty/layouts/bottomLeft.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/noty/layouts/bottomRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/noty/layouts/center.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/noty/layouts/centerLeft.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/noty/layouts/centerRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/noty/layouts/inline.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/noty/layouts/top.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/noty/layouts/topCenter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/noty/layouts/topLeft.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/noty/layouts/topRight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/noty/promise.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/noty/themes/default.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/lib/cie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/lib/colorbrewer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/lib/crossfilter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/lib/crossfilter.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/lib/d3.v2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/lib/d3.v2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/lib/d3.v3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/lib/fisheye.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/lib/hive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/lib/horizon.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/lib/sankey.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/nv.d3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/interactiveLayer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/intro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/axis.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/backup/bullet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/backup/bulletChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/boilerplate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/bullet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/bulletChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/cumulativeLineChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/discreteBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/discreteBarChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/distribution.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/historicalBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/historicalBarChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/indentedTree.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/legend.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/line.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/lineChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/linePlusBarChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/linePlusBarWithFocusChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/lineWithFisheye.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/lineWithFisheyeChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/lineWithFocusChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/multiBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/multiBarChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/multiBarHorizontal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/multiBarHorizontalChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/multiBarTimeSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/multiBarTimeSeriesChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/multiChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/ohlcBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/parallelCoordinates.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/pie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/pieChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/scatter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/scatterChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/scatterPlusLineChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/sparkline.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/sparklinePlus.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/stackedArea.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/models/stackedAreaChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/outro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/tooltip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/nvd3/src/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/owl/owl.carousel.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/rangeslider/jQAllRangeSliders-min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/rickshaw/d3.layout.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/rickshaw/d3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/rickshaw/d3.v2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/rickshaw/d3.v3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/rickshaw/rickshaw.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/scrolltotop/scrolltopcontrol.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/smartwizard/jquery.smartWizard-2.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/sparkline/jquery.sparkline.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/summernote/summernote.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/tableexport/html2canvas.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/tableexport/jquery.base64.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/tableexport/jspdf/jspdf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/tableexport/jspdf/libs/base64.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/tableexport/jspdf/libs/sprintf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/tableexport/simple_html_dom.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/tableexport/tableExport.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/tagsinput/jquery.tagsinput.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/tocify/jquery.tocify.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/tour/bootstrap-tour.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/tour/bootstro.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/jquery.validationEngine.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-cz.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-da.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-el.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-et.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-fa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-fi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-fr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-he.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-hr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-hu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-id.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-it.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-ja.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-lt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-nl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-no.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-pl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-pt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-pt_BR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-ro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-sr_Cyrl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-sr_Latn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-sv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-tr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-vi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-zh_CN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/plugins/validationengine/languages/jquery.validationEngine-zh_TW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/portlet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/settings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accueil/categories.section.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil/categories.section.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact/contact.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/listing/listing-details/listing-details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/listing/listing-details/listing-details.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/listing/listing.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/listing/listing.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/header.section.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.section.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210303115706.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210303222901.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210303222921.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210303224854.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210304004624.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210304035901.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210304035953.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210304040157.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210304040405.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210311090626.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210311090740.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210311090828.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210311131119.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210311131249.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210323181121.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210323182911.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210323183847.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GuidesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GuidesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/GuidesType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/GuidesType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ResetPassType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ResetPassType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/SearchType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/GuidesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/GuidesRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/guides/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/guides/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/guides/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/guides/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/guides/guides.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/guides/guides.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/guides/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/guides/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/guides/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/guides/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/guides/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/guides/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/footer.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/forgotten_password.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/forgotten_password.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/upload/images/guides/156324325_1146694582432186_3867014375401139703_n.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/upload/images/guides/79722830_3320697371335100_3306468731600764928_o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/upload/images/guides/bebfafc7fc3b05e471a1f715818eaf58.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/upload/images/guides/e4fabc49d0047d80b4d17d0838e8d94b.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/images/upload/images/guides/hello.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -2381,6 +3087,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -2516,9 +3224,9 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/unidev" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -2527,7 +3235,15 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="s doctrine:migrations:dump-schema" />
+      <command value="s doctrine:schema:update" />
+      <command value="s doctrine:schema:update --force" />
+    </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -2553,7 +3269,7 @@
       <workItem from="1616503368716" duration="23215000" />
       <workItem from="1616683726259" duration="1044000" />
       <workItem from="1616684790835" duration="454000" />
-      <workItem from="1616688310118" duration="2496000" />
+      <workItem from="1616688310118" duration="48483000" />
     </task>
     <servers />
   </component>
@@ -2576,6 +3292,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="540" y="175" key="#CLI_Interpreters" timestamp="1616879911268">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="540" y="175" key="#CLI_Interpreters/0.0.1920.1040@0.0.1920.1040" timestamp="1616879911268" />
     <state x="586" y="198" key="#Inspections" timestamp="1616512772508">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -2592,26 +3312,54 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616524845400" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1614728902762">
+    <state x="684" y="397" key="ComposerCompositePathDialog" timestamp="1616879899456">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614728902762" />
+    <state x="684" y="397" key="ComposerCompositePathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616879899456" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1616879922981">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1616879922981" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1616882478401">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616882478401" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1616882478400">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616882478400" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1616882478400">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616882478400" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1616882478400">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616882478400" />
     <state x="712" y="243" key="NewPhpClassDialog" timestamp="1616522575229">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="712" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616522575229" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1616879932093">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1616879932093" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1614725695694">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1614725695694" />
+    <state x="764" y="422" key="SymfonyPathDialog" timestamp="1616879924899">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="764" y="422" key="SymfonyPathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616879924899" />
     <state x="803" y="291" key="refactoring.ChangeSignatureDialog" timestamp="1616514648515">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="803" y="291" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616514648515" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1615453599372">
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1616880020895">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615453599372" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1616880020895" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1616513413554">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

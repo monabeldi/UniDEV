@@ -3,7 +3,6 @@
 {% block title %}Register{% endblock %}
  {% block stylesheets %}
      {{ parent() }}
-     <link rel="stylesheet" href="{{ asset('css/login.css') }}" >
  {% endblock %}
 
 {% block body %}
@@ -22,80 +21,67 @@
             </div>
         </div>
     </div>
+    <section class="pt-4">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
     {{ form_start(registrationForm,{'attr':{'novalidate': 'novalidate'}}) }}
-
- <section class="contact spad">
-    <div class="container centered">
-        <div class="row">
-            <div class="col-lg-12 col-md-12">
-                <form action="#" class="contact__form">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6">
-                            {{ form_label(registrationForm.nom, 'Nom'|trans, {'label_attr' : {'class': '' }}) }}
+                <form  method="post"  class="contact__form">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-8 col-md-8 d-flex justify-content-center">
+                        <p>Sign Up in Seconds!</p>
+                        </div>
+                            <div class="col-lg-8 col-md-8 d-flex justify-content-center">
+                        <p>Signup using your Email address</p>
+                            </div>
+                        <div class="col-lg-6 col-md-8 p-1 m-1">
+                            {{ form_label(registrationForm.nom, 'Full Name'|trans, {'label_attr' : {'class': 'control-label' }}) }}
                             {{ form_widget(registrationForm.nom) }}
                         </div>
-                        <div class="col-lg-6 col-md-6">
-                            {{ form_label(registrationForm.email, 'Email'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+
+                        <div class="col-lg-6 col-md-8 p-1 m-1" >
+                            {{ form_label(registrationForm.email, 'Email Adress'|trans, {'label_attr' : {'class': 'control-label' }}) }}
                             {{ form_widget(registrationForm.email) }}
                         </div>
-                        <div class="col-lg-6 col-md-6">
+
+                        <div class="col-lg-6 col-md-8 p-1 m-1">
                             {{ form_label(registrationForm.plainPassword, 'Password'|trans, {'label_attr' : {'class': 'control-label' }}) }}
                             {{ form_widget(registrationForm.plainPassword) }}
+                        </div>
+                        <div class="col-lg-6 col-md-8 p-1 m-1">
+                            {{ form_label(registrationForm.confirm_password, 'Confirm Password'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                            {{ form_widget(registrationForm.confirm_password) }}
+                        </div>
+
+                    </div>
+                    <div class="d-flex justify-content-center p-1 m-1">
+
+                        <div>
+                            <button type="submit" class="site-btn">Sign UP</button>
+
+                        </div>
+
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <div class="p-3 m-3">
+                            <p>Don't have an account? <b><a style="color:#000b16" href="{{ path('app_login') }}" >Login here</a></b></p>
+                            <p>Forget password? It's ok.<b><a style="color:#000b16" href="{{ path('app_forgotten_password') }}" >Recover here</a></b></p>
                         </div>
 
                     </div>
 
-        <button type="submit" class="btn btn-success pull-right">Register</button>
-
                 </form>
-
+                {{ form_end(registrationForm) }}
+            </div>
         </div>
-    </div>
-    </div>
+    </section>
 
 
-</section>
-    {{ form_end(registrationForm) }}
 {% endblock %}
+        {% block javascripts %}
+            {{ parent() }}
+        {% endblock %}
 
-{#
-<!--Signup Section-->
-    {{ form_start(registrationForm,{'attr':{'novalidate': 'novalidate'}}) }}
-        <div id="wrap" class="wrap">
-            <div class="wrap-inner">
-<div  class="section" id="section2">
-    <div class="form form--signup">
-        <h1 class="alpha">Sign Up in Seconds!</h1>
-        <p>Signup using your Email address</p>
-        <div>
-            <form action="{{ path('app_register') }}" class="form-wrap">
-                <input id="" class="inputbox name" type="text" placeholder="Your Name" />
-                <input id="" class="inputbox email" type="text" placeholder="Email id" />
-                <input id="" class="inputbox password" type="password" placeholder="Password" />
-                <input id="" class="inputbox password" type="password" placeholder="Confirm Password" />
-                <p><a type="submit" class="button">Create my Account <i class="icon-rocket"></i></a></p>
-                <!--<input id="" type="button" class="button" value="Sign up" />-->
-            </form>
-        </div>
-        <hr />
-        <p>Or you can Signup with one of the following</p>
-        <div class="social">
-            <a href="#" class="facebook"><i class="icon-facebook"></i><span>Facebook</span></a>
-            <a href="#" class="twitter"><i class="icon-twitter"></i><span>Twitter</span></a>
-            <a href="#" class="google"><i class="icon-google-plus"></i><span>Google</span></a>
-        </div>
-        <p><a class="scroll" href="{{ path('app_login') }}" data-section="1">&laquo; Login here</a></p>
-    </div>
-</div>
-</div>
-    </div>
-    {% block javascripts %}
-        {{ parent() }}
-        <script src="{{ asset('js/login.js') }}"></script>
-    {% endblock %}
-<!--END: Signup Section-->
-{% endblock %}
- #}
+

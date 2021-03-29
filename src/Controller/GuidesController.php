@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Guides;
 use App\Form\GuidesType;
-use App\Form\SearchType;
 use App\Repository\GuidesRepository;
 use Symfony\Component\Serializer\Exception\ExceptionInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
@@ -14,6 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * @Route("/guides")
@@ -22,12 +22,23 @@ class GuidesController extends AbstractController
 {
     /**
      * @Route("/", name="guides_index")
+     * @param Request $request
+     * @param PaginatorInterface $paginator
      * @return Response
      */
-    public function index(GuidesRepository $guidesRepository): Response
+    public function index(Request $request, PaginatorInterface $paginator): Response
     {
+        $donnees = $this->getDoctrine()->getRepository(Guides::class)->findAll();
 
-        return  $this->render('guides/index.html.twig',['guides' => $guidesRepository->findAll()]);
+        $guides = $paginator->paginate(
+            $donnees,
+            $request->query->getInt('page', 1),
+            5
+        );
+
+        return $this->render('guides/index.html.twig', [
+            'guides' => $guides,
+        ]);
 
     }
 
