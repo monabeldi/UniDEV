@@ -12,10 +12,14 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\File\File;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 
 /**
  * @Route("/restaurants")
+ * Require ROLE_ADMIN for *every* controller method in this class.
+ *
+ * @IsGranted("ROLE_ADMIN")
  */
 class RestaurantsController extends AbstractController
 {

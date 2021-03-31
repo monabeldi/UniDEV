@@ -21,32 +21,8 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('email',EmailType::class)
             ->add('nom',TextType::class)
-            ->add('plainPassword', PasswordType::class, [
-                'mapped' => false,
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Please enter a password',
-                    ]),
-                    new Length([
-                        'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
-                        'max' => 4096,
-                    ]),
-                ],
-            ])
-            ->add('confirm_password', PasswordType::class, [
-                'mapped' => false,
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Please enter a confirm password',
-                    ]),
-                    new Length([
-                        'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
-                        'max' => 4096,
-                    ]),
-                ],
-            ])
+            ->add('password', PasswordType::class)
+            ->add('confirm_password', PasswordType::class)
         ;
     }
 

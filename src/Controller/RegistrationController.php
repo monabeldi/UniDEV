@@ -41,7 +41,7 @@ class RegistrationController extends AbstractController
             $user->setPassword(
                 $passwordEncoder->encodePassword(
                     $user,
-                    $form->get('plainPassword')->getData()
+                    $form->get('password')->getData()
                 )
             );
             // On génère un token et on l'enregistre
@@ -66,7 +66,7 @@ class RegistrationController extends AbstractController
                 )
             ;
             $mailer->send($message);
-            $this->addFlash('message    ', 'Un lien d\'activation a été envoyer a votre email !');
+            $this->addFlash('message', 'Un lien d\'activation a été envoyer a votre email !');
         }
 
         return $this->render('registration/register.html.twig', [

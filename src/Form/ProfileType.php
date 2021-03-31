@@ -47,6 +47,7 @@ class ProfileType extends AbstractType
                 ],
                 'second_options' => [
                     'label' => 'confirm_password',
+                    'name' => 'confirm_password'
                 ],
             ])
             ->add('picture', FileType::class, array(

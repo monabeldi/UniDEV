@@ -55,7 +55,6 @@
                             <td>{{ restaurant.addRest }}</td>
                             <td>{{ restaurant.numTelRest }}</td>
                             <td><img src="{{ asset('uploads/images/' ~ restaurant.photoRest) }}" width="70" height="70"></img></td>
-<<<<<<< HEAD
                             <td>{{ restaurant.catalogue }}</td>
                             <td>
                                 <a class="btn btn-success btn-sm rounded-0" href="{{ path('restaurants_edit', {'id': restaurant.id}) }}"><i class="fa fa-edit"></i></a>
@@ -65,13 +64,6 @@
                                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ restaurant.id) }}">
                                     <button class="btn btn-danger btn-sm rounded-0"><i class="fa fa-trash"></i></button>
                                 </form>
-=======
-                            <td>{{ restaurant.idCata }}</td>
-                            <td>
-                                <a class="btn btn-success btn-sm rounded-0" href="{{ path('restaurants_show', {'id': restaurant.id}) }}"><i class="fa fa-eye"></i></a>
-                                <a class="btn btn-primary btn-sm rounded-0" href="{{ path('restaurants_edit', {'id': restaurant.id}) }}"><i class="fa fa-edit"></i></a>
-                                <a class="btn btn-danger btn-sm rounded-0" href="{{ path('restaurants_edit', {'id': restaurant.id}) }}"><i class="fa fa-trash"></i></a>
->>>>>>> 6fd7449 (first commit)
                             </td>
                         </tr>
                     {% else %}
@@ -129,11 +121,7 @@
                                     ' </td><td>    '+obj.nom_rest+'' +
                                     '  </td><td>'+obj.add_rest+'' +
                                     '  </td><td>'+obj.num_tel_rest+'' +
-<<<<<<< HEAD
                                     '  </td><td><img src="/uploads/images/'+obj.photo_rest+'" width="70" height="70"></img></td><td>'+obj.catalogue+'' +
-=======
-                                    '  </td><td><img src="uploads/images/'+obj.photo_rest+'" width="70" height="70"></img></td><td>'+obj.id_cata+'' +
->>>>>>> 6fd7449 (first commit)
                                     ' </td><td><a href="/restaurants/'+obj.id+'">show</a> </br><a href="/restaurants/'+obj.id+'/edit">edit</a></td></tr>');
                             });
                         }
@@ -150,4 +138,3 @@
         });
     </script>
 {% endblock %}
-

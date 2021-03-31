@@ -63,11 +63,12 @@ class User implements UserInterface
     private $password;
     /**
      * @var string The hashed password
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      * @Assert\Length(min="8", minMessage="Password must be more then 8 caracteres")
-     * @Assert\EqualTo(propertyPath="confirm_password", message="Please type the same password" )
+     * @Assert\EqualTo(propertyPath="password", message="Please type the same password" )
      */
     public $confirm_password;
+
     /**
      * @ORM\Column(type="boolean")
      */
@@ -193,7 +194,7 @@ class User implements UserInterface
     public function getRoles(): array
     {
         $roles = $this->roles;
-            $roles[] = 'ROLE_USER';
+            $roles[] = "ROLE_USER";
         return array_unique($roles);
     }
 

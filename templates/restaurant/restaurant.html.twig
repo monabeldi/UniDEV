@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -70,7 +69,6 @@
 <!-- Filter Begin -->
 <div class="filter nice-scroll">
     <div class="filter__title">
-<<<<<<< HEAD
         <h5><i class="fa fa-filter" ></i> Filter</h5>
     </div>
     <div class="filter__search">
@@ -85,52 +83,6 @@
         <i class="fa fa-map-marker"></i>
     </div>
 
-=======
-        <h5><i class="fa fa-filter"></i> Filter</h5>
-    </div>
-    <div class="filter__search">
-        <input type="text">
-    </div>
-    <div class="filter__select">
-        <select>
-            <option value="">All Categories</option>
-        </select>
-    </div>
-    <div class="filter__location">
-        <input type="text" placeholder="Location">
-        <i class="fa fa-map-marker"></i>
-    </div>
-    <div class="filter__radius">
-        <p>Radius:</p>
-        <div class="price-range-wrap">
-            <div
-                    class="price-range-radius ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
-                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-            </div>
-            <div class="range-slider">
-                <div class="price-input">
-                    <input type="text" id="radius">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="filter__price">
-        <p>Price:</p>
-        <div class="price-range-wrap">
-            <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
-                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-            </div>
-            <div class="range-slider">
-                <div class="price-input">
-                    <input type="text" id="minamount">
-                    <input type="text" id="maxamount" value="$80">
-                </div>
-            </div>
-        </div>
-    </div>
->>>>>>> 6fd7449 (first commit)
     <div class="filter__tags">
         <h6>Tag</h6>
         <label for="coupon">
@@ -181,59 +133,51 @@
     <div class="listing__text__top">
         <div class="listing__text__top__left">
             <h5>Restaurants</h5>
-<<<<<<< HEAD
             <span>{{ restaurants|length }} Results Found</span>
-=======
-            <span>4 Results Found</span>
->>>>>>> 6fd7449 (first commit)
         </div>
 
         <div class="listing__text__top__right">Nearby <i class="fa fa-sort-amount-asc"></i></div>
 
     </div>
-<<<<<<< HEAD
     <div id="list" class="listing__list">
-=======
-    <div class="listing__list">
->>>>>>> 6fd7449 (first commit)
         {% for restaurant in restaurants %}
-        <div class="listing__item">
-            <div class="listing__item__pic set-bg" data-setbg="{{ asset('uploads/images/' ~ restaurant.photoRest) }}">
-                <img src="img/listing/list_icon-1.png" alt="">
-                <div class="listing__item__pic__tag">Popular</div>
-                <div class="listing__item__pic__btns">
-                    <a href="#"><span class="icon_zoom-in_alt"></span></a>
-                    <a href="#"><span class="icon_heart_alt"></span></a>
+            <div class="listing__item">
+                <div class="listing__item__pic set-bg" data-setbg="{{ asset('uploads/images/' ~ restaurant.photoRest) }}">
+                    <img src="img/listing/list_icon-1.png" alt="">
+                    <div class="listing__item__pic__tag">Popular</div>
+                    <div class="listing__item__pic__btns">
+                        <a href="#"><span class="icon_zoom-in_alt"></span></a>
+                        <a href="#"><span class="icon_heart_alt"></span></a>
+                    </div>
                 </div>
-            </div>
-            <div class="listing__item__text">
-                <div class="listing__item__text__inside">
+                <div class="listing__item__text">
+                    <div class="listing__item__text__inside">
 
-                    <h5>{{ restaurant.nomRest }}</h5>
-                    <div class="listing__item__text__rating">
-                        <div class="listing__item__rating__star">
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star"></span>
-                            <span class="icon_star-half_alt"></span>
+                        <h5>{{ restaurant.nomRest }}</h5>
+                        <div class="listing__item__text__rating">
+                            <div class="listing__item__rating__star">
+                                <span class="icon_star"></span>
+                                <span class="icon_star"></span>
+                                <span class="icon_star"></span>
+                                <span class="icon_star"></span>
+                                <span class="icon_star-half_alt"></span>
+                            </div>
+                            <h6>$40 - $70</h6>
                         </div>
-                        <h6>$40 - $70</h6>
+                        <ul>
+                            <li><span class="icon_pin_alt"></span> {{ restaurant.addRest }}</li>
+                            <li><span class="icon_phone"></span> +216 {{ restaurant.numTelRest }}</li>
+                        </ul>
                     </div>
-                    <ul>
-                        <li><span class="icon_pin_alt"></span> {{ restaurant.addRest }}</li>
-                        <li><span class="icon_phone"></span> +216 {{ restaurant.numTelRest }}</li>
-                    </ul>
-                </div>
-                <div class="listing__item__text__info">
-                    <div class="listing__item__text__info__left">
-                        <img src="img/listing/list_small_icon-1.png" alt="">
-                        <span>Restaurant</span>
+                    <div class="listing__item__text__info">
+                        <div class="listing__item__text__info__left">
+                            <img src="img/listing/list_small_icon-1.png" alt="">
+                            <span>Restaurant</span>
+                        </div>
+                        <div class="listing__item__text__info__right">Open Now</div>
                     </div>
-                    <div class="listing__item__text__info__right">Open Now</div>
                 </div>
             </div>
-        </div>
 
         {% endfor %}
 
@@ -247,13 +191,9 @@
 
 </div>
 <!-- Map End -->
-<<<<<<< HEAD
 <!-- make sure that jquery is included --!>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
-=======
-
->>>>>>> 6fd7449 (first commit)
 <!-- Js Plugins -->
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -265,7 +205,6 @@
 <script src="js/jquery.slicknav.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/main.js"></script>
-<<<<<<< HEAD
 <!-- /.content-wrapper -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
 </script>
@@ -361,8 +300,6 @@
     </div>
 </template>
 
-=======
->>>>>>> 6fd7449 (first commit)
 </body>
 
 </html>

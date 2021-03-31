@@ -5,10 +5,15 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\UserRepository;
+use App\Service\ImageUploader;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+
 
 /**
  * @Route("/user")
@@ -73,6 +78,32 @@ class UserController extends AbstractController
         }
 
         return $this->render('user/edit.html.twig', [
+            'user' => $user,
+            'form' => $form->createView(),
+        ]);
+    }
+    /**
+     * @Route("/profile/{id}", name="profile", methods={"GET","POST"})
+     *
+     */
+    public function profile(Request $request, User $user, ImageUploader $imageUploader ): Response
+    {
+        $form = $this->createForm(UserType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            /** @var UploadedFile $imageFile */
+            $brochureFile = $form->get('picture')->getData();
+            if ($brochureFile) {
+                $brochureFileName = $imageUploader->upload($brochureFile);
+                $user->setPicture($brochureFileName);
+            }
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('profile');
+        }
+
+        return $this->render('user/profile.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
         ]);

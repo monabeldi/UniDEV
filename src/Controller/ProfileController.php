@@ -19,13 +19,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProfileController extends AbstractController
 {
     /**
-     * @Route("/", name="profile")
+     * @Route("/profile", name="profile")
      * @param Request $request
      * @return Response
      */
     public function profileEdit(Request $request): Response
     {
-        $this->denyAccessUnlessGranted(['ROLE_ADMIN']);
+        $this->denyAccessUnlessGranted(['ROLE_ADMIN','ROLE_USER']);
         $user = $this->getUser();
 
         $form = $this->createForm(ProfileType::class, $user);

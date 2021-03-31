@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\BoutiqueRepository;
 use App\Repository\ProduitRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class AccueilController extends AbstractController
 {
@@ -61,6 +62,9 @@ class AccueilController extends AbstractController
     }
     /**
      * @Route("/admin", name="admin")
+     * Require ROLE_ADMIN for *every* controller method in this class.
+     *
+     * @IsGranted("ROLE_ADMIN")
      */
     public function admin(): Response
     {
@@ -146,6 +150,18 @@ class AccueilController extends AbstractController
             'controller_name' => 'AccueilController',
         ]);
     }
+
+    /**
+     * @Route("/profile", name="profile",)
+     */
+    public function profile(): Response
+    {
+        return $this->render('profile/profile/new.html.twig', [
+            'controller_name' => 'AccueilController',
+        ]);
+    }
+
+
 
 
 

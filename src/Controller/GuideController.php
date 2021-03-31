@@ -8,6 +8,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
 
 class GuideController extends AbstractController
 {
@@ -19,7 +21,7 @@ class GuideController extends AbstractController
      */
     public function index(GuidesRepository $guidesRepository): array
     {
-        return ['guides' => $guidesRepository->findAll()];
+        return ['guide' => $guidesRepository->findAll()];
     }
 
     /**
@@ -27,6 +29,7 @@ class GuideController extends AbstractController
      */
     public function show(Guides $guide): Response
     {
+
         return $this->render('guide/show.html.twig', [
             'guide' => $guide,
         ]);

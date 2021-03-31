@@ -41,7 +41,7 @@ class UserType extends AbstractType
                     ]),
                 ],
                 'first_options' => [
-                    'label' => 'password',
+                    'label' => 'plainPassword',
                 ],
                 'second_options' => [
                     'label' => 'confirm_password',
@@ -59,6 +59,7 @@ class UserType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => User::class,
+
         ]);
     }
 }
