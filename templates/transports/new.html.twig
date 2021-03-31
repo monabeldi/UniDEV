@@ -1,0 +1,33 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}New Transport{% endblock %}
+
+{% block body %}
+    {{parent()}}
+    <!-- Breadcrumb Begin -->
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-dark">Add</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                            <li class="breadcrumb-item active">Add </li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- Breadcrumb End -->
+        {{ include('uber/_form.html.twig') }}
+    </div>
+    <script type="text/javascript"
+            src="{{ asset('js/jQuery.min.js') }}"></script>
+{% endblock %}
+
