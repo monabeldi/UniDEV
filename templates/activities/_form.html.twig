@@ -1,0 +1,53 @@
+{{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+<!-- Contact Section Begin -->
+<div class="card card-primary">
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+                <div class="form-group">
+                    {{ form_label(form.nom_activite, 'Nom Activite'|trans, {'label_attr' : {'class': '' }}) }}
+                    {{ form_widget(form.nom_activite) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.lieu_evenement, 'lieu_evenement'|trans, {'label_attr' : {'class': '' }}) }}
+                    {{ form_widget(form.lieu_evenement) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.prix_participation, 'Prix Paritcipation'|trans, {'label_attr' : {'class': '' }}) }}
+                    {{ form_widget(form.prix_participation) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.date_debut, 'Date Debut'|trans, {'label_attr' : {'class': '' }}) }}
+                    {{ form_widget(form.date_debut) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.date_fin, 'Date Fin'|trans, {'label_attr' : {'class': '' }}) }}
+                    {{ form_widget(form.date_fin) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(form.heure_evenement, 'Heure Evenement'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                    {{ form_widget(form.heure_evenement) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.heure_fin, 'Heure Fin'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                    {{ form_widget(form.heure_fin) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.description, 'Decription Activite'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                    {{ form_widget(form.description) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.organisateur, 'Organiséeee Par'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                    {{ form_widget(form.organisateur) }}
+                </div>
+
+            </div>
+            <a class="btn btn-success" href="{{ path('activities_index') }}">back to list</a>
+            <button type="submit" class="btn btn-primary">{{ button_label|default('Save') }}</button>
+
+    </form>
+</div>
+</div>
+<!-- Contact Section End -->
+{{ form_end(form) }}

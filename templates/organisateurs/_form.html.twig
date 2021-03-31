@@ -1,0 +1,28 @@
+{{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+<!-- Contact Section Begin -->
+<div class="card card-primary">
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+                <div class="form-group">
+                    {{ form_label(form.nom_organisateur, 'Nom de l\'organisateur'|trans, {'label_attr' : {'class': '' }}) }}
+                    {{ form_widget(form.nom_organisateur) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.num_tel, 'Numéro de Téléphone'|trans, {'label_attr' : {'class': '' }}) }}
+                    {{ form_widget(form.num_tel) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.description, 'Description'|trans, {'label_attr' : {'class': '' }}) }}
+                    {{ form_widget(form.description) }}
+                </div>
+
+            </div>
+            <a class="btn btn-success" href="{{ path('organisateurs_index') }}">Liste Organisateurs</a>
+            <button type="submit" class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
+
+        </form>
+    </div>
+</div>
+<!-- Contact Section End -->
+{{ form_end(form) }}
