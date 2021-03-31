@@ -1,0 +1,185 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #2ca1cc;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.4rem;
+    color: #999;
+    vertical-align: baseline;
+
+    /* This will hide the Horizontal Scroll bar */
+    overflow-x: hidden;
+}
+
+hr {
+    height: 0;
+    margin: 3rem 0;
+    border: 0;
+    border-top: 1px dashed #ddd;
+}
+
+.wrap {
+    width: 100%;
+    overflow: hidden;
+}
+
+.wrap-inner {
+    width: 300%;
+
+    /* css transitions */
+    transition: transform 500ms cubic-bezier(1.000, 0.000, 0.000, 1.000);
+    transform: translateX(0);
+    -webkit-backface-visibility: hidden;
+}
+
+.section {
+    margin: 0;
+    width: 33%;
+    height: 100%;
+    padding: 1rem;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+.alpha {
+    color: #333;
+}
+
+.form {
+    min-width: 30rem;
+    background: #fff;
+    border-radius: 4px;
+    padding: 2rem;
+    text-align: center;
+    margin: 5em auto;
+    display: inline-block;
+}
+
+
+/* Inputs */
+
+.form-wrap {
+    margin: 0;
+    padding: 1rem 0;
+}
+.form-wrap .inputbox {
+    border: 1px solid #eaedf2;
+    border-radius: 3px;
+    padding: 1rem 0 1rem 3.2rem;
+    width: 44%;
+    outline: none;
+    margin-bottom: 1rem;
+    font-family: inherit;
+}
+.form--login .form-wrap .inputbox {
+    width: 88%;
+}
+.form-wrap .name {
+    background: #eaedf2 url(img/user.png) 10px 13px no-repeat;
+}
+.form-wrap .email {
+    background: #eaedf2 url(img/email.png) 10px 15px no-repeat;
+}
+.form-wrap .password {
+    background: #eaedf2 url(img/password.png) 10px 10px no-repeat;
+}
+.form-wrap a.button {
+    background: none repeat scroll 0 0 #14B9D5;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    text-decoration: none;
+}
+.form-wrap .button:hover {
+    background :#0e778a;
+}
+.form-wrap a.button > i {
+    font-size: 2rem;
+}
+
+.scroll {
+    color: #555;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.scroll:hover {
+    color: #222;
+}
+
+
+/* Social Buttons */
+
+.social {
+    margin: 4rem 0 1rem;
+}
+.social a {
+    display: inline-block;
+    min-width: 6.2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 1rem 0;
+}
+.social a.facebook {
+    background: #3b5998;
+}
+.social a.facebook:hover {
+    background: #37528c;
+}
+.social .twitter {
+    background: #1daee3;
+    margin: 0 2.6rem;
+}
+.social .twitter:hover {
+    background: #1ca4d6;
+}
+.social .google {
+    background: #d34836;
+}
+.social .google:hover {
+    background: #c74534;
+}
+.social i {
+    border-radius: 4px 0 0 4px;
+    font-size: 3.8rem;
+    padding: 1rem 1.5rem;
+    vertical-align: middle;
+    clear: both;
+}
+.social .facebook > span,
+.social .twitter > span,
+.social .google > span {
+    font-size: 1.8rem;
+    letter-spacing: 0.06em;
+    padding: 2.4rem 2rem 2.4rem 0;
+}
+
+
+/* Goto */
+
+.goto-2 {
+    transform: translateX(-33%);
+}
+.goto-3 {
+    transform: translateX(-66%);
+}
