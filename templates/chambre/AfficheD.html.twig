@@ -5,11 +5,10 @@
 
 
     {{parent()}}
-    <form METHOD="post">
-        <input type="text" name="idchambre" >
-        <input type="submit" value="recherche" class="btn btn-outline-warning">
-    </form>
-
+        <form METHOD="get">
+            <input type="text" name="search" class=" js-user-search ">
+            <input type="submit" value="Search" name="search" >
+        </form>
     <table class="table" border="1">
         <thead>
         <tr>
@@ -23,8 +22,8 @@
             <th>Update</th>
         </tr>
         </thead>
-        <tbody>
-
+        <tbody id="entitiesNavv">
+<div>
         <tr {% for c in Chambre %}>
             <td>{{ c.idchambre }}</td>
             <td> №={{ c.numchambre }}</td>
@@ -38,9 +37,111 @@
             <td><a class="btn btn-outline-primary" href="{{ path('updat',{'idchambre':c.idchambre}) }}">Update</a> </td>
 
         </tr{% endfor %}>
-
+    </div>
         </tbody>
     </table>
     <a class="btn btn-outline-success" href="{{ path('neww') }}">Create new</a>
     </div>
+
+
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            var searchRequest = null;
+            $(".js-user-search").keyup(function () {
+                var minlength = 1;
+                var that = this;
+                var value = $(this).val();
+                var entitySelector = $("#entitiesNavv").html('');
+                console.log(value.length)
+
+                if (searchRequest != null)
+                    searchRequest.abort();
+                searchRequest = $.ajax({
+                    type: "GET",
+                    url: "{{ path('search_ajaxx') }}",
+                    data: {
+                        'd': value
+                    },
+                    dataType: "text",
+                    success: function (msg) {
+                        //we need to check if the value is the same
+                        if (value == $(that).val()) {
+                            var result = JSON.parse(msg);
+                            $.each(result, function (keyph, arr) {
+                                $.each(arr, function (id, value) {
+                                    if (key == 'entities') {
+                                        if (id != 'error') {
+
+                                            var numchambre=value[0];
+                                            var typechambre=value[1];
+                                            var etatchambre=value[2];
+                                            var chambreid=value[3];
+                                            var prixchambre=value[4]
+
+                                            entitySelector.append(
+
+                                                +'<table class="table" border="1">'
+                                                +'<tr>'
+                                                // + ' <th>ID</th>'
+                                                // +  '<th>numero</th>'
+                                                // +   '<th>type</th>'
+                                                // +  '<th>etat</th>'
+                                                // +   '<th>description</th>'
+                                                // + ' <th>prix</th>'
+                                                // +  '<th>numtel</th>'
+                                                // +  '</tr>'
+                                                + '<tr >'
+                                                // + '<div class="listing_img" >'
+                                                // + '<img id="myImgTag'+hotelid+'" src="" style="width:300px">'
+                                                // +'</div>'
+
+                                                +  '<th>'+chambreid+'</th>'
+                                                +   '<th>'+numchambre+'</th>'
+                                                +     '<th>'+typechambre+'</th>'
+                                                +  '<th>'+etatchambre+'</th>'
+                                                +   '<th>'+prixchambre+'</th>'
+
+                                                + '<th>'
+                                                + '<a class="btn btn-outline-danger" href="" id="hrd'+chambreid+'">'
+                                                +'Delete'
+                                                +'</a>'
+                                                + '</th>'
+                                                + '<th>'
+                                                + '<a class="btn btn-outline-danger" href="" id="update'+chambreid+'">'
+                                                +'Update'
+                                                +'</a>'
+                                                + '</th>'
+
+                                                    {#<td><a class="btn btn-outline-primary" href="{{ path('update',{'idhotel':h.idhotel}) }}">Update</a> </td>#}
+                                                +   '</tr >'
+                                                +   ' </table>'
+
+
+
+                                            );
+
+                                            document.getElementById("hrd"+chambreid).href="http://127.0.0.1:8000/Supp/"+chambreid;
+                                            document.getElementById("update"+chambreid).href="http://127.0.0.1:8000/chambre/AfficheC/"+chambreid
+
+
+
+
+
+
+                                        } else {
+                                            entitySelector.append('<li class="errorLi">' + value + '</li>');
+                                        }
+                                    }
+                                });
+                            });
+
+
+                        }
+                    }
+                });
+
+            });
+        });
+    </script>
 {% endblock %}

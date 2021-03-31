@@ -166,7 +166,17 @@ function Update(HotelRepository $repository,$idhotel,Request $request,ImageUploa
         return $realEntities;
     }
 
-
+    /**
+     * @param HotelRepository $hotelRepository
+     * @return Response
+     * @Route("/Hotels",name="AfficheQ")
+     */
+    public function listeHotels(HotelRepository $hotelRepository): Response
+    {
+        return $this->render('Hotels/listinghotel.html.twig',  [
+            'Hotel' => $hotelRepository->findAll(),
+        ]);
+    }
 
 
 

@@ -12,6 +12,10 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Chambre
 {
 
+
+
+
+
     /**
      * @Assert\NotBlank(message="champ obligatoire")
      * @ORM\Id
@@ -42,6 +46,12 @@ class Chambre
      * @ORM\Column(type="float")
      */
     private $prixchambre;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Hotel::class, inversedBy="chambres")
+     */
+    private $hotel;
 
 
 
@@ -103,6 +113,18 @@ class Chambre
     public function setPrixChambre(float $prixchambre): self
     {
         $this->prixchambre = $prixchambre;
+
+        return $this;
+    }
+
+    public function getHotel(): ?Hotel
+    {
+        return $this->hotel;
+    }
+
+    public function setHotel(?Hotel $hotel): self
+    {
+        $this->hotel = $hotel;
 
         return $this;
     }

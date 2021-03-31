@@ -22,26 +22,25 @@
         <th>NUMTEL</th>
         <th>Delete</th>
         <th>Update</th>
-        <th> choix</th>
     </tr>
     </thead>
     <tbody id="entitiesNavv">
     <div  >
     <tr {% for h in Hotel %}  >
-         <td>{{ h.idhotel }}</td>
-         <td>{{ h.nomhotel }}</td>
-        <td>{{ h.adrrhotel }}</td>
+            <td >{{ h.idhotel }}</td>
+            <td>{{ h.nomhotel }}</td>
+            <td>{{ h.adrrhotel }}</td>
 
-        <td><img src="{{ asset('uploads/images/' ~ h.photohotel) }}" width="160" height="160"></img></td>
-        <td>{{ h.ratehotel }}</td>
+            <td><img src="{{ asset('uploads/images/' ~ h.photohotel) }}" width="160" height="160"></img></td>
+            <td>{{ h.ratehotel }}</td>
 
-        <td>{{ h.deschotel }}</td>
-        <td>{{ h.prixnuit }}DT/Nuit</td>
-        <td>№: +216 {{ h.numtelhotel }}</td>
-        <td><a class="btn btn-outline-danger" href="{{ path('d',{'idhotel':h.idhotel}) }}">Delete</a> </td>
-        <td><a class="btn btn-outline-primary" href="{{ path('update',{'idhotel':h.idhotel}) }}">Update</a> </td>
-        <td ><input type="radio" name="drone"></td>
-    </tr{% endfor %}>
+            <td>{{ h.deschotel }}</td>
+            <td>{{ h.prixnuit }}DT/Nuit</td>
+            <td>№: +216 {{ h.numtelhotel }}</td>
+            <td><a class="btn btn-outline-danger" href="{{ path('d',{'idhotel':h.idhotel}) }}">Delete</a> </td>
+            <td><a class="btn btn-outline-primary" href="{{ path('update',{'idhotel':h.idhotel}) }}">Update</a> </td>
+
+        </tr{% endfor %}>
     </div>
 
     </tbody>
@@ -84,7 +83,7 @@
                                             var hoteladdresss=value[1];
                                             var imgName=value[2];
                                             var hotelid=value[3];
-                                            var rate=value[4]
+                                            var rate=value[4];
                                             var desc=value[5];
                                             var prix=value[6];
                                             var numtel=value[7];

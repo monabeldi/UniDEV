@@ -3,8 +3,45 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:louay" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:louay" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:louay/louay" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa80f936-28da-4bc7-85b2-d606723f147d" name="Default Changelist" comment="" />
+    <list default="true" id="fa80f936-28da-4bc7-85b2-d606723f147d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Hotels/listinghotel.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ChambreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ChambreController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HotelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HotelController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Chambre.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Chambre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Hotel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Hotel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ChambreRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ChambreRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/chambre/AfficheD.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chambre/AfficheD.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/hotel/AfficheS.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/hotel/AfficheS.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/listing/listing.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/listing/listing.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +57,14 @@
         <option value="HTML File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="louay" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -137,8 +182,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="VAR" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/bundles" />
@@ -185,12 +233,42 @@
       <workItem from="1616751048589" duration="3537000" />
       <workItem from="1616768893145" duration="1984000" />
       <workItem from="1616965791193" duration="88000" />
-      <workItem from="1616965888513" duration="2329000" />
+      <workItem from="1616965888513" duration="2900000" />
+      <workItem from="1617049047909" duration="1878000" />
+      <workItem from="1617090177451" duration="7092000" />
+      <workItem from="1617098961904" duration="1109000" />
+      <workItem from="1617105231777" duration="757000" />
+      <workItem from="1617177857419" duration="5894000" />
+      <workItem from="1617205247491" duration="3035000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="louay/louay" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="578" y="292" key="#Composer" timestamp="1614676262160">
@@ -201,22 +279,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="395" y="91" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1616070150482" />
-    <state x="813" y="285" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1614801014516">
+    <state x="813" y="285" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1617207440850">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="813" y="285" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1614801014516" />
+    <state x="813" y="285" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1617207440850" />
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1614844410891">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1614844410891" />
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616066231770">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617090505918">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1616066231770" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1617090505918" />
     <state x="604" y="336" key="NewPhpFileDialog" timestamp="1614844529224">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1614844529224" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1617099466078">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1617099466078" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1614863470611">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
