@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\File\File;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
@@ -27,10 +28,15 @@ class BoutiqueController extends AbstractController
     /**
      * @Route("/", name="boutique_index", methods={"GET"})
      */
-    public function index(BoutiqueRepository $boutiqueRepository): Response
+    public function index(BoutiqueRepository $boutiqueRepository,Request $request,PaginatorInterface $paginator): Response
     {
+        $donnees = $this->getDoctrine()->getRepository(Boutique::class)->findALL();
+        $boutique = $paginator->paginate(
+            $donnees,
+            $request->query->getInt('page', 1)
+        );
         return $this->render('boutique/index.html.twig', [
-            'boutiques' => $boutiqueRepository->findAll(),
+            'boutiques' => $boutique
         ]);
     }
 

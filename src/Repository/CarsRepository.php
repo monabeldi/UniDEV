@@ -18,7 +18,13 @@ class CarsRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Cars::class);
     }
-
+    public function findCarByNom($marque_car){
+        return $this->createQueryBuilder('car')
+            ->where('car.marque_car LIKE :marque_car')
+            ->setParameter('marque_car', '%'.$marque_car.'%')
+            ->getQuery()
+            ->getArrayResult();
+    }
     // /**
     //  * @return Cars[] Returns an array of Cars objects
     //  */

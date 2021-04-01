@@ -25,7 +25,7 @@ use Symfony\Component\Form\Extension\Core\Type\FormType;
 class UberController extends AbstractController
 {
     /**
-     * @Route("/", name="uber_index", methods={"GET"})
+     * @Route("/", name="uber_index", methods={"GET","POST"})
      */
     public function index(UberRepository $uberRepository): Response
     {
@@ -60,10 +60,11 @@ class UberController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $imageFile = $form->get('photo_uber')->getData();
-            if ($imageFile) {
-                $imageFileName = $imageUploader->upload($imageFile);
-                $uber->setPhotoUber($imageFileName);
+            $imageFiles = $form->get['photo_uber']->getData();
+            foreach ($imageFiles as $imageFile )
+            if ($imageFiles) {
+                $imageFileNames = $imageUploader->upload($imageFile);
+                $uber->setPhotoUber($imageFileNames);
             }
 
             $entityManager = $this->getDoctrine()->getManager();
@@ -123,7 +124,7 @@ class UberController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="uber_delete", methods={"POST"})
+     * @Route("/{id}", name="uber_delete", methods={"GET","POST"})
      */
     public function delete(Request $request, Uber $uber): Response
     {

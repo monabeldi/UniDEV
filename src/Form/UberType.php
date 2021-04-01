@@ -22,13 +22,56 @@ class UberType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nom_uber',TextType::class)
-            ->add('num_tel_uber',TelType::class)
-            ->add('field_uber', CountryType::class )
-            ->add('prix_uber',NumberType::class)
-            ->add('photo_uber',FileType::class, array('data_class'  => null, 'required' => false,))
+            ->add('nom_uber',TextType::class, [
+                'label' => 'Full Name',
+
+            ])
+            ->add('num_tel_uber',NumberType::class, [
+                'label' => 'Phone N°',
+
+            ])
+            ->add('field_uber', ChoiceType::class, [
+                'label' => 'Field°',
+                'choices' => array(
+                    'Tunis' => 'Tunis',
+                    'Ariana' => 'Ariana',
+                    'Ben Arous' => 'Ben Arous',
+                    'Manouba' => 'Manouba',
+                    'Nabeul' => 'Nabeul',
+                    'Zaghouan' => 'Zaghouan',
+                    'Bizerte' => 'Bizerte',
+                    'Béja' => 'Béja',
+                    'Jendouba' => 'Jendouba',
+                    'Siliana' => 'Siliana',
+                    'Sousse' => 'Sousse',
+                    'Monastir' => 'Monastir',
+                    'Mahdia' => 'Mahdia',
+                    'Sfax' => 'Sfax',
+                    'Kairouan' => 'Kairouan',
+                    'Kasserine' => 'Kasserine',
+                    'Sidi Bouzid' => 'Sidi Bouzid',
+                    'Gabès' => 'Gabès',
+                    'Mednine' => 'Mednine',
+                    'Tataouine' => 'Tataouine',
+                    'Gafsa' => 'Gafsa',
+                    'Tozeur' => 'Tozeur',
+                    'Kebili' => 'Kebili',
+                ),
+
+            ])
+            ->add('prix_uber',NumberType::class, [
+                'label' => 'Price per day',
+
+
+            ])
+            ->add('photos_uber',FileType::class, [
+                'required' => false,
+                'multiple' => true
+
+            ])
             ->add('transport',EntityType::class, [
                 'class' => Uber::class,
+                'required' => false
                 ])
 
         ;

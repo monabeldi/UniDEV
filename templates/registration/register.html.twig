@@ -63,7 +63,7 @@
 
                         <div class="col-lg-6 col-md-8 p-1 m-1">
                             {{ form_errors(registrationForm.password)}}
-                            {{ form_widget(registrationForm.password, { 'attr': {'class': 'form-control', 'placeholder' : 'Password'}}) }}
+                            {{ form_widget(registrationForm.password, { 'attr': {'class': 'form-control', 'placeholder' : 'Password', 'id' : ''}}) }}
                         </div>
                         <div class="col-lg-6 col-md-8 p-1 m-1">
                             {{ form_errors(registrationForm.confirm_password)}}
@@ -97,6 +97,7 @@
 {% endblock %}
         {% block javascripts %}
             {{ parent() }}
+
         {% endblock %}
 
 

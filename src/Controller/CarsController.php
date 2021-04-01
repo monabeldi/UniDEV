@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Cars;
+use App\Entity\Uber;
 use App\Form\CarsType;
 use App\Repository\CarsRepository;
 use App\Service\ImageUploader;
@@ -12,10 +13,16 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 /**
  * @Route("/cars")
+ * Require ROLE_ADMIN for *every* controller method in this class.
+ *
+ * @IsGranted("ROLE_ADMIN")
  */
+
 class CarsController extends AbstractController
 {
     /**
@@ -26,6 +33,18 @@ class CarsController extends AbstractController
         return $this->render('cars/index.html.twig', [
             'cars' => $carsRepository->findAll(),
         ]);
+    }
+    /**
+     * @Route("/search", name="search_car")
+     */
+    public function searchCarx(Request $request, NormalizerInterface $Normalizer)
+    {
+        $repository = $this->getDoctrine()->getRepository(Cars::class);
+        $requestString = $request->get('searchValue');
+        $cars = $repository->findCarByMarque($requestString);
+        $jsonContent = $Normalizer->normalize($cars, 'json',[]);
+
+        return new Response(json_encode($jsonContent));
     }
 
     /**

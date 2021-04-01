@@ -1,7 +1,29 @@
-<div class="card-header">
-    {{ form_start(form) }}
-    {{ form_errors(form) }}
-    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
-    {{ form_end(form) }}
 
+{{ form_start(form,{'attr':{'novalidate': 'novalidate'}}) }}
+
+<!-- Contact Section Begin -->
+<div class="card card-primary">
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+                <div class="form-group">
+                    {{ form_label(form.type, 'Type'|trans, {'label_attr' : {'class': '' }}) }}
+                    {{ form_widget(form.type) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.etatTransport, 'State'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                    {{ form_widget(form.etatTransport) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(form.photo_transport, 'Image'|trans, {'label_attr' : {'class': 'control-label' }}) }}
+                    {{ form_widget(form.photo_transport) }}
+                </div>
+            <button type="submit" class="btn btn-primary">{{ button_label|default('Save') }}</button>
+
+            <a class="btn btn-success" href="{{ path('transports_index') }}">back to list</a>
+        </form>
+    </div>
 </div>
+<!-- Contact Section End -->
+{{ form_end(form) }}

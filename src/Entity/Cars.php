@@ -64,6 +64,12 @@ class Cars
      */
     private $transport;
 
+    /**
+     * @Assert\NotBlank(message="Please upload image")
+     * @Assert\File(mimeTypes={"image/jpeg"})
+     */
+    private $photos_car = [];
+
 
 
     public function getId(): ?int
@@ -153,4 +159,21 @@ class Cars
 
         return $this;
     }
+    public function __toString()
+    {
+        return $this->marque_car;
+    }
+
+    public function getPhotosCar(): ?array
+    {
+        return $this->photos_car;
+    }
+
+    public function setPhotosCar(array $photos_car): self
+    {
+        $this->photos_car = $photos_car;
+
+        return $this;
+    }
+
 }

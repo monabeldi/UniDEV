@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Constraints\Length;
+
 /**
  * @ORM\Entity(repositoryClass=UberRepository::class)
  */
@@ -40,30 +41,31 @@ class Uber
 
 
     /**
-     * @Assert\NotBlank(message="working field is required")
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="working field is required")
+     *
      */
     private $field_uber;
 
     /**
+     *  @ORM\Column(type="float")
      * @Assert\NotBlank(message="set a price please!")
-     * @ORM\Column(type="float")
+     *
      */
     private $prix_uber;
 
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Please upload image")
-     * @Assert\File(mimeTypes={"image/jpeg"})
-     */
-    private $photo_uber;
 
     /**
      * @ORM\OneToOne(targetEntity=Transports::class, mappedBy="uber", cascade={"persist", "remove"})
      */
     private $transport;
 
+    /**
+     * @Assert\NotBlank(message="Please upload image")
+     * @Assert\File(mimeTypes={"image/jpeg"})
+     */
+    private $photos_uber = [];
 
 
     public function getId(): ?int
@@ -96,8 +98,6 @@ class Uber
     }
 
 
-
-
     public function getFieldUber(): ?string
     {
         return $this->field_uber;
@@ -122,17 +122,6 @@ class Uber
         return $this;
     }
 
-    public function getPhotoUber(): ?string
-    {
-        return $this->photo_uber;
-    }
-
-    public function setPhotoUber(string $photo_uber): self
-    {
-        $this->photo_uber = $photo_uber;
-
-        return $this;
-    }
 
     public function getTransport(): ?Transports
     {
@@ -155,7 +144,21 @@ class Uber
 
         return $this;
     }
+    /**
+     * @Assert\NotBlank(message="Please upload image")
+     * @Assert\File(mimeTypes={"image/jpeg"})
+     */
 
+    public function getPhotosUber(): ?array
+    {
+        return $this->photos_uber;
+    }
 
+    public function setPhotosUber(array $photos_uber): self
+    {
+        $this->photos_uber = $photos_uber;
+
+        return $this;
+    }
 
 }

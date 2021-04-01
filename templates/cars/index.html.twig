@@ -1,47 +1,3 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Cars index{% endblock %}
-
-{% block body %}
-    <h1>Cars index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Marque_car</th>
-                <th>Price_car</th>
-                <th>Address_car</th>
-                <th>Photo_car</th>
-                <th>Owner_tel</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for car in cars %}
-            <tr>
-                <td>{{ car.id }}</td>
-                <td>{{ car.marqueCar }}</td>
-                <td>{{ car.priceCar }}</td>
-                <td>{{ car.addressCar }}</td>
-                <td>{{ car.photoCar }}</td>
-                <td>{{ car.ownerTel }}</td>
-                <td>
-                    <a href="{{ path('cars_show', {'id': car.id}) }}">show</a>
-                    <a href="{{ path('cars_edit', {'id': car.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('cars_new') }}">Create new</a>
-{% endblock %}
-
 {% extends 'back.html.twig' %}
 {% block body %}
     <!-- Content Wrapper. Contains page content -->
@@ -51,12 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Liste Rbers</h1>
+                        <h1 class="m-0 text-dark">Liste cars</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/admin">Home</a></li>
-                            <li class="breadcrumb-item active">Liste Ubers </li>
+                            <li class="breadcrumb-item active">Liste cars </li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -65,7 +21,7 @@
         <!-- /.content-header -->
         <div class="card">
             <div class="card-header">
-                <a class="btn btn-primary" href="{{ path('uber_new') }}">Add uber</a>
+                <a class="btn btn-primary" href="{{ path('cars_new') }}">Add car</a>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -105,7 +61,7 @@
 
                                 <form method="post" action="{{ path('cars_delete', {'id': car.id}) }}" onsubmit="return confirm('Are you sure you wanna delete this ?');">
                                     <input type="hidden" name="_method" value="DELETE">
-                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ uber.id) }}">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ car.id) }}">
                                     <button class="btn btn-danger btn-sm rounded-0"><i class="fa fa-trash"></i></button>
                                 </form>
                             </td>
@@ -146,7 +102,7 @@
                 /* Ajax est lancé lors du remplissage du champ texte dont l’id est « search » pour faire la recherche */
                 $.ajax({
                     /* l’url est une chaine de caractères contenant l’adresse où la requête est envoyée */
-                    url : "{{ path('search_uber') }}",
+                    url : "{{ path('search_car') }}",
                     /* La méthode utilisée pour transférer les données est GET */
                     type : 'GET',
                     /*Ici search value va prendre la chaine entrée par un utilisateur dans la zone de recherche et sera placée après l’url */
@@ -161,12 +117,13 @@
                             $.each(JSON.parse(retour), function(i, obj) {
                                 $('#t tbody#all').hide();
                                 $('#t tbody#search').append(
-                                    ' </td><td>    '+obj.nom_uber+'' +
-                                    '  </td><td>'+obj.num_tel_uber+'' +
-                                    '  </td><td>'+obj.field_uber+'' +
-                                    '  </td><td>'+obj.Prix_uber+'' +
-                                    '  </td><td><img src="/uploads/images/'+obj.Photo_uber+'" width="70" height="70">
-                                ' </td><td><a href="/uber/'+obj.id+'">show</a> </br><a href="/uber/'+obj.id+'/edit">edit</a></td></tr>');
+                                    ' </td><td>    '+obj.id+'' +
+                                    '  </td><td>'+obj.marque_car+'' +
+                                    '  </td><td>'+obj.price_car+'' +
+                                    '  </td><td>'+obj.address_car+'' +
+                                    '  </td><td>'+obj.owner_tel+'' +
+                                    '  </td><td><img src="/uploads/images/'+obj.Photo_car+'" width="70" height="70">
+                                ' </td><td><a href="/car/'+obj.id+'">show</a> </br><a href="/car/'+obj.id+'/edit">edit</a></td></tr>');
                             });
                         }
                         else

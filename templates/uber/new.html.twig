@@ -27,35 +27,24 @@
         <!-- Breadcrumb End -->
         {{ include('uber/_form.html.twig') }}
     </div>
-    <script type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyCuP0QbhWgKwx5mwDm1jV2pZXYU4FtGhQ4"></script>
     <script>
-        function initializeAutocomplete(id) {
-            var element = document.getElementById(id);
-            if (element) {
-                var autocomplete = new google.maps.places.Autocomplete(element, { types: ['geocode'] });
-                google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
-            }
-        }
-
-        function onPlaceChanged() {
-            var place = this;
-
-            // console.log(place);  // Uncomment this line to view the full object returned by Google API.
-
-            for (var i in place.address_components) {
-                var component = place.address_components[i];
-                for (var j in component.types) {  // Some types are ["country", "political"]
-                    var type_element = document.getElementById(component.types[j]);
-                    if (type_element) {
-                        type_element.value = component.long_name;
-                    }
-                }
-            }
-        }
-
-        google.maps.event.addDomListener(window, 'load', function() {
-            initializeAutocomplete('user_input_autocomplete_address');
-        });</script>
+        $(document).on('change', '#transports_type, #transports_address_transport', function () {
+            let $field = $(this)
+            let $regionField = $('#transports_type')
+            let $form = $field.closest('form')
+            let target = '#' + $field.attr('id').replace('departement', 'ville').replace('region', 'departement')
+            // Les données à envoyer en Ajax
+            let data = {}
+            data[$regionField.attr('name')] = $regionField.val()
+            data[$field.attr('name')] = $field.val()
+            // On soumet les données
+            $.post($form.attr('action'), data).then(function (data) {
+                // On récupère le nouveau <select>
+                let $input = $(data).find(target)
+                // On remplace notre <select> actuel
+                $(target).replaceWith($input)
+            })
+        })
+    </script>
 {% endblock %}
 

@@ -1,11 +1,64 @@
-{% extends 'base.html.twig' %}
+{% extends 'back.html.twig' %}
 
-{% block title %}New Cars{% endblock %}
+{% block title %}New Transport{% endblock %}
 
 {% block body %}
-    <h1>Create new Cars</h1>
+    {{parent()}}
+    <!-- Breadcrumb Begin -->
 
-    {{ include('cars/_form.html.twig') }}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-dark">Add</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                            <li class="breadcrumb-item active">Add </li>
+                        </ol>
+                        <button class="btn btn-primary" href="{{ path('cars_index') }}">back to list</button>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- Breadcrumb End -->
+        {{ include('uber/_form.html.twig') }}
+    </div>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyCuP0QbhWgKwx5mwDm1jV2pZXYU4FtGhQ4"></script>
+    <script>
+        function initializeAutocomplete(id) {
+            var element = document.getElementById(id);
+            if (element) {
+                var autocomplete = new google.maps.places.Autocomplete(element, { types: ['geocode'] });
+                google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+            }
+        }
 
-    <a href="{{ path('cars_index') }}">back to list</a>
+        function onPlaceChanged() {
+            var place = this;
+
+            // console.log(place);  // Uncomment this line to view the full object returned by Google API.
+
+            for (var i in place.address_components) {
+                var component = place.address_components[i];
+                for (var j in component.types) {  // Some types are ["country", "political"]
+                    var type_element = document.getElementById(component.types[j]);
+                    if (type_element) {
+                        type_element.value = component.long_name;
+                    }
+                }
+            }
+        }
+
+        google.maps.event.addDomListener(window, 'load', function() {
+            initializeAutocomplete('user_input_autocomplete_address');
+        });</script>
 {% endblock %}
+
+
+

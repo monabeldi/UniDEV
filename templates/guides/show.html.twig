@@ -21,8 +21,8 @@
         </div>
         <!-- /.content-header -->
         <div>
-
-            <table class="table contact__form">
+<div class="card-body" >
+            <table class="table table-bordered">
         <tbody>
             <tr>
                 <th>Nom : </th>
@@ -53,6 +53,7 @@
             </table>
             <a class="btn btn-success" href="{{ path('guides_index') }}">Back to list</a>
             <a class="btn btn-primary" href="{{ path('guides_edit', {'id': guide.id}) }}">edit</a>
+</div>
 </div>
 </div>
 {% endblock %}
