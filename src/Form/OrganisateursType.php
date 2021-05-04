@@ -22,6 +22,7 @@ class OrganisateursType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Organisateurs::class,
+            'csrf_protection' => false
         ]);
     }
 }

@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ba8dd79-7a28-41cf-9eba-8777c65d8b53" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/activities/user.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ActivitiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ActivitiesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Activities.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Activities.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ActivitiesType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ActivitiesType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/OrganisateursType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/OrganisateursType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/activities/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/activities/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/activities/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/activities/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +194,11 @@
       <workItem from="1616955671465" duration="14567000" />
       <workItem from="1617024376238" duration="14450000" />
       <workItem from="1617201999274" duration="6940000" />
-      <workItem from="1617210493800" duration="7178000" />
+      <workItem from="1617210493800" duration="11072000" />
+      <workItem from="1617268026714" duration="10097000" />
+      <workItem from="1617279880875" duration="2769000" />
+      <workItem from="1617284995359" duration="5711000" />
+      <workItem from="1620136062259" duration="1465000" />
     </task>
     <servers />
   </component>
@@ -265,6 +279,11 @@
           <url>file://$PROJECT_DIR$/templates/catalogues/index.html.twig</url>
           <line>27</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Entity/Activities.php</url>
+          <line>23</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

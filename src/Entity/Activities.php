@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ActivitiesRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ActivitiesRepository::class)
@@ -25,6 +26,12 @@ class Activities
     /**
      * @ORM\Column(type="string", length=255)
      */
+
+    private $image;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $lieu_evenement;
 
     /**
@@ -34,12 +41,15 @@ class Activities
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\GreaterThan("today UTC")
      */
     private $date_debut;
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\GreaterThan("today UTC")
      */
+
     private $date_fin;
 
     /**
@@ -174,4 +184,21 @@ class Activities
 
         return $this;
     }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+
+
+
+
 }

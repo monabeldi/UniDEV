@@ -8,6 +8,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class ActivitiesType extends AbstractType
 {
@@ -15,6 +16,10 @@ class ActivitiesType extends AbstractType
     {
         $builder
             ->add('nom_activite')
+            ->add('image', FileType::class, array('label' => 'Image',
+                'data_class' => null,
+                'required' => false
+            ))
             ->add('lieu_evenement')
             ->add('prix_participation')
             ->add('date_debut')
@@ -23,10 +28,9 @@ class ActivitiesType extends AbstractType
             ->add('heure_fin')
             ->add('description')
             ->add('organisateur', EntityType::class, [
-                'class'=>Organisateurs::class,
-                'choice_label'=>'nomOrganisateur'
-            ])
-        ;
+                'class' => Organisateurs::class,
+                'choice_label' => 'nomOrganisateur'
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

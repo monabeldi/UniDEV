@@ -9,6 +9,10 @@
                     {{ form_widget(form.nom_activite) }}
                 </div>
                 <div class="form-group">
+                    {{ form_label(form.image, 'Image Descriptive'|trans, {'label_attr' : {'class': '' }}) }}
+                    {{ form_widget(form.image) }}
+                </div>
+                <div class="form-group">
                     {{ form_label(form.lieu_evenement, 'lieu_evenement'|trans, {'label_attr' : {'class': '' }}) }}
                     {{ form_widget(form.lieu_evenement) }}
                 </div>

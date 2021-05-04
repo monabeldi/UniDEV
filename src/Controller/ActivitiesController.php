@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Activities;
 use App\Form\ActivitiesType;
 use App\Repository\ActivitiesRepository;
+use App\Service\ImageUploader;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -34,13 +35,21 @@ class ActivitiesController extends AbstractController
      * @param Request $request
      * @Route("/new", name="activities_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, ImageUploader $ImageUploader): Response
     {
         $activity = new Activities();
         $form = $this->createForm(ActivitiesType::class, $activity);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $imageFile = $form->get('image')->getData();
+            if ($imageFile) {
+                $imageFileName = $ImageUploader->upload($imageFile);
+                $activity->setImage($imageFileName);
+            }
+
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($activity);
             $entityManager->flush();
@@ -67,12 +76,17 @@ class ActivitiesController extends AbstractController
     /**
      * @Route("/{id}/edit", name="activities_edit", methods={"GET","POST"}, requirements={"id":"\d+"})
      */
-    public function edit(Request $request, Activities $activity): Response
+    public function edit(Request $request, Activities $activity, ImageUploader $ImageUploader): Response
     {
         $form = $this->createForm(ActivitiesType::class, $activity);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $imageFile = $form->get('image')->getData();
+            if ($imageFile) {
+                $imageFileName = $ImageUploader->upload($imageFile);
+                $activity->setImage($imageFileName);
+            }
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('activities_index');
@@ -113,5 +127,28 @@ class ActivitiesController extends AbstractController
         $jsonContent = $Normalizer->normalize($activities, 'json',[]);
 
         return new Response(json_encode($jsonContent));
+    }
+
+    /**
+     * @Route("/user", name="activities_user", methods={"GET"})
+     * @param ActivitiesRepository $activitiesRepository
+     * @return Response
+     */
+    public function user(ActivitiesRepository $activitiesRepository): Response
+    {
+        return $this->render('activities/user.html.twig', [
+            'activities' => $activitiesRepository->findAll(),
+        ]);
+    }
+
+    /**
+     * @Route("/recherche",name="recherche")
+     */
+    function recherche(ActivitiesRepository $repository, Request $request)
+    {
+        $data = $request->get('search_static');
+        $activite = $repository->findBy(['id' => $data]);
+        return $this->render('activities/index.html.twig',
+            ['activities' => $activite]);
     }
 }
