@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=UberRepository::class)
@@ -19,12 +20,14 @@ class Uber
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups("uber")
      */
     private $id;
 
     /**
      * @Assert\NotBlank(message="nom is required")
      * @ORM\Column(type="string", length=255)
+     * @Groups("uber")
      */
     private $nom_uber;
 
@@ -36,6 +39,7 @@ class Uber
      *     message="The value {{ value }} is not a number")
      * @Assert\Length (min="8",
      *     minMessage="number must constaint 8 min")
+     * @Groups("uber")
      */
     private $num_tel_uber;
 
@@ -43,6 +47,7 @@ class Uber
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="working field is required")
+     * @Groups("uber")
      *
      */
     private $field_uber;
@@ -50,6 +55,7 @@ class Uber
     /**
      *  @ORM\Column(type="float")
      * @Assert\NotBlank(message="set a price please!")
+     * @Groups("uber")
      *
      */
     private $prix_uber;
@@ -58,14 +64,17 @@ class Uber
 
     /**
      * @ORM\OneToOne(targetEntity=Transports::class, mappedBy="uber", cascade={"persist", "remove"})
+     * @Groups("uber")
      */
     private $transport;
 
     /**
+     * @ORM\Column(type="string")
      * @Assert\NotBlank(message="Please upload image")
      * @Assert\File(mimeTypes={"image/jpeg"})
+     * @Groups("uber")
      */
-    private $photos_uber = [];
+    private $photo_uber;
 
 
     public function getId(): ?int
@@ -144,19 +153,16 @@ class Uber
 
         return $this;
     }
-    /**
-     * @Assert\NotBlank(message="Please upload image")
-     * @Assert\File(mimeTypes={"image/jpeg"})
-     */
 
-    public function getPhotosUber(): ?array
+
+    public function getPhotoUber(): ?string
     {
-        return $this->photos_uber;
+        return $this->photo_uber;
     }
 
-    public function setPhotosUber(array $photos_uber): self
+    public function setPhotoUber(string $photo_uber): self
     {
-        $this->photos_uber = $photos_uber;
+        $this->photo_uber = $photo_uber;
 
         return $this;
     }

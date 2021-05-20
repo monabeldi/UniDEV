@@ -18,6 +18,24 @@ class TransportsRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Transports::class);
     }
+ public function findSelectedUber(int $user_id , int $uber_id)
+
+    {
+        $conn = $this->getEntityManager()->getConnection();
+        $sql = 'SELECT transports.* FROM  `transports` WHERE transports.user_id = :user_id AND transports.uber_id= :uber_id';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(['user_id'=> $user_id , 'uber_id'=> $uber_id]);
+        return $stmt->fetch();
+    }
+    public function findSelectedCar(int $user_id , int $car_id)
+    {
+        $conn = $this->getEntityManager()->getConnection();
+        $sql = 'SELECT transports.id FROM  `transports` WHERE transports.user_id = :user_id AND transports.car_id= :car_id';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(['user_id'=> $user_id , 'car_id'=> $car_id]);
+        return $stmt->fetch();
+    }
+
 
 
 }

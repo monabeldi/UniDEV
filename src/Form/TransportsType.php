@@ -13,96 +13,77 @@ use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Choice;
 
 
 class TransportsType extends AbstractType
 {
 
-    public function __construct(
-
-    ) {
+    public function __construct()
+    {
 
     }
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('type', ChoiceType::class, [
                 'choices' => array(
                     'Uber' => 'uber',
-                    'car' => 'car'
+                    'Car' => 'car'
                 ),
                 'placeholder' => 'Select a Type',
-                'mapped' => false,
-                'required' => false
+                'required' => true,
 
             ]);
         $builder->get('type')->addEventListener(
             FormEvents::POST_SUBMIT,
             function (FormEvent $event) {
+                $form = $event->getForm();
+                $form->getParent()->add('address_transport',ChoiceType::class,[
+                    'placeholder' => 'Select a region',
+                    'required' => true,
+                    'auto_initialize' => false,
+                    'choices' => array()
 
-                if('type' == 'uber')
-                {
+                ]);
+
+            });
+    }
+}
+        /*
+        if($type === 'uber'){
+            $builder->get('type')->addEventListener(
+                FormEvents::POST_SUBMIT,
+                function (FormEvent $event) {
                     $form = $event->getForm();
                     $this->addUberRegionField($form->getParent(), $form->getData());
-            }else
-                {
+                });
+        }elseif ($type === 'car'){
+            $builder->get('type')->addEventListener(
+                FormEvents::POST_SUBMIT,
+                function (FormEvent $event) {
                     $form = $event->getForm();
                     $this->addCarRegionField($form->getParent(), $form->getData());
-                }
-            }
+                });
+        }
 
-
-        );
-        $builder->addEventListener(
-            FormEvents::POST_SET_DATA,
-            function (FormEvent $event) {
-                $data = $event->getData();
-                /* @var $transport Transports */
-                $transport = $data;
-                    $transport->getType();
-                $form = $event->getForm();
-                if ($transport) {
-                    // On récupère le département et la région
-                    $type = $transport->getType();
-                    if($type == true){
-                        // On crée les 2 champs supplémentaires
-                        $this->addUberRegionField($form, $transport);
-                        $this->addUberField($form, $type);
-                        // On set les données
-                        $form->get('type')->setData($transport);
-                        $form->get('address_transport')->setData($transport);
-                    }else
-                        {
-                            // On crée les 2 champs supplémentaires
-                            $this->addCarRegionField($form, $transport);
-                            $this->addCarField($form, $type);
-                            // On set les données
-                            $form->get('type')->setData($transport);
-                            $form->get('address_transport')->setData($transport);
-                    }
-
-                } else {
-                    // On crée les 2 champs en les laissant vide (champs utilisé pour le JavaScript)
-                    $this->addCarRegionField($form, null);
-                    $this->addUberField($form, null);
-                }
-            }
-        );
     }
 
-    private function addUberRegionField(FormInterface $form,?Uber $uber)
+
+
+    private function addUberRegionField(FormInterface $form, ?Uber $uber)
     {
         $builder = $form->getConfig()->getFormFactory()->createNamedBuilder(
             'address_transport',
             EntityType::class,
             null,
             [
-                'class'           => 'App\Entity\Uber',
-                'placeholder'     => $uber ? 'Select a type' : 'Select a region',
-                'mapped'          => false,
-                'required'        => false,
+                'class' => 'App\Entity\Uber',
+                'placeholder' => $uber ? 'Select a type' : 'Select a region',
+                'required' => true,
                 'auto_initialize' => false,
-                'choices'         => $uber ? $uber->setFieldUber() : []
+                'choices' => $uber ? $uber->getFieldUber() : []
 
             ]
         );
@@ -110,24 +91,24 @@ class TransportsType extends AbstractType
             FormEvents::POST_SUBMIT,
             function (FormEvent $event) {
                 $form = $event->getForm();
-                $this->addUberRegionField($form->getParent(), $form->getData());
+                $this->addUberField($form->getParent(), $form->getData());
             }
         );
-                $form->add($builder->getForm());
+        $form->add($builder->getForm());
     }
-    private function addCarRegionField(FormInterface $form,?Cars $cars)
+
+    private function addCarRegionField(FormInterface $form, ?Cars $cars)
     {
         $builder = $form->getConfig()->getFormFactory()->createNamedBuilder(
             'address_car',
             EntityType::class,
             null,
             [
-                'class'           => 'App\Entity\Cars',
-                'placeholder'     => $cars ? 'Select a type' : 'Select a region',
-                'mapped'          => false,
-                'required'        => false,
+                'class' => 'App\Entity\Cars',
+                'placeholder' => $cars ? 'Select a type' : 'Select a region',
+                'required' => true,
                 'auto_initialize' => false,
-                'choices'         => $cars ? $cars->setAddressCar() : []
+                'choices' => $cars ? $cars->getAddressCar() : []
 
             ]
         );
@@ -135,25 +116,27 @@ class TransportsType extends AbstractType
             FormEvents::POST_SUBMIT,
             function (FormEvent $event) {
                 $form = $event->getForm();
-                $this->addCarRegionField($form->getParent(), $form->getData());
+                $this->addCarField($form->getParent(), $form->getData());
             }
         );
-                $form->add($builder->getForm());
+        $form->add($builder->getForm());
     }
+
     private function addCarField(FormInterface $form, ?Cars $cars)
     {
         $form->add('car', EntityType::class, [
-            'class'       => 'App\Entity\Cars',
+            'class' => 'App\Entity\Cars',
             'placeholder' => $cars ? 'Select a Car' : 'Sélectionnez votre département',
-            'choices'     => $cars ? $cars->getMarqueCar() : []
+            'choices' => $cars ? $cars->getMarqueCar() : []
         ]);
     }
+
     private function addUberField(FormInterface $form, ?Uber $uber)
     {
         $form->add('uber', EntityType::class, [
-            'class'       => 'App\Entity\Uber',
+            'class' => 'App\Entity\Uber',
             'placeholder' => $uber ? 'Select a Car' : 'Sélectionnez votre département',
-            'choices'     => $uber ? $uber->getNomUber() : []
+            'choices' => $uber ? $uber->getNomUber() : []
         ]);
     }
 
@@ -166,86 +149,86 @@ class TransportsType extends AbstractType
         ]);
     }
 
-}
+}*/
 
-       /* ->addEventListener(FormEvents::POST_SUBMIT,
+/* ->addEventListener(FormEvents::POST_SUBMIT,
 
-            function (FormEvent $event){
-                $type = $event->getData();
-                $form = $event->getForm();
-                if($type == 'car'){
-                    $form->getParent()->add('uber',EntityType::class, [
-                        'class' => Uber::class,
-                        'label' => 'Ubers',
-                        'placeholder' => 'Select a Uber',
-                        'choices' => $form->getData()->getUber()->getNomUber(),
-                    ]);
-                }
-                elseif($type == 'uber'){
-                    $form->getParent()->add('car', EntityType::class, [
-                        'class' => Cars::class,
-                        'label' => 'Cars',
-                        'placeholder' => 'Select a Car',
-                        'choices' => $form->getData()->getCar(),
+     function (FormEvent $event){
+         $type = $event->getData();
+         $form = $event->getForm();
+         if($type == 'car'){
+             $form->getParent()->add('uber',EntityType::class, [
+                 'class' => Uber::class,
+                 'label' => 'Ubers',
+                 'placeholder' => 'Select a Uber',
+                 'choices' => $form->getData()->getUber()->getNomUber(),
+             ]);
+         }
+         elseif($type == 'uber'){
+             $form->getParent()->add('car', EntityType::class, [
+                 'class' => Cars::class,
+                 'label' => 'Cars',
+                 'placeholder' => 'Select a Car',
+                 'choices' => $form->getData()->getCar(),
 
-                    ]);
-
-
-                }
-            })
-        ;
-            ->add('type',ChoiceType::class, [
-                'choices' => array(
-                    'Uber' => true,
-                    'Car' => false,
+             ]);
 
 
-                ),
-                'placeholder'=>'Select Type',
-                'required' => true,
-
-            ])
-            ->add('etat_transport',ChoiceType::class, [
-                'choices' => array(
-                    'Active' => 'car',
-                    'Inactive' => 'uber',
+         }
+     })
+ ;
+     ->add('type',ChoiceType::class, [
+         'choices' => array(
+             'Uber' => true,
+             'Car' => false,
 
 
-                ),
-                'attr' => ['class' => 'custom-control-label','for' => 'customSwitch3'],
-                'label' => 'Status',
-            ])
+         ),
+         'placeholder'=>'Select Type',
+         'required' => true,
+
+     ])
+     ->add('etat_transport',ChoiceType::class, [
+         'choices' => array(
+             'Active' => 'car',
+             'Inactive' => 'uber',
+
+
+         ),
+         'attr' => ['class' => 'custom-control-label','for' => 'customSwitch3'],
+         'label' => 'Status',
+     ])
 
 
 
-        ;
-        $builder ->get('type')->addEventListener(
-            FormEvents::POST_SUBMIT,
-            function (FormEvent $event)
-            {
-                $form = $event->getForm();
-                $data = $event->getData();
-                $type = $data->getType();
-                console.log($type);
-                if($type == 'uber'){
-                    $form->getParent()->add('uber',EntityType::class, [
-                        'class' => Uber::class,
-                        'label' => 'Ubers',
-                        'placeholder' => 'Select a Uber',
-                        'choices' => $form->getData()->getUber(),
-                    ]);
-                }
-                else{
-                    $form->getParent()->add('car', EntityType::class, [
-                        'class' => Cars::class,
-                        'label' => 'Cars',
-                        'placeholder' => 'Select a Car',
-                        'choices' => $form->getData()->getCars(),
+ ;
+ $builder ->get('type')->addEventListener(
+     FormEvents::POST_SUBMIT,
+     function (FormEvent $event)
+     {
+         $form = $event->getForm();
+         $data = $event->getData();
+         $type = $data->getType();
+         console.log($type);
+         if($type == 'uber'){
+             $form->getParent()->add('uber',EntityType::class, [
+                 'class' => Uber::class,
+                 'label' => 'Ubers',
+                 'placeholder' => 'Select a Uber',
+                 'choices' => $form->getData()->getUber(),
+             ]);
+         }
+         else{
+             $form->getParent()->add('car', EntityType::class, [
+                 'class' => Cars::class,
+                 'label' => 'Cars',
+                 'placeholder' => 'Select a Car',
+                 'choices' => $form->getData()->getCars(),
 
-                    ]);
-                }
+             ]);
+         }
 
-            }
-        );*/
+     }
+ );*/
 
 

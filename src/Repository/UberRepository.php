@@ -26,6 +26,26 @@ class UberRepository extends ServiceEntityRepository
             ->getQuery()
             ->getArrayResult();
     }
+    public function findAllNOTRESERVED():
+    array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+        $sql = 'SELECT uber.* FROM `uber` WHERE uber.id NOT IN (SELECT DISTINCT transports.uber_id FROM `transports` WHERE transports.uber_id > 0)';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+    public function findMyreserved(int $user_id):
+    array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+        $sql = 'SELECT uber.* FROM  `uber` , `transports` WHERE uber.id = transports.uber_id AND transports.user_id = :user_id';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(['user_id' => $user_id]);
+        return $stmt->fetchAll();
+    }
+
+
 
 
 

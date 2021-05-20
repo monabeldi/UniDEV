@@ -25,6 +25,25 @@ class CarsRepository extends ServiceEntityRepository
             ->getQuery()
             ->getArrayResult();
     }
+    public function findAllNOTRESERVED():
+    array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+        $sql = 'SELECT cars.* FROM `cars` WHERE cars.id NOT IN (SELECT DISTINCT transports.car_id FROM `transports` WHERE transports.car_id > 0 )';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+    public function findMyreserved(int $user_id):
+    array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+        $sql = 'SELECT cars.* FROM  `cars` , `transports` WHERE cars.id = transports.car_id AND transports.user_id = :user_id';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(['user_id' => $user_id]);
+        return $stmt->fetchAll();
+    }
+
     // /**
     //  * @return Cars[] Returns an array of Cars objects
     //  */

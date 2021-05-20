@@ -1,0 +1,218 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-area set-bg" data-setbg={{ asset('img/breadcrumb/breadcrumb-normal.jpg') }}>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Reservation</h2>
+                        <div class="breadcrumb__option">
+                            <a href="#"><i class="fa fa-home"></i> Home</a>
+                            <span>Reserver</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact__map">
+                        <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423283.43556031643!2d-118.69192431097179!3d34.020730495817475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1586670019340!5m2!1sen!2sbd"
+                                height="550" style="border:0;" allowfullscreen="" aria-hidden="false"
+                                tabindex="0"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="contact__widget">
+                        <div class="contact__widget__address">
+                            <h4>Contact Us</h4>
+                            <ul>
+                                <li><i class="fa fa-send"></i> 40 Baria Sreet 133/2 NewYork City</li>
+                                <li><i class="fa fa-envelope"></i> hello@atheme.com</li>
+                                <li><i class="fa fa-phone"></i> +88-111-555-666</li>
+                            </ul>
+                        </div>
+                        <div class="contact__widget__time">
+                            <h4>Working Hours</h4>
+                            <ul>
+                                <li><i class="fa fa-clock-o"></i> Mon - Fri: 6:30am - 07:45pm</li>
+                                <li><i class="fa fa-clock-o"></i> Sat - Sun: 8:30am - 05:45pm</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="list" class="listing__list">
+                    <div class="listing__text__top__left">
+                        <h5>Cars Available</h5>
+                        <span>{{ cars|length }} Results Found</span>
+                    </div>
+                    {% for car in cars %}
+                        <div class="contacts-list p-5 m-5">
+                            <div class="listing__item">
+                                <div class="listing__item__pic set-bg"
+                                     data-setbg="{{ asset('uploads/images/' ~ car.photo_car) }}">
+                                    <div class="listing__item__pic__tag">Popular</div>
+                                    <div class="listing__item__pic__btns">
+                                        <a href="#"><span class="icon_zoom-in_alt"></span></a>
+                                        <a href="#"><span class="icon_heart_alt"></span></a>
+                                    </div>
+                                </div>
+                                <div class="listing__item__text">
+                                    <div class="listing__item__text__inside">
+
+                                        <h5>Available</h5>
+                                        <div class="listing__item__text__rating">
+                                            <div class="listing__item__rating__star">
+                                                <span class="icon_star"></span>
+                                                <span class="icon_star"></span>
+                                                <span class="icon_star"></span>
+                                                <span class="icon_star"></span>
+                                                <span class="icon_star-half_alt"></span>
+                                            </div>
+                                            <h6>{{ car.price_car }} DT</h6>
+                                        </div>
+                                        <ul>
+                                            <li><span class="icon_pin_alt"></span> {{ car.address_car }}</li>
+                                            <li><span class="icon_phone"></span> +216 {{ car.owner_tel }}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="listing__item__text__info">
+                                        <div class="listing__item__text__info__left">
+                                            <span>Uber</span>
+                                        </div>
+                                        <a href="{{ path('transports_newCar', {'id': car.id}) }}"
+                                                class="btn btn-danger pull-right">Reserver
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+                <div id="list" class="listing__list">
+                    <div class="listing__text__top__left">
+                        <h5>Cars Available</h5>
+                        <span>{{ ubers|length }} Results Found</span>
+                    </div>
+                    {% for uber in ubers %}
+                        <div class="contacts-list p-5 m-5">
+                            <div class="listing__item">
+                                <div class="listing__item__pic set-bg"
+                                     data-setbg="{{ asset('uploads/images/' ~ uber.photo_uber) }}">
+                                    <div class="listing__item__pic__tag">Popular</div>
+                                    <div class="listing__item__pic__btns">
+                                        <a href="#"><span class="icon_zoom-in_alt"></span></a>
+                                        <a href="#"><span class="icon_heart_alt"></span></a>
+                                    </div>
+                                </div>
+                                <div class="listing__item__text">
+                                    <div class="listing__item__text__inside">
+
+                                        <h5>Available</h5>
+                                        <div class="listing__item__text__rating">
+                                            <div class="listing__item__rating__star">
+                                                <span class="icon_star"></span>
+                                                <span class="icon_star"></span>
+                                                <span class="icon_star"></span>
+                                                <span class="icon_star"></span>
+                                                <span class="icon_star-half_alt"></span>
+                                            </div>
+                                            <h6>{{ uber.prix_uber }} DT</h6>
+                                        </div>
+                                        <ul>
+                                            <li><span class="icon_pin_alt"></span> {{ uber.field_uber }}</li>
+                                            <li><span class="icon_phone"></span> +216 {{ uber.num_tel_uber }}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="listing__item__text__info">
+                                        <div class="listing__item__text__info__left">
+                                            <span>Car</span>
+                                        </div>
+                                        <a href="{{ path('transports_newUber', {'id': uber.id}) }}"
+                                                class="btn btn-danger pull-right">Reserver
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Listing Section End -->
+
+    <!-- Map Begin -->
+
+    <!-- Map End -->
+{% endblock %}
+{#
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+ <script>
+    $( document ).ready(function() {
+        $("#search").keyup(function(e){
+            /* La variable value va prendre la valeur insérer dans le champ de texte afin d’effectuer la recherche */
+            var value = $(this).val();
+            /* Ajax est lancé lors du remplissage du champ texte dont l’id est « search » pour faire la recherche */
+            $.ajax({
+                /* l’url est une chaine de caractères contenant l’adresse où la requête est envoyée */
+                url : "{{ path('search_car') }},{{ path('search_uber') }}",
+                /* La méthode utilisée pour transférer les données est GET */
+                type : 'GET',
+                /*Ici search value va prendre la chaine entrée par un utilisateur dans la zone de recherche et sera placée après l’url */
+                data: {
+                    'searchValue' : value
+                },
+                /*Cette fonction permet de vider le contenu du tableau pour recevoir le nouveau contenu*/
+                success : function(retour){
+                    //console.log(retour);
+                    if(retour){
+                        $('#list').empty();
+                        $.each(JSON.parse(retour), function(i, obj) {
+                            // Get template
+                            var template = $("#template-restaurant-item").html();
+
+                            // Create a new row from the template
+                            var $item = $(template);
+
+                            // Add data to the row
+                            //$('.listing__item__pic').
+                            $item.find("div[data-template='image_rest']").css('background-image', 'url(/uploads/images/'+ obj.photo_rest + ')')
+                            //data('setbg', "/uploads/images/"+obj.photo_rest);
+                            $item.find("h5[data-template='nom_rest']").text(obj.nom_rest);
+                            $item.find("li[data-template='add_rest']").text(obj.add_rest);
+                            $item.find("li[data-template='num_tel_rest']").text(obj.num_tel_rest);
+
+                            // Add the row to the table
+                            $("#list").append($item);
+                        });
+                    }
+                    else
+                    {
+                        $('#list tbody#all').show();
+                        $('#list tbody#search').empty();
+                        $('#list tbody#search').fadeIn('fast');
+                    }
+                },
+            });
+            return false;
+        });
+    });
+
+</script>
+#}

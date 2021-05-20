@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\RestaurantsRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=RestaurantsRepository::class)
@@ -15,18 +16,21 @@ class Restaurants
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups("restaurant")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="nom is required")
+     * @Groups("restaurant")
      */
     private $nom_rest;
 
     /**
      * @ORM\Column(type="string", length=255)
      *@Assert\NotBlank(message="adress is required")
+     * @Groups("restaurant")
      */
     private $add_rest;
 
@@ -35,16 +39,19 @@ class Restaurants
      * @Assert\Length(min="8",
      *     minMessage="Number must containt 8 carater",
      *     maxMessage="Number must containt 8 carater")
+     * @Groups("restaurant")
      */
     private $num_tel_rest;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("restaurant")
      */
     private $photo_rest;
 
     /**
      * @ORM\OneToOne(targetEntity=Catalogues::class, inversedBy="restaurants", cascade={"persist", "remove"})
+     * @Groups("restaurant")
      */
     private $catalogue;
 

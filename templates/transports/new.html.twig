@@ -27,27 +27,7 @@
         <!-- Breadcrumb End -->
         {{ include('uber/_form.html.twig') }}
     </div>
-    <script type="text/javascript"
-            src="{{ asset('js/jQuery.min.js') }}"></script>
 
-    <script>
-        $(document).on('change', '#app_type_region, #appbundle_medecin_departement', function () {
-            let $field = $(this)
-            let $regionField = $('#app_type_region')
-            let $form = $field.closest('form')
-            let target = '#' + $field.attr('id').replace('departement', 'ville').replace('region', 'departement')
-            // Les données à envoyer en Ajax
-            let data = {}
-            data[$regionField.attr('name')] = $regionField.val()
-            data[$field.attr('name')] = $field.val()
-            // On soumet les données
-            $.post($form.attr('action'), data).then(function (data) {
-                // On récupère le nouveau <select>
-                let $input = $(data).find(target)
-                // On remplace notre <select> actuel
-                $(target).replaceWith($input)
-            })
-        })
-    </script>
+
 {% endblock %}
 

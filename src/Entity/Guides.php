@@ -8,6 +8,8 @@ use PhpParser\Node\Scalar\String_;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 
 /**
  * @ORM\Entity(repositoryClass=GuidesRepository::class)
@@ -18,24 +20,28 @@ class Guides
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups("guide")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="nom is required")
+     * @Groups("guide")
      */
     private $nom_gui;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="prenom is required")
+     * @Groups("guide")
      *
      */
     private $prenom_gui;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("guide")
      *
      */
     private $etat_gui;
@@ -43,6 +49,7 @@ class Guides
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("guide")
      */
     private $desc_gui;
 
@@ -54,6 +61,7 @@ class Guides
      *     message="The value {{ value }} is not a number")
      * @Assert\Length (min="8",
      *     minMessage="number must constaint 8 min")
+     * @Groups("guide")
      *
      */
     private $num_tel_gui;
@@ -62,6 +70,7 @@ class Guides
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="Please upload image")
      * @Assert\File(mimeTypes={"image/jpeg"})
+     * @Groups("guide")
      */
     private $photo_gui;
 

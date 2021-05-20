@@ -9,6 +9,8 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 
 /**
  * @ORM\Entity(repositoryClass=CarsRepository::class)
@@ -19,34 +21,30 @@ class Cars
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups("cars")
      */
     private $id;
 
     /**
      * @Assert\NotBlank(message="marque is required")
      * @ORM\Column(type="string", length=255)
+     * @Groups("cars")
      */
     private $marque_car;
 
     /**
      * @Assert\NotBlank(message="set a price please!")
      * @ORM\Column(type="float")
+     * @Groups("cars")
      */
     private $price_car;
 
     /**
      * @Assert\NotBlank(message="address is required")
      * @ORM\Column(type="string", length=255)
+     * @Groups("cars")
      */
     private $address_car;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Please upload image")
-     * @Assert\File(mimeTypes={"image/jpeg"})
-     * @ORM\Column(type="string", length=255)
-     */
-    private $photo_car;
 
     /**
      * @ORM\Column(type="integer")
@@ -56,19 +54,23 @@ class Cars
      *     message="The value {{ value }} is not a number")
      * @Assert\Length (min="8",
      *     minMessage="number must constaint 8 min")
+     * @Groups("cars")
      */
     private $owner_tel;
 
     /**
      * @ORM\OneToOne(targetEntity=Transports::class, mappedBy="car", cascade={"persist", "remove"})
+     * @Groups("cars")
      */
     private $transport;
 
     /**
+     * @ORM\Column(type="string")
      * @Assert\NotBlank(message="Please upload image")
      * @Assert\File(mimeTypes={"image/jpeg"})
+     * @Groups("cars")
      */
-    private $photos_car = [];
+    private $photo_car ;
 
 
 
@@ -113,18 +115,6 @@ class Cars
         return $this;
     }
 
-    public function getPhotoCar(): ?string
-    {
-        return $this->photo_car;
-    }
-
-    public function setPhotoCar(string $photo_car): self
-    {
-        $this->photo_car = $photo_car;
-
-        return $this;
-    }
-
 
     public function getOwnerTel(): ?int
     {
@@ -164,14 +154,14 @@ class Cars
         return $this->marque_car;
     }
 
-    public function getPhotosCar(): ?array
+    public function getPhotoCar(): ?string
     {
-        return $this->photos_car;
+        return $this->photo_car;
     }
 
-    public function setPhotosCar(array $photos_car): self
+    public function setPhotoCar(string $photo_car): self
     {
-        $this->photos_car = $photos_car;
+        $this->photo_car = $photo_car;
 
         return $this;
     }

@@ -1,55 +1,64 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{guide.nomGui}}{% endblock %}
-
 {% block body %}
-    <div class="breadcrumb-area set-bg" data-setbg={{ asset('img/breadcrumb/breadcrumb-normal.jpg') }}>
+    {{parent()}}
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-area set-bg" data-setbg="img/breadcrumb/breadcrumb-normal.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Register</h2>
+                        <h2>add Produits</h2>
                         <div class="breadcrumb__option">
                             <a href="/accueil"><i class="fa fa-home"></i> Home</a>
-                            <span>Register</span>
+                            <span>Contacts</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div>
+    <!-- Breadcrumb End -->
 
-        <table class="table contact__form">
-            <tbody>
-            <tr>
-                <th>Nom : </th>
-                <td>{{ guide.nomGui }}</td>
-            </tr>
-            <tr>
-                <th>Prenom : </th>
-                <td>{{ guide.prenomGui }}</td>
-            </tr>
-            <tr>
-                <th>Etat : </th>
-                <td>{{ guide.etatGui }}</td>
-            </tr>
-            <tr>
-                <th>Description  : </th>
-                <td>{{ guide.descGui }}</td>
-            </tr>
-            <tr>
-                <th>Tel Num° : </th>
-                <td>{{ guide.numTelGui }}</td>
-            </tr>
-            <tr>
-                <th>Image  : </th>
-                <td><img src="/uploads/images/{{ guide.photoGui }}" alt="" width="140" height="200"></td>
-            </tr>
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
 
-            </tbody>
-        </table>
+                </div>
+            </div>
+            <div class="row">
 
-    </div>
-    </div>
+                <div class="col-lg-12 col-md-12">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <input type="text" placeholder="id-Produits" value="">
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <input type="text" placeholder="nom-Produits" value="">
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <input type="text" placeholder="marque" value="">
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <input type="text" placeholder="Prix-produit" value="">
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <input type="text" placeholder="poids_produit" value="">
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <input type="text" placeholder="id-boutique" value="">
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
 {% endblock %}

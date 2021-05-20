@@ -15,28 +15,28 @@ class Boutique
 {
     /**
      * @ORM\Id
-     * @Groups("boutique:read")
+     * @Groups("post:read")
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
-     * @Groups("boutique:read")
+     * @Groups("post:read")
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
      */
     private $nomBoutique;
 
     /**
-     * @Groups("boutique:read")
+     * @Groups("post:read")
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank
      */
     private $addressBoutiques;
 
     /**
-     * @Groups("boutique:read")
+     * @Groups("post:read")
      * @ORM\Column(type="integer", length=8 )
      * @Assert\NotBlank
      * @Assert\Length(min="8",
@@ -47,7 +47,7 @@ class Boutique
     private $numTelBoutique;
 
     /**
-     * @Groups("boutique:read")
+     * @Groups("post:read")
      * @ORM\Column(type="string", length=255)
      * @Assert\Email(message = "The email '{{ value }}' is not a valid email.")
      * @Assert\NotBlank
@@ -55,13 +55,13 @@ class Boutique
     private $emailBoutique;
 
     /**
-     * @Groups("boutique:read")
+     * @Groups("post:read")
      * @ORM\Column(type="string", length=255)
      */
     private $photoBoutique;
 
     /**
-     * @Groups("boutique:read")
+     * @Groups("post:read")
      * @ORM\OneToMany(targetEntity=Produit::class, mappedBy="boutique")
      */
     private $idBoutique;

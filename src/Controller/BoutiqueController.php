@@ -11,33 +11,32 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\File\File;
-use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
-
 
 
 /**
  * @Route("/boutique")
- * Require ROLE_ADMIN for *every* controller method in this class.
- *
- * @IsGranted("ROLE_ADMIN")
  */
 class BoutiqueController extends AbstractController
 {
     /**
      * @Route("/", name="boutique_index", methods={"GET"})
      */
-    public function index(BoutiqueRepository $boutiqueRepository,Request $request,PaginatorInterface $paginator): Response
+    public function index(BoutiqueRepository $boutiqueRepository): Response
     {
-        $donnees = $this->getDoctrine()->getRepository(Boutique::class)->findALL();
-        $boutique = $paginator->paginate(
-            $donnees,
-            $request->query->getInt('page', 1)
-        );
         return $this->render('boutique/index.html.twig', [
-            'boutiques' => $boutique
+            'boutiques' => $boutiqueRepository->findAll(),
         ]);
+    }
+
+    /**
+     * @Route("/json", name="boutique_index", methods={"GET"})
+     */
+    public function indexjson(BoutiqueRepository $boutiqueRepository,NormalizerInterface $Normalizer): Response
+    {
+        $boutique =$boutiqueRepository->findAll();
+        $jsonContent=$Normalizer->normalize($boutique,'json',['groups'=>'post:read']);
+        return new Response(json_encode($jsonContent));
     }
 
     /**
@@ -70,6 +69,31 @@ class BoutiqueController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/newjson/new", name="boutique_new_json", methods={"GET","POST"})
+     */
+    public function newJson(Request $request, ImageUploader $imageUploader ,NormalizerInterface $Normalizer): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $boutique = new Boutique();
+        $boutique->setNomBoutique($request->get('nom_boutique'));
+        $boutique->setAddressBoutiques($request->get('address_boutiques'));
+        $boutique->setNumTelBoutique($request->get('num_tel_boutique'));
+        $boutique->setEmailBoutique($request->get('email_boutique'));
+        $boutique->setPhotoBoutique($request->get('photo_boutique'));
+
+
+        $entityManager->persist($boutique);
+        $entityManager->flush();
+
+        $jsonContent=$Normalizer->normalize($boutique,'json',['groups'=>'post:read']);
+        return new Response(json_encode($jsonContent));
+
+    }
+
+
+
 
     /**
      * @Route("/{id}",requirements={"id"="\d+"}, name="boutique_show", methods={"GET"})
@@ -117,6 +141,43 @@ class BoutiqueController extends AbstractController
         ]);
     }
 
+
+
+    /**
+     * @Route("/{id}/editjson", name="boutique_edit", methods={"GET","POST"})
+     */
+    public function editjson(Request $request, Boutique $boutique,ImageUploader $imageUploader
+        ,NormalizerInterface $Normalizer): Response
+    {
+        $fileName = $boutique->getPhotoBoutique();
+        $boutique->setPhotoBoutique(
+            new File($this->getParameter('images_directory').'/'.$boutique->getPhotoBoutique())
+        );
+        $form = $this->createForm(Boutique1Type::class, $boutique);
+        $form->handleRequest($request);
+
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            /** @var UploadedFile $imageFile */
+            $brochureFile = $form->get('PhotoBoutique')->getData();
+            if ($brochureFile) {
+                $brochureFileName = $imageUploader->upload($brochureFile);
+                $boutique->setPhotoBoutique($brochureFileName);
+            } else {
+                $boutique->setPhotoBoutique($fileName);
+            }
+
+
+            $this->getDoctrine()->getManager()->flush();
+
+
+        }
+        $jsonContent=$Normalizer->normalize($boutique,'json',['groups'=>'post:read']);
+        return new Response("Boutique update succefully".json_encode($jsonContent));
+
+    }
+
     /**
      * @Route("/{id}", name="boutique_delete", methods={"DELETE"})
      */
@@ -129,6 +190,21 @@ class BoutiqueController extends AbstractController
         }
 
         return $this->redirectToRoute('boutique_index');
+    }
+
+    /**
+     * @Route("deletejson/{id}", name="boutique_delete", methods={"DELETE"})
+     */
+    public function deletejson(Request $request, Boutique $boutique,NormalizerInterface $Normalizer): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$boutique->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($boutique);
+            $entityManager->flush();
+        }
+
+        $jsonContent=$Normalizer->normalize($boutique,'json',['groups'=>'post:read']);
+        return new Response("Boutique delete succefully".json_encode($jsonContent));
     }
 
     /**

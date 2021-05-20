@@ -13,7 +13,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/admin">Home</a></li>
-                            <li class="breadcrumb-item active">Liste Ubers </li>
+                            <li class="breadcrumb-item active">Liste Ubers</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -48,7 +48,7 @@
                         <th>actions</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="all">
                     {% for uber in ubers %}
                         <tr>
                             <td>{{ uber.id }}</td>
@@ -58,13 +58,16 @@
                             <td>{{ uber.prixUber }}</td>
                             <td><img src="{{ asset('uploads/images/' ~ uber.photoUber) }}" width="70" height="70"></td>
                             <td>
-                                <a class="btn btn-success btn-sm rounded-0" href="{{ path('uber_edit', {'id': uber.id}) }}"><i class="fa fa-edit"></i></a>
+                                <a class="btn btn-success btn-sm rounded-circle"
+                                   href="{{ path('uber_edit', {'id': uber.id}) }}"><i class="fa fa-edit"></i></a>
 
-                                <form method="post" action="{{ path('uber_delete', {'id': uber.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer le uber ?');">
-                                    <input type="hidden" name="_method" value="DELETE">
+                                <form method="post" action="{{ path('uber_delete', {'id': uber.id}) }}"
+                                      onsubmit="return confirm('Are you sure you want to delete this item?');">
                                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ uber.id) }}">
-                                    <button class="btn btn-danger btn-sm rounded-0"><i class="fa fa-trash"></i></button>
+                                    <button class="btn btn-danger btn-sm rounded-circle"><i class="fa fa-trash"></i>
+                                    </button>
                                 </form>
+
                             </td>
                         </tr>
                     {% else %}
@@ -72,6 +75,7 @@
                             <td colspan="7">no records found</td>
                         </tr>
                     {% endfor %}
+                    {{ knp_pagination_render(ubers) }}
                     </tbody>
                     <tbody id="search">
                     </tbody>
@@ -79,15 +83,7 @@
                 </table>
             </div>
             <!-- /.card-body -->
-            <div class="card-footer clearfix">
-                <ul class="pagination pagination-sm m-0 float-right">
-                    <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-                </ul>
-            </div>
+
         </div>
 
     </div>
@@ -96,39 +92,37 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
     </script>
     <script>
-        $( document ).ready(function() {
-            $("#search").keyup(function(e){
+        $(document).ready(function () {
+            $("#search").keyup(function (e) {
                 /* La variable value va prendre la valeur insérer dans le champ de texte afin d’effectuer la recherche */
                 var value = $(this).val();
                 /* Ajax est lancé lors du remplissage du champ texte dont l’id est « search » pour faire la recherche */
                 $.ajax({
                     /* l’url est une chaine de caractères contenant l’adresse où la requête est envoyée */
-                    url : "{{ path('search_uber') }}",
+                    url: "{{ path('search_uber') }}",
                     /* La méthode utilisée pour transférer les données est GET */
-                    type : 'GET',
+                    type: 'GET',
                     /*Ici search value va prendre la chaine entrée par un utilisateur dans la zone de recherche et sera placée après l’url */
                     data: {
-                        'searchValue' : value
+                        'searchValue': value
                     },
                     /*Cette fonction permet de vider le contenu du tableau pour recevoir le nouveau contenu*/
-                    success : function(retour){
+                    success: function (retour) {
                         //console.log(retour);
-                        if(retour){
+                        if (retour) {
                             $('#t tbody#search').empty();
-                            $.each(JSON.parse(retour), function(i, obj) {
+                            $.each(JSON.parse(retour), function (i, obj) {
                                 $('#t tbody#all').hide();
                                 $('#t tbody#search').append(
-                                    ' </td><td>    '+obj.id+'' +
-                                    ' </td><td>    '+obj.nom_uber+'' +
-                                    '  </td><td>'+obj.num_tel_uber+'' +
-                                    '  </td><td>'+obj.field_uber+'' +
-                                    '  </td><td>'+obj.prix_uber+'' +
-                                    '  </td><td><img src="/uploads/images/'+obj.photo_uber+'" width="70" height="70"></td>' +
-                                    ' </td><td><a href="/uber/'+obj.id+'">show</a> </br><a href="/uber/'+obj.id+'/edit">edit</a></td></tr>');
+                                    ' </td><td>    ' + obj.id + '' +
+                                    ' </td><td>    ' + obj.nom_uber + '' +
+                                    '  </td><td>' + obj.num_tel_uber + '' +
+                                    '  </td><td>' + obj.field_uber + '' +
+                                    '  </td><td>' + obj.prix_uber + '' +
+                                    '  </td><td><img src="/uploads/images/' + obj.photo_uber + '" width="70" height="70"></td>' +
+                                    '</td><td><a class="btn btn-success btn-sm rounded-circle" href="/uber/' + obj.id + '"><i class="fa fa-eye"></i></a> <a class="btn btn-primary btn-sm rounded-circle" href="/uber/' + obj.id + '/edit"><i class="fa fa-edit"></a></td></tr>');
                             });
-                        }
-                        else
-                        {
+                        } else {
                             $('#t tbody#all').show();
                             $('#t tbody#search').empty();
                             $('#t tbody#search').fadeIn('fast');

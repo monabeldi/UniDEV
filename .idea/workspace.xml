@@ -16,21 +16,124 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:louay" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:louay" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:louay/louay" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa80f936-28da-4bc7-85b2-d606723f147d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-6065d4a6a3cc2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-6065d4c4f0847.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-6065d5556985d.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-6065d565f1141.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-6065d80683cd4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-6065d89de761e.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-6065d9069cf8a.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-6065d91d85c0d.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-60673a0b3f2f6.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-60673c1d1b705.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-60673e0c4fe21.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-60689b3ed9216.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-60689b6ace794.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-60689e42b73d8.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-6068a12482c6d.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-6068a132611b2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-6068a16d320b9.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-6068a584bba54.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-6068a7f68e018.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-6068a9921f1f7.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-6068a9a274db4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-6068cbe6549b0.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-6068cc1c38774.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/-6068cc51993f4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/3347af858781d87cb18e2b8f84027815.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ActivitiesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/HotelController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/OrganisateursController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ReservationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/UserApiController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Activities.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Hotel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Organisateurs.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Reservation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ReservationType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ActivitiesRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/HotelRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/OrganisateursRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ReservationRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/reservation/_delete_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/reservation/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/reservation/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/reservation/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/reservation/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/reservation/reservation.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/reservation/show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/tranport/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/transports/transport.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BoutiqueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BoutiqueController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CarsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CarsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GuidesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GuidesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProduitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RestaurantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RestaurantController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RestaurantsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RestaurantsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TransportsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TransportsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UberController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UberController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Boutique.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Boutique.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Cars.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Cars.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Catalogues.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Catalogues.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Guides.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Guides.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Produit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Produit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Restaurants.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Restaurants.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Transports.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Transports.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Uber.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Uber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Boutique1Type.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Boutique1Type.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/BoutiqueType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/BoutiqueType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/CarsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CarsType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/CataloguesType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CataloguesType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ChangePasswordType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ChangePasswordType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Produit1Type.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Produit1Type.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ProduitType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ProduitType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ResetPassType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ResetPassType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RestaurantsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RestaurantsType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/TransportsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TransportsType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UberType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UberType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/BoutiqueRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/BoutiqueRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/CarsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CarsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/CataloguesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CataloguesRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/GuidesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/GuidesRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ProduitRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProduitRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/RestaurantsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RestaurantsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/TransportsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TransportsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UberRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UberRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/AppAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/AppAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ImageUploader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ImageUploader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cars/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cars/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cars/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cars/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/guide/guide.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/guide/guide.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/guide/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/guide/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/guides/guides.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/header.section.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.section.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/header2.section.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header2.section.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profile/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/profile.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/transport/map.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/transports/map.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/transport/restaurant.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/transports/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/transports/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/transports/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/transports/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/transports/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/transports/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/uber/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/uber/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/uber/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/uber/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/uber/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/uber/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/profile.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +158,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/config/routes.yaml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -161,6 +267,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/debug-bundle" />
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-uuid" />
       <path value="$PROJECT_DIR$/vendor/symfony/string" />
@@ -169,6 +277,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1pC9XtkzFNp5XNncTmg07eNFMam" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -181,22 +292,33 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="VAR" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/bundles" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Controller" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\loubi\OneDrive\Desktop\UniDEV-achref\public\bundles" />
-      <recent name="C:\Users\loubi\OneDrive\Desktop\UniDEV-achref\public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\21628\Documents\GitHub\UniDEV\templates\transports" />
       <recent name="C:\Users\loubi\OneDrive\Desktop\UniDEV-achref\templates\hotel" />
       <recent name="C:\Users\loubi\OneDrive\Desktop\UniDEV-achref\src" />
       <recent name="C:\Users\loubi\OneDrive\Desktop\UniDEV-achref\templates" />
       <recent name="C:\Users\loubi\OneDrive\Desktop\UniDEV-achref\public\bundles\dist\img" />
-      <recent name="C:\Users\loubi\OneDrive\Desktop\UniDEV-achref\public\bundles\dist\img\credit" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\21628\Documents\GitHub\UniDEV\src\Controller" />
+      <recent name="C:\Users\loubi\OneDrive\Desktop\UniDEV-achref\public\bundles" />
+      <recent name="C:\Users\loubi\OneDrive\Desktop\UniDEV-achref\public" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="s doctrine:schema:update --force" />
+    </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -233,6 +355,10 @@
       <workItem from="1617177857419" duration="5894000" />
       <workItem from="1617205247491" duration="5188000" />
       <workItem from="1617236318530" duration="326000" />
+      <workItem from="1617468083847" duration="11555000" />
+      <workItem from="1619075110736" duration="1244000" />
+      <workItem from="1619645728846" duration="4527000" />
+      <workItem from="1621337127328" duration="61416000" />
     </task>
     <servers />
   </component>
@@ -263,6 +389,9 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="578" y="292" key="#Composer" timestamp="1614676262160">
       <screen x="0" y="0" width="1536" height="824" />
@@ -276,26 +405,65 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="813" y="285" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1617207440850" />
+    <state x="753" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1617274349821">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="753" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1617274349821" />
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1614844410891">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1614844410891" />
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617090505918">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="624" y="211" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1621511765519">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1617090505918" />
+    <state x="624" y="211" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1621511765519" />
+    <state x="259" y="104" key="DiffContextDialog" timestamp="1621509368199">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="259" y="104" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1621509368199" />
+    <state width="938" height="282" key="GridCell.Tab.0.bottom" timestamp="1617407854196">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617407854196" />
+    <state width="938" height="282" key="GridCell.Tab.0.center" timestamp="1617407854196">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617407854196" />
+    <state width="938" height="282" key="GridCell.Tab.0.left" timestamp="1617407854196">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617407854196" />
+    <state width="938" height="282" key="GridCell.Tab.0.right" timestamp="1617407854196">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617407854196" />
     <state x="604" y="336" key="NewPhpFileDialog" timestamp="1614844529224">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1614844529224" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1617099466078">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1617389805656">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1617389805656" />
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1621509398498">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1617099466078" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1614863470611">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1621509398498" />
+    <state x="601" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1617470459386">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="601" y="246" width="700" height="530" key="recent.locations.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1617470459386" />
+    <state x="677" y="291" key="refactoring.ChangeSignatureDialog" timestamp="1617377661967">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="677" y="291" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1617377661967" />
+    <state x="531" y="236" width="672" height="677" key="run.anything.popup" timestamp="1617475228581">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1614863470611" />
+    <state x="531" y="236" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1617475228581" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1616064277927">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

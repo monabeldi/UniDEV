@@ -6,6 +6,7 @@ use App\Entity\Restaurants;
 use App\Form\RestaurantsType;
 use App\Repository\RestaurantsRepository;
 use App\Service\ImageUploader;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,13 +14,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\File\File;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Component\Serializer\SerializerInterface;
 
 
 /**
  * @Route("/restaurants")
  * Require ROLE_ADMIN for *every* controller method in this class.
  *
- * @IsGranted("ROLE_ADMIN")
+ *
  */
 class RestaurantsController extends AbstractController
 {
@@ -32,6 +34,90 @@ class RestaurantsController extends AbstractController
             'restaurants' => $restaurantsRepository->findAll(),
         ]);
     }
+
+    /**
+     * @Route("/json", name="restaurants_json", methods={"GET"})
+     */
+    public function restaurantjson(RestaurantsRepository $restaurantsRepository,SerializerInterface $serializerInterface  ):response
+    {
+        $restaurants = $restaurantsRepository->findAll();
+        $jsonContent= $serializerInterface->serialize($restaurants,'json',['groups'=> 'restaurant']  );
+        return new Response($jsonContent);
+    }
+
+    /**
+     * @Route("/{id}", name="restaurants_json_id", methods={"GET"}, requirements={"id"="\d+"})
+     */
+    public function restaurantjsonId(Request $request,$id,SerializerInterface $serializerInterface  )
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $restaurants = $entityManager->getRepository(Restaurants::class)->find($id);
+        $jsonContent= $serializerInterface->serialize($restaurants,'json',['groups'=> 'restaurant']  );
+        return new Response(json_encode($jsonContent));
+    }
+
+    /**
+     * @Route("/addRestaurantJSON/new", name="add_restaurants_json", methods={"GET"})
+     */
+    public function addrestaurantJSON(Request $request,SerializerInterface $serializerInterface  )
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $restaurant = new Restaurants();
+        $restaurant->setNomRest($request->get('nom_rest'));
+        $restaurant->setAddRest($request->get('add_rest'));
+        $restaurant->setNumTelRest($request->get('num_tel_rest'));
+        $restaurant->setPhotoRest($request->get('photo_rest'));
+        $entityManager->persist($restaurant);
+        $entityManager->flush();;
+        $jsonContent= $serializerInterface->serialize($restaurant,'json',['groups'=> 'restaurant']  );
+        return new Response(json_encode($jsonContent));
+    }
+
+    /**
+     * @Route("/updateRestaurantJSON/{id}", name="update_restaurants_json", methods={"GET"})
+     */
+    public function updaterestaurantJSON(Request $request,SerializerInterface $serializerInterface,$id  )
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $restaurant = $entityManager->getRepository(Restaurants::class)->find($id);
+        $restaurant->setNomRest($request->get('nom_rest'));
+        $restaurant->setAddRest($request->get('add_rest'));
+        $restaurant->setNumTelRest($request->get('num_tel_rest'));
+        $restaurant->setPhotoRest($request->get('photo_rest'));
+        $entityManager->flush();;
+        $jsonContent= $serializerInterface->serialize($restaurant,'json',['groups'=> 'restaurant']  );
+        return new Response("Information updated successufuly".json_encode($jsonContent));
+    }
+
+    /**
+     * @Route("/deleteRestaurantJSON/{id}", name="delete_restaurants_json", methods={"GET"})
+     */
+    public function deleterestaurantJSON(Request $request,SerializerInterface $serializerInterface,$id  )
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $restaurant = $entityManager->getRepository(Restaurants::class)->find($id);
+        $entityManager->remove($restaurant);
+        $entityManager->flush();;
+        $jsonContent= $serializerInterface->serialize($restaurant,'json',['groups'=> 'restaurant']  );
+        return new Response("Restaurant deleted successufuly".json_encode($jsonContent));
+    }
+
+    /**
+     * @Route("upload/new", name="upload_img", methods={"GET","POST"})
+     */
+    public function Upload(Request $request, ImageUploader $imageUploader,SerializerInterface $serializerInterface){
+        $restaurant = new Restaurants();
+        $uploadedFile = $request->files->get('photo_rest');
+       // $imageFile = $form->get('photo_rest')->getData();
+            if ($uploadedFile) {
+                $imageFileName = $imageUploader->upload($uploadedFile);
+                $restaurant->setPhotoRest($imageFileName);
+            }
+
+        $jsonContent= $serializerInterface->serialize($restaurant,'json',['groups'=> 'restaurant']  );
+        return new Response("Photo added successufuly".json_encode($jsonContent));
+    }
+
 
     /**
      * @Route("/new", name="restaurants_new", methods={"GET","POST"})

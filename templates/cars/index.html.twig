@@ -12,7 +12,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/admin">Home</a></li>
-                            <li class="breadcrumb-item active">Liste cars </li>
+                            <li class="breadcrumb-item active">Liste cars</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -47,7 +47,7 @@
                         <th>actions</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="all">
                     {% for car in cars %}
                         <tr>
                             <td>{{ car.id }}</td>
@@ -57,13 +57,16 @@
                             <td>{{ car.ownerTel }}</td>
                             <td><img src="{{ asset('uploads/images/' ~ car.photoCar) }}" width="70" height="70"></td>
                             <td>
-                                <a class="btn btn-success btn-sm rounded-0" href="{{ path('cars_edit', {'id': car.id}) }}"><i class="fa fa-edit"></i></a>
+                                <a class="btn btn-success btn-sm rounded-circle"
+                                   href="{{ path('cars_edit', {'id': car.id}) }}"><i class="fa fa-edit"></i></a>
 
-                                <form method="post" action="{{ path('cars_delete', {'id': car.id}) }}" onsubmit="return confirm('Are you sure you wanna delete this ?');">
-                                    <input type="hidden" name="_method" value="DELETE">
+                                <form method="post" action="{{ path('cars_delete', {'id': car.id}) }}"
+                                      onsubmit="return confirm('Are you sure you want to delete this item?');">
                                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ car.id) }}">
-                                    <button class="btn btn-danger btn-sm rounded-0"><i class="fa fa-trash"></i></button>
+                                    <button class="btn btn-danger btn-sm rounded-circle"><i class="fa fa-trash"></i>
+                                    </button>
                                 </form>
+
                             </td>
                         </tr>
                     {% else %}
@@ -71,6 +74,7 @@
                             <td colspan="7">no records found</td>
                         </tr>
                     {% endfor %}
+                    {{ knp_pagination_render(cars) }}
                     </tbody>
                     <tbody id="search">
                     </tbody>
@@ -95,39 +99,37 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
     </script>
     <script>
-        $( document ).ready(function() {
-            $("#search").keyup(function(e){
+        $(document).ready(function () {
+            $("#search").keyup(function (e) {
                 /* La variable value va prendre la valeur insérer dans le champ de texte afin d’effectuer la recherche */
                 var value = $(this).val();
                 /* Ajax est lancé lors du remplissage du champ texte dont l’id est « search » pour faire la recherche */
                 $.ajax({
                     /* l’url est une chaine de caractères contenant l’adresse où la requête est envoyée */
-                    url : "{{ path('search_car') }}",
+                    url: "{{ path('search_car') }}",
                     /* La méthode utilisée pour transférer les données est GET */
-                    type : 'GET',
+                    type: 'GET',
                     /*Ici search value va prendre la chaine entrée par un utilisateur dans la zone de recherche et sera placée après l’url */
                     data: {
-                        'searchValue' : value
+                        'searchValue': value
                     },
                     /*Cette fonction permet de vider le contenu du tableau pour recevoir le nouveau contenu*/
-                    success : function(retour){
+                    success: function (retour) {
                         //console.log(retour);
-                        if(retour){
+                        if (retour) {
                             $('#t tbody#search').empty();
-                            $.each(JSON.parse(retour), function(i, obj) {
+                            $.each(JSON.parse(retour), function (i, obj) {
                                 $('#t tbody#all').hide();
                                 $('#t tbody#search').append(
-                                    ' </td><td>    '+obj.id+'' +
-                                    '  </td><td>'+obj.marque_car+'' +
-                                    '  </td><td>'+obj.price_car+'' +
-                                    '  </td><td>'+obj.address_car+'' +
-                                    '  </td><td>'+obj.owner_tel+'' +
-                                    '  </td><td><img src="/uploads/images/'+obj.Photo_car+'" width="70" height="70">
-                                ' </td><td><a href="/car/'+obj.id+'">show</a> </br><a href="/car/'+obj.id+'/edit">edit</a></td></tr>');
+                                    ' </td><td>    ' + obj.id + '' +
+                                    '  </td><td>' + obj.marque_car + '' +
+                                    '  </td><td>' + obj.price_car + '' +
+                                    '  </td><td>' + obj.address_car + '' +
+                                    '  </td><td>' + obj.owner_tel + '' +
+                                    '  </td><td><img src="/uploads/images/' + obj.photo_car + '" width="70" height="70"></td>' +
+                                    '</td><td><a class="btn btn-success btn-sm rounded-circle" href="/car/' + obj.id + '"><i class="fa fa-eye"></i></a> <a class="btn btn-primary btn-sm rounded-circle" href="/car/' + obj.id + '/edit"><i class="fa fa-edit"></a></td></tr>');
                             });
-                        }
-                        else
-                        {
+                        } else {
                             $('#t tbody#all').show();
                             $('#t tbody#search').empty();
                             $('#t tbody#search').fadeIn('fast');

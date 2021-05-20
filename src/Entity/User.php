@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -15,6 +16,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class User implements UserInterface
 {
     /**
+     * @Groups("user")
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -22,6 +24,7 @@ class User implements UserInterface
     private $id;
 
     /**
+     * @Groups("user")
      * @Assert\NotBlank
      * @Assert\Email(
      *     message = "The email '{{ value }}' is not a valid email."
@@ -31,30 +34,36 @@ class User implements UserInterface
     private $email;
 
     /**
+     * @Groups("user")
      * @Assert\NotBlank
      * @ORM\Column(type="string")
      */
     private $nom;
 
     /**
+     * @Groups("user")
      * @ORM\Column(type="string", nullable=true)
      */
     private $sexe;
     /**
+     * @Groups("user")
      * @ORM\Column(type="string", nullable=true)
      */
     private $address;
 
     /**
+     * @Groups("user")
      * @ORM\Column(type="json")
      */
     private $roles = [];
     /**
+     * @Groups("user")
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $picture;
 
     /**
+     * @Groups("user")
      * @var string The hashed password
      * @ORM\Column(type="string")
      * @Assert\Length(min="8", minMessage="Password must be more then 8 caracteres")
@@ -62,6 +71,7 @@ class User implements UserInterface
      */
     private $password;
     /**
+     * @Groups("user")
      * @var string The hashed password
      * @ORM\Column(type="string", nullable=true)
      * @Assert\Length(min="8", minMessage="Password must be more then 8 caracteres")
@@ -70,16 +80,19 @@ class User implements UserInterface
     public $confirm_password;
 
     /**
+     * @Groups("user")
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
 
     /**
+     * @Groups("user")
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $activation_token;
 
     /**
+     * @Groups("user")
      * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $reset_token;
@@ -194,7 +207,7 @@ class User implements UserInterface
     public function getRoles(): array
     {
         $roles = $this->roles;
-            $roles[] = "ROLE_USER";
+        $roles[] = "ROLE_ADMIN";
         return array_unique($roles);
     }
 

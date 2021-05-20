@@ -30,8 +30,9 @@
         <!-- left column -->
         <div class="col-md-3">
             <div class="text-center">
+                {{ form_start(form,{'attr': {'novalidate': 'novalidate','action' : path('profile', {'id': user.id} )}} ) }}
                 {% if app.user.picture %}
-                <img {{ app.user.picture }} class="img z-depth-1 rounded-circle" alt="avatar" width="70" height="70">
+                    {{ form_widget(form.picture,{ 'attr': {'class': 'form-control', 'placeholder' : 'Confirm password'}}) }}
                 {% else %}
                 <img href="" class="img z-depth-1 rounded-circle" alt="avatar" width="70" height="70">
                 {% endif %}
@@ -63,57 +64,41 @@
                 {% endfor %}
             </div>
             <h3>Personal info</h3>
-            <form action="{{ path('profile', {'id' : app.user.id}) }}" method="post" class="form-horizontal p-2 m-2" role="form">
+            <form  class="form-horizontal p-2 m-2" action="{{ path('profile', {'id': user.id}) }}" method="post" role="form">
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Full Name:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" name="nom" value="{{ app.user.nom }}">
+                        {{ form_widget(form.nom,{ 'attr': {'class': 'form-control', 'placeholder' : 'Full Name'}}) }}
 
                     </div>
 
                 </div>
 
+                <div class="form-group">
+                    <label class="col-lg-3 control-label p-3 ">Email:</label>
+                    <div class="col-lg-8">
+                        {{ form_widget(form.email,{ 'attr': {'class': 'form-control', 'placeholder' : 'Email Adress'}}) }}
+                    </div>
+                </div>
                 <div class="form-group">
                     <label class="col-lg-3 control-label p-3 ">Adress:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" name="address" id="user_input_autocomplete_address" value="{{ app.user.address }}">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Email:</label>
-                    <div class="col-md-8">
-                        <input class="form-control" name="email" value="{{ app.user.email }}">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Password:</label>
-                    <div class="col-md-8">
-                        <input class="form-control" type="password" value="">
-                    </div>
-                </div>
-                {{ form_start(form) }}
-                {{ form_widget(form) }}
-                <button class="btn">{{ button_label|default('Save') }}</button>
-                {{ form_end(form) }}
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Confirm password:</label>
-                    <div class="col-md-8">
-                        <input class="form-control" type="password" name="confirm_password" value="">
+                        {{ form_widget(form.address,{ 'attr': {'class': 'form-control', 'placeholder' : 'Adress' ,'id': 'user_input_autocomplete_address' }}) }}
                     </div>
                 </div>
                 <div class="form-group">
                     <div>
                         <label class="col-lg-3 control-label">Sexe:</label>
                     </div>
-                    <SELECT class="col-lg-3" name="sexe" value="{{ app.user.sexe }}">
-                        <OPTION value="1">Not defined
-                        <OPTION value="2">Female
-                        <OPTION value="3">Man
-                    </SELECT>
+                    {{ form_widget(form.sexe, { 'attr': {'class': 'form-control', 'placeholder' : 'Sexe'}}) }}
                 </div>
-                <p></p>
                 <div class="form-group">
-                    <label class="col-md-3 control-label p-3 "></label>
+                    <div>
+                        <label class="col-lg-3 control-label">Picture :</label>
+                    </div>
+                    {{ form_widget(form.picture, { 'attr': {'class': 'form-control', 'placeholder' : ''}}) }}
+                </div>
+                <div class="form-group">
                     <div class="col-md-12">
 
                             <button type="submit" class="btn btn-primary">Save Changes</button>
@@ -122,6 +107,7 @@
 
                     </div>
                 </div>
+                {{ form_end(form) }}
             </form>
         </div>
     </div>
@@ -155,7 +141,7 @@
         }
 
         google.maps.event.addDomListener(window, 'load', function() {
-            initializeAutocomplete('user_input_autocomplete_address');
+            initializeAutocomplete('user_address');
         });</script>
 {% endblock %}
 

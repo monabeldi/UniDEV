@@ -19,11 +19,15 @@ use Symfony\Component\Validator\Constraints\CardScheme;
 
 class UberType extends AbstractType
 {
+    public static function processImage($uploaded_file)
+    {
+    }
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('nom_uber',TextType::class, [
-                'label' => 'Full Name',
+                'label' => 'Full name',
 
             ])
             ->add('num_tel_uber',NumberType::class, [
@@ -31,7 +35,7 @@ class UberType extends AbstractType
 
             ])
             ->add('field_uber', ChoiceType::class, [
-                'label' => 'Field°',
+                'label' => 'Uber address',
                 'choices' => array(
                     'Tunis' => 'Tunis',
                     'Ariana' => 'Ariana',
@@ -61,18 +65,14 @@ class UberType extends AbstractType
             ])
             ->add('prix_uber',NumberType::class, [
                 'label' => 'Price per day',
-
-
             ])
-            ->add('photos_uber',FileType::class, [
+            ->add('photo_uber',FileType::class, [
+                'label' => 'Uber image',
                 'required' => false,
-                'multiple' => true
+
+                'data_class' => null,
 
             ])
-            ->add('transport',EntityType::class, [
-                'class' => Uber::class,
-                'required' => false
-                ])
 
         ;
     }

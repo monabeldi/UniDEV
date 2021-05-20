@@ -18,6 +18,7 @@ class Transports
      */
     private $id;
 
+
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -37,11 +38,11 @@ class Transports
      * @ORM\OneToOne(targetEntity=Cars::class, inversedBy="Transport", cascade={"persist", "remove"})
      */
     private $car;
-
     /**
-     * @ORM\Column(type="string", length=255)
+     * * @ORM\Column(type="integer", length=255)
      */
-    private $photo_transport;
+    private $user_id;
+
 
 
 
@@ -98,21 +99,25 @@ class Transports
         return $this;
     }
 
-    public function getPhotoTransport(): ?string
-    {
-        return $this->photo_transport;
-    }
-
-    public function setPhotoTransport(string $photo_transport): self
-    {
-        $this->photo_transport = $photo_transport;
-
-        return $this;
-    }
-
 
     public function __toString()
     {
         return $this->type;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * @param mixed $user_id
+     */
+    public function setUserId($user_id): void
+    {
+        $this->user_id = $user_id;
     }
 }

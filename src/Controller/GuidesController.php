@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Entity\Guides;
 use App\Form\GuidesType;
 use App\Repository\GuidesRepository;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Exception\ExceptionInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,19 +17,21 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Knp\Component\Pager\PaginatorInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * @Route("/guides")
  *
- * Require ROLE_ADMIN for *every* controller method in this class.
  *
- * @IsGranted("ROLE_ADMIN")
  */
 
 class GuidesController extends AbstractController
 {
     /**
      * @Route("/", name="guides_index")
+     * @IsGranted("ROLE_ADMIN")
      * @param Request $request
      * @param PaginatorInterface $paginator
      * @return Response
@@ -39,7 +43,7 @@ class GuidesController extends AbstractController
         $guides = $paginator->paginate(
             $donnees,
             $request->query->getInt('page', 1),
-            5
+            2
         );
 
         return $this->render('guides/index.html.twig', [
@@ -51,6 +55,7 @@ class GuidesController extends AbstractController
 
     /**
      * @Route("/new", name="guides_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN")
      * @param Request $request
      * @return Response
      */
@@ -85,6 +90,7 @@ class GuidesController extends AbstractController
 
     /**
      * @Route("/{id}", name="guides_show", methods={"GET"}, requirements={"id"="\d+"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function show(Guides $guide): Response
     {
@@ -96,6 +102,7 @@ class GuidesController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="guides_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function edit(Request $request, Guides $guide): Response
     {
@@ -121,6 +128,7 @@ class GuidesController extends AbstractController
 
     /**
      * @Route("/{id}", name="guides_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function delete(Request $request, Guides $guide): Response
     {
@@ -135,6 +143,7 @@ class GuidesController extends AbstractController
 
     /**
      * @Route("/search", name="search_guides", requirements={"id":"\d+"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function searchGuides(Request $request, NormalizerInterface $Normalizer)
     {
@@ -145,6 +154,92 @@ class GuidesController extends AbstractController
 
         return new Response(json_encode($jsonContent));
     }
+    /**
+     * @Route("/json", name="guides_json", methods={"GET"})
+     */
+    public function guidesjson(GuidesRepository $guidesRepository,SerializerInterface $serializerInterface  ):response
+    {
+        $guides = $guidesRepository->findAll();
+        $jsonContent= $serializerInterface->serialize($guides,'json',['groups'=> 'guide']  );
+        return new Response($jsonContent);
+    }
 
+
+
+    /**
+     * @Route("/addGuide/new", name="add_Guide", methods={"GET"})
+     * @param Request $request
+     * @return JsonResponse
+     * @throws ExceptionInterface
+     */
+
+    public function addGuideAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $guide = new Guides();
+        $guide->setNomGui($request->get("nom_gui"));
+        $guide->setPrenomGui($request->get("prenom_gui"));
+        $guide->setEtatGui($request->get("etat_gui"));
+        $guide->setDescGui($request->get("desc_gui"));
+        $guide->setNumTelGui($request->get("num_tel_gui"));
+        $guide->setPhotoGui($request->get("photo_gui"));
+        $em->persist($guide);
+        $em->flush();
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($guide);
+        return new JsonResponse($formatted);
+
+    }
+
+    /******************Supprimer Reclamation*****************************************/
+
+    /**
+     * @Route("/deleteGuide", name="delete_guide", methods={"DELETE"})
+     *
+     */
+
+    public function deleteGuideAction(Request $request) {
+        $id = $request->get("id");
+
+        $em = $this->getDoctrine()->getManager();
+        $guide = $em->getRepository(Guides::class)->find($id);
+        if($guide!=null ) {
+            $em->remove($guide);
+            $em->flush();
+
+            $serialize = new Serializer([new ObjectNormalizer()]);
+            $formatted = $serialize->normalize("Guide a ete supprimee avec success.");
+            return new JsonResponse($formatted);
+
+        }
+        return new JsonResponse("id Guide invalide.");
+
+
+    }
+
+    /******************Modifier Reclamation*****************************************/
+    /**
+     * @Route("/updateGuide", name="update_guide", methods={"PUT"})
+     *
+     */
+    public function modifierGuideAction(Request $request) {
+        $em = $this->getDoctrine()->getManager();
+        $guide = $this->getDoctrine()->getManager()
+            ->getRepository(Guides::class)
+            ->find($request->get("id"));
+
+        $guide->setNomGui($request->get("nom_gui"));
+        $guide->setPrenomGui($request->get("prenom_gui"));
+        $guide->setEtatGui($request->get("etat_gui"));
+        $guide->setDescGui($request->get("desc_gui"));
+        $guide->setNumTelGui($request->get("num_tel_gui"));
+
+        $em->persist($guide);
+        $em->flush();
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($guide);
+        return new JsonResponse("Guide a ete modifiee avec success.");
+
+    }
 
 }
